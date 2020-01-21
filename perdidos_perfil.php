@@ -16,10 +16,17 @@
 
 <body>
 
-<!-- nav -->
-<?php
-    require_once("./includes/nav.php");
-?>
+<header>
+    <!-- nav -->
+    <?php
+        require_once("./includes/nav.php");
+    ?>
+</header>
+
+<main>
+
+
+</main>
 
 
 <!-- Footer -->

@@ -25,7 +25,10 @@
     ?>
 </header>
 
+<main>
 
+
+</main>
 
 
 <!-- Footer -->
