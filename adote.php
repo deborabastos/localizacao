@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="style.css">
  
     <!-- Fontes -->
-    <link href="https://fonts.googleapis.com/css?family=Merienda&display=swap" rel="stylesheet">  
+    <?php
+        require_once("./includes/fonts.php");
+    ?>
+
     
     
     <title>LocalizaCão - Adote</title>

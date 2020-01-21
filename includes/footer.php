@@ -1,16 +1,17 @@
 <footer class="bg-primary">
-    <div class="container">
+    <div class="container-fluid">
     <div class="row">
         <div class="col-sm">
-            <h2 class="text-secondary">localizaCão</h1>
+        <div class="footer-items">    
+            <h2 class="text-white text-uppercase">localizaCão</h1>
             <p class="text-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam, ab.</p>
-     
+        </div>
 
         </div>
         <div class="col-sm">
         <div class="footer-items">
-                    <h4 class="text-secondary text-uppercase">Adotar</h4>
-                    <div class="border"></div>
+                    <h5 class="text-uppercase">Adotar</h4>
+                    <div class="footer-items-border"></div>
                     <ul>
                         <a class="text-white" href="">Adocao</a>
                         <a class="text-white" href="">Procurar</a>
@@ -22,8 +23,8 @@
         </div>
         <div class="col-sm">
         <div class="footer-items">
-                    <h4 class="text-secondary text-uppercase">another</h4>
-                    <div class="border"></div>
+                    <h5 class="text-uppercase">another</h4>
+                    <div class="footer-items-border"></div>
                     <ul>
                         <a class="text-white" href="">home</a>
                         <a class="text-white" href="">home</a>
@@ -36,8 +37,8 @@
         </div>
         <div class="col-sm">
         <div class="footer-items">
-                    <h4 class="text-secondary text-uppercase">contato</h4>
-                    <div class="border"></div>
+                    <h5 class="text-uppercase">contato</h4>
+                    <div class="footer-items-border"></div>
                     <ul>
                      <li><i class="fa fa-map-marker" aria-hidden="true"></i> 4455 av interlagos</li>
                      <li><i class="fa fa-phone" aria-hidden="true"></i> 11- 997979981</li>

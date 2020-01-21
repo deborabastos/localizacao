@@ -7,8 +7,8 @@
 
       
       <!-- Menu Hamburguer -->
-      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Menu de navegação">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler ml" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Menu de navegação">
+        <span class="navbar-toggler-icon ml"></span>
       </button>
       <!-- Menu hamburguer posicionado estranho com uso da siv container!!!!!!!!!!! -->
       <!-- Configurar melhor letra do menu hamburguer !!!!!!-->
