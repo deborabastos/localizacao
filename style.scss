@@ -1,0 +1,24 @@
+
+$theme-colors: (
+    "primary": #0e2b3a,
+    "secondary": #D97E4A,
+);
+
+$text-primary: #D97E4A;
+$text-secondary: #0e2b3a;
+
+$font-family: 'Merienda', cursive;
+$font-family-sans-serif: 'Merienda', cursive;
+$font-family-monospace: 'Merienda', cursive; 
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+
+.banner {
+    background-image: url("images/banner.jpg");
+    height: 400px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
