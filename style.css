@@ -9887,28 +9887,140 @@ h3 {
   background-size: cover;
 }
 
-.footer-items {
-  font-family: 'Merienda', cursive;
-  margin: 0;
-  padding: 10px;
+
+
+/* FOOTER SHAW */
+
+.footer{
+  width: 100%;
+  background: #041f2c;
+  display: block;
+  font-size: 18px;
+  font-family: 'Merienda One', cursive;
   font-weight: 400;
+  line-height: 1.8em;
 }
 
-
-.footer-items-border {
-    height: 2px;
-    width: 40px;
-    margin: 12px 0 5px 0;
-    background-color: #ff9800;
+.inner-footer{
+  width: 95%;
+  margin: auto;
+  padding: 30px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: center;
 }
 
-.footer-items ul a {
+.footer-h1{
+  padding: 10px 0;
+  font-size: 25px;
+  color: white;
+}
+
+.footer-h2{
+  color: orange;
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.footer-items p{
+  color: grey;
+  font-size: 16px;
+  text-align: justify;
+  line-height: 25px;
+}
+
+.footer-border{
+  height: 2px;
+  width: 40px;
+  background: #ff9800;
+}
+
+.footer-items ul{
+  list-style: none;
+  color: white;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  padding: 5px;
+}
+
+.footer-items ul li{
   display: block;
 }
 
-.footer-items h5 {
+
+
+.footer-items ul li a{
+  text-decoration: none;
+  outline: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.footer-items ul li a:hover {
   color: #ff9800;
 }
+
+
+.footer-items ul li i{
+  margin-right: 20px;
+}
+
+.social-media{
+  width: 100%;
+  color: white;
+  text-align: left;
+}
+
+.social-media a{
+  text-decoration: none;
+}
+
+.social-media i{
+  height: 37px;
+  width: 37px;
+  margin: 20px 5px;
+  padding: 10px;
+  color: white;
+  border-radius: 50%;
+  border: 1px solid grey;
+  transition: 0.3s;
+}
+
+.social-media i:hover{
+  background: grey;
+}
+
+.footer-bottom{
+  padding: 10px;
+  background: #3d545f;
+  color: white;
+  font-size: 12px;
+}
+
+
+
+
+/* ver query */
+.footer-items{
+  width: 25%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width:1085px) {
+  .footer-items {
+      width: 50%;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .footer-items {
+      width: 10 0%;
+  }
+}
+
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! MEDIA QUERY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
