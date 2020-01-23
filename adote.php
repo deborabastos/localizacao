@@ -27,11 +27,17 @@
     ?>
 </header>
 
-<main>
+<main class="main">
+    <aside class="aside">
 
+
+    </aside>
+    <section class="section">
+
+
+    </section>
 
 </main>
-
 
 
 <!-- Footer -->
