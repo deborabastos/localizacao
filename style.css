@@ -1,9 +1,6 @@
 @charset "UTF-8";
 
-
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CSS PERSONALIZADO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-
-
 /* TOPO */
 .topo {
   height:40px;
@@ -63,6 +60,22 @@
   width: 100%;
   background-position: center;
   background-size: cover;
+}
+
+.main{
+  display: flex;  
+}
+
+.aside {
+  background-color: aqua;
+  width: 25%;
+  height: 100px;
+}
+
+.main-section{
+  background-color: brown;
+  width: 75%;
+  height: 100px;
 }
 
 
@@ -184,7 +197,7 @@
   font-size: 12px;
 }
 
-/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! MEDIA QUERY DO FOOTER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/* MEDIA QUERY DO FOOTER */
 @media screen and (min-width:1086px) {
   .footer-items {
       width: 25%;
@@ -203,7 +216,7 @@
   }
 }
 
-/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! MEDIA QUERY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/* MEDIA QUERY */
 
 /* Telefones em paisagem e abaixo */
 @media (max-width: 479px) { 
@@ -245,13 +258,7 @@
 }
 
 
-
-/*!
- * Bootstrap v4.4.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors
- * Copyright 2011-2019 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CSS BOOSTRAP ALTERADO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 :root {
   --blue: #007bff;
   --indigo: #6610f2;

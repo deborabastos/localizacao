@@ -32,7 +32,7 @@
 
 
     </aside>
-    <section class="section">
+    <section class="main-section">
 
 
     </section>
