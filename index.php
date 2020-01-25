@@ -32,7 +32,7 @@
 
 <main>
 
-teste
+
 
 <section class="section section-light">
         <h3>Como funciona</h3>

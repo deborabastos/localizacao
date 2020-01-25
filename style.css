@@ -197,6 +197,28 @@
   font-size: 12px;
 }
 
+/*CSS PAGINA PERDIDOS E ACHADOS*/
+
+.icones{
+  margin-top: 20px;
+  margin-bottom: 20px;  
+}
+.card{
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.card:hover{
+  border-color: #2c355c;
+}
+.card:hover{
+  transition: all 0.4s ease;
+  transform: scale(1.1);
+}
+
+
+
+
 /* MEDIA QUERY DO FOOTER */
 @media screen and (min-width:1086px) {
   .footer-items {
