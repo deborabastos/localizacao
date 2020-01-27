@@ -31,14 +31,15 @@
 <main>
         <section class="icones">
             <div class="row">
-                <div class="mx-auto">
-                    <div class="col-sm-4 col-xs-12" >
-                            <img class="icone_cao"src="images/cao1.png" alt="icone de um cachorro">
-                    </div>
+                <div class="imagedog">
+                    <img class="icone_cao"src="images/cao1.png" alt="icone de um cachorro">
+
                 </div>
-                <div class="mx-auto">
-                    <div class="col-sm-4 col-xs-12" >
-                            <img class="icone_gato"src="images/gato2.png" alt="icone de um gato">
+            </div>
+                <div>
+                    <div class="imagecat">
+                        <img class="icone_gato"src="images/gato2.png" alt="icone de um gato">
+
                     </div>
                 </div>
             </div>  
