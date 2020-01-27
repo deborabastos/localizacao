@@ -30,99 +30,54 @@
   </header>
 
 
-<main>
 
-
-
-<section class="section section-light">
-        <h3>Como funciona</h3>
-        <p>
-            A LocalizaCão conta com a ajuda de toda comunidade para reunir tutores com animais perdidos ou abandonados.
-            Confira no mapa!
-
-        </p>
-    </section>
-
-    <div class="box">
-
-    <div class="selectors">
-        
-        <select>
-            <option>animal</option>
-            <option>cachorro</option>
-            <option>gato</option>
-            
-        </select>
-        
-        <select>
-            <option>tamanho</option>
-            <option>grande</option>
-            <option>medio</option>
-            <option>pequeno</option>
-            
-            
-        </select>
-        
-        <select>
-            <option>achados ou perdidos</option>
-            <option>achados</option>
-            <option>perdidos</option>
-        </select>
-        
-        <select>
-            <option>estado</option>
-            <option>sao paulo</option>
-            <option>parana</option>
-            
-        </select>
-        
-        <select>
-            <option>cidade</option>
-            <option>sao paulo</option>
-            <option>curitiba</option>
-            
-        </select>
-        
-        <input class="form-control" placeholder="nome do bichinho? Digite aqui." type="text">
-        
-        <input class="btn" type="submit" value="procurar"></input>
-    </div>
-       
+  <div class="servicos" id="servicos">
+		<h1 class="title">Servicos</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam quia, porro repellendus dolore repudiandae, accusantium corporis harum vel iste suscipit maiores provident ullam itaque libero minus nesciunt consequatur iusto numquam asperiores quod fugiat veniam blanditiis.</p>
+		<div class="diff_services">
+			<div class="diff_services_item">
+				<img src="images/mainpage copy.jpg" alt="service_image">
+				<h3 class="sub_title">Achados</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+			</div>
+			<div class="diff_services_item">
+				<img src="images/mainpage2 copy.jpg" alt="service_image">
+				<h3 class="sub_title">Perdidos</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+			</div>
+		</div>
     </div>
 
-    <section class="section section-light">
-        <h3>Mapas</h3>
-        <p>
+        <!-- mapas-->
 
-            Se você precisa de ajuda para encontrar um animal, um tutor ou apenas gostaria de ajudar. É muito importante
-            se cadastrar para conseguirmos entrar em contato com você.
-            Faça seu login ou cadastre-se.
-        </p>
-    </section>
-
-    <div class="maps">
-        <img src="images/maps1 copy.jpg" style="width: 45%;">
-
+        <div class="diff_services_item1">
+            <h1 class="title">Mapas</h1>
+        <img src="images/maps1 copy 3.jpg" width=45%>
+        <h3 class="sub_title">Mapas</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
     </div>
 
-
-    
-
-    <section class="section section-light">
-        <p>
-
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae quasi doloribus itaque fugiat, quibusdam totam
-            maxime neque illo nostrum similique ex cum quas labore voluptates dolorem aspernatur, quis ipsam quos id
-            quia nam, non facere laboriosam error? Maiores dolores minima explicabo delectus fugiat amet necessitatibus!
-            Sapiente suscipit vero quos, earum provident eveniet quidem labore? In placeat soluta, fuga doloremque
-            numquam nisi amet quaerat! Eius ipsa itaque, minima aliquam explicabo quam nobis aperiam animi repudiandae
-            nulla commodi cupiditate tenetur amet autem adipisci ut repellendus, similique, cum totam sapiente facere
-            velit quod eligendi. Reiciendis doloremque cumque tempore ratione eius corporis magnam neque.
-        </p>
-    </section>
+<!-- mapas termina-->
 
 
-</main>
+
+<!-- isto tambem vai ne-->
+
+	<div class="adote" id="adote">
+		<h1 class="title">Adote</h1>
+		<div class="ourteam_wrapper">
+			<div class="team-1 team">
+				<div class="team_members" data-name="da vinci"><img src="images/animal-blur-canine-close-up-551628 copy.jpg"><p>Da Vinci<br>Procurando uma casa</p></div>
+				<div class="team_members" data-name="doido"><img src="images/english-cocker-spaniel-puppy-sitting-on-ground-beside-grass-1254140 copy.jpg"><p>Doido<br>Procurando uma casa</p></div>
+				<div class="team_members" data-name="domingo"><img src="images/perdido2 copy.jpg"><p>domingo<br>Procurando uma casa</p></div>
+			</div>
+			<div class="team-2 team">
+				<div class="team_members" data-name="dahora"><img src="images/perdido4 copy.jpg"><p>Dahora<br>Procurando uma casa</p></div>
+				<div class="team_members" data-name="gato"><img src="images/perdido5 copy.jpg"><p>gato<br>Procurando uma casa</p></div>
+				<div class="team_members" data-name="miauu"><img src="images/silver-tabby-cat-lying-on-brown-wooden-surface-126407 copy.jpg"><p>miauu<br>Procurando uma casa</p></div>
+			</div>
+		</div>
+    </div>	
 
 
 
