@@ -48,11 +48,40 @@
       
       <!-- Botões -->
       <ul class="nav-button navbar-nav ml-auto">
-        <li class="nav-item mt-2 mr-2 mb-2">
-          <a class="button btn-primary font-weight-bold rounded p-2" href="#" role="button">Login</a>
-        </li>
-        <li class="nav-item mt-2 mb-2">
-          <a class="button btn-primary font-weight-bold rounded p-2" href="#" role="button">Cadastro</a>          
+      
+      <!--Adicionado botão de Login-->
+        <li class="dropleft ">
+        <button class=" btn-primary btn-sm font-weight-bold mr-2 mb-3 p-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Entrar
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+         <!--Adicionado dados para login em um formulário-->
+         <form class="px-4 py-3">
+          <div class="form-group">
+          <label for="exampleDropdownFormEmail1">Endereço de email</label>
+          <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@exemplo.com">
+          </div>
+          <div class="form-group">
+          <label for="exampleDropdownFormPassword1">Senha</label>
+          <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Senha">
+          </div>
+          <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="dropdownCheck">
+          <label class="form-check-label" for="dropdownCheck">
+          Lembrar
+          </label>
+          </div>
+          <button type="submit" class="btn btn-primary">Entrar</button>
+          </form>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Não tem uma conta? Cadastre-se.</a>
+          <a class="dropdown-item" href="#">Esqueceu a senha?</a>
+          </div>
+          </li>
+
+        <li class="nav-item mt-1 ">
+          <a class="btn-primary btn-sm font-weight-bold rounded p-2 " href="cadastro_usuario.php" role="button">Cadastro</a>          
         </li>
       </ul>
     </div>
