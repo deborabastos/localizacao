@@ -13,13 +13,12 @@
         require_once("./includes/fonts.php");
     ?>
 
-        
-    <title>LocalizaCão - Perdidos</title>
-
+    
+    
+    <title>LocalizaCão - Adote</title>
 </head>
 
 <body>
-
 
 <header>
     <!-- nav -->
@@ -29,7 +28,6 @@
 </header>
 
 <main>
-
         <section class="icones">
             <div class="row">
                 <div class="imagedog">
@@ -49,7 +47,7 @@
 
     <!-- !!!!!!!!COMEÇO DOS CARDS!!!!! -->
 
-        <section class="container">
+<section class="container">
             <div class="row">
                 <div class="mx-auto">
                     <div class="col-sm-4 col-xs-12" >
@@ -136,7 +134,8 @@
             
             
             </section>
-            
+
+
 </main>
 
 
@@ -146,6 +145,7 @@
         require_once("./includes/footer.php");
     ?>
 </footer>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
