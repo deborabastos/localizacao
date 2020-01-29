@@ -62,7 +62,7 @@
 
 
 <!-- isto tambem vai ne-->
-
+<main>
 	<div class="adote" id="adote">
 		<h1 class="title">Adote</h1>
     <section class="container">
@@ -152,7 +152,7 @@
             
             
             </section>
-
+</main>
 
 
   <!-- Footer -->
