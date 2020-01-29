@@ -32,7 +32,7 @@
 
 
   <div class="servicos" id="servicos">
-		<h1 class="title">Servicos</h1>
+		<h1 class="title">Serviços</h1>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam quia, porro repellendus dolore repudiandae, accusantium corporis harum vel iste suscipit maiores provident ullam itaque libero minus nesciunt consequatur iusto numquam asperiores quod fugiat veniam blanditiis.</p>
 		<div class="diff_services">
 			<div class="diff_services_item">
