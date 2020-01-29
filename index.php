@@ -32,7 +32,7 @@
 
 
   <div class="servicos" id="servicos">
-		<h1 class="title">Serviços</h1>
+		<h1 class="title">Servicos</h1>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam quia, porro repellendus dolore repudiandae, accusantium corporis harum vel iste suscipit maiores provident ullam itaque libero minus nesciunt consequatur iusto numquam asperiores quod fugiat veniam blanditiis.</p>
 		<div class="diff_services">
 			<div class="diff_services_item">
@@ -63,7 +63,9 @@
 
 <!-- isto tambem vai ne-->
 
-<section class="container">
+	<div class="adote" id="adote">
+		<h1 class="title">Adote</h1>
+    <section class="container">
             <div class="row">
                 <div class="mx-auto">
                     <div class="col-sm-4 col-xs-12" >
@@ -150,7 +152,6 @@
             
             
             </section>
-
 
 
 
