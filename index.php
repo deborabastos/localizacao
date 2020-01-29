@@ -32,7 +32,7 @@
 
 
   <div class="servicos" id="servicos">
-		<h1 class="title">Servicos</h1>
+		<h1 class="title">Serviços</h1>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam quia, porro repellendus dolore repudiandae, accusantium corporis harum vel iste suscipit maiores provident ullam itaque libero minus nesciunt consequatur iusto numquam asperiores quod fugiat veniam blanditiis.</p>
 		<div class="diff_services">
 			<div class="diff_services_item">
@@ -63,21 +63,93 @@
 
 <!-- isto tambem vai ne-->
 
-	<div class="adote" id="adote">
-		<h1 class="title">Adote</h1>
-		<div class="ourteam_wrapper">
-			<div class="team-1 team">
-				<div class="team_members" data-name="da vinci"><img src="images/animal-blur-canine-close-up-551628 copy.jpg"><p>Da Vinci<br>Procurando uma casa</p></div>
-				<div class="team_members" data-name="doido"><img src="images/english-cocker-spaniel-puppy-sitting-on-ground-beside-grass-1254140 copy.jpg"><p>Doido<br>Procurando uma casa</p></div>
-				<div class="team_members" data-name="domingo"><img src="images/perdido2 copy.jpg"><p>domingo<br>Procurando uma casa</p></div>
-			</div>
-			<div class="team-2 team">
-				<div class="team_members" data-name="dahora"><img src="images/perdido4 copy.jpg"><p>Dahora<br>Procurando uma casa</p></div>
-				<div class="team_members" data-name="gato"><img src="images/perdido5 copy.jpg"><p>gato<br>Procurando uma casa</p></div>
-				<div class="team_members" data-name="miauu"><img src="images/silver-tabby-cat-lying-on-brown-wooden-surface-126407 copy.jpg"><p>miauu<br>Procurando uma casa</p></div>
-			</div>
-		</div>
-    </div>	
+<section class="container">
+            <div class="row">
+                <div class="mx-auto">
+                    <div class="col-sm-4 col-xs-12" >
+                        <div class="card text-center" style="width: 18rem;">
+                            <img class="card-img-top" src="images/perdido3.jpg" alt="Imagem de capa do card">
+                            <div class="card-body">
+                                <h5 class="card-title">Da vinci</h5>
+                                <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+                                <a href="#" class="btn btn-primary">Visitar</a>
+                            </div>
+                            </div>
+                    </div>        
+                </div>    
+                 
+                <div class="mx-auto">
+                    <div class="col-sm-4 col-xs-12" >
+                        <div class="card text-center" style="width: 18rem;">
+                                <img class="card-img-top" src="images/perdido2.jpg" alt="Imagem de capa do card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Doido</h5>
+                                    <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+                                    <a href="#" class="btn btn-primary">Visitar</a>
+                                </div>
+                                </div>
+                    </div>  
+                </div>              
+                  
+                <div class="mx-auto">
+                    <div class="col-sm-4 col-xs-12" >    
+                        <div class="card text-center" style="width: 18rem;">
+                                <img class="card-img-top" src="images/perdido1.jpg" alt="Imagem de capa do card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Domingo</h5>
+                                    <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+                                    <a href="#" class="btn btn-primary">Visitar</a>
+                                </div>
+                                </div>
+                    </div>
+                </div>   
+                    
+            </div>
+            <div class="row">
+                <div class="mx-auto">
+                    <div class="col-sm-4 col-xs-12" >
+                        <div class="card text-center" style="width: 18rem;">
+                            <img class="card-img-top" src="images/perdido4.jpg" alt="Imagem de capa do card">
+                            <div class="card-body">
+                                <h5 class="card-title">Dahora</h5>
+                                <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+                                <a href="#" class="btn btn-primary">Visitar</a>
+                            </div>
+                            </div>
+                    </div>        
+                </div>    
+                 
+                <div class="mx-auto">
+                    <div class="col-sm-4 col-xs-12" >
+                        <div class="card text-center" style="width: 18rem;">
+                                <img class="card-img-top" src="images/perdido5.jpg" alt="Imagem de capa do card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Gato</h5>
+                                    <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+                                    <a href="#" class="btn btn-primary">Visitar</a>
+                                </div>
+                                </div>
+                    </div>  
+                </div>              
+                  
+                <div class="mx-auto">
+                    <div class="col-sm-4 col-xs-12" >    
+                        <div class="card text-center" style="width: 18rem;">
+                                <img class="card-img-top" src="images/perdido6.jpg" alt="Imagem de capa do card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Miauu</h5>
+                                    <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+                                    <a href="#" class="btn btn-primary">Visitar</a>
+                                </div>
+                                </div>
+                    </div>
+                </div>   
+                    
+            </div>
+            
+            
+            
+            </section>
 
 
 
