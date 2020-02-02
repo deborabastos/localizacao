@@ -186,6 +186,11 @@
 				                            </select>	
                                             </div>
                                             </div>
+                                                
+                                            <div class="form-group ">
+                                            <label class="col-sm-4 control-label mt-2" for="exampleFormControlFile1">Adicione uma foto</label>
+                                            <input type="file" class="form-control-file col-sm-8     control-label"id="exampleFormControlFile1">
+                                            </div>
                                         </fieldset>
 
                                         <fieldset>
@@ -261,7 +266,7 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                        </fieldset>
+                                            </fieldset>
 
                                         <button type="submit" class="btn btn-primary">
                                             <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Enviar
