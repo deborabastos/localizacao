@@ -33,15 +33,35 @@
         <div class="collapse navbar-collapse mt-2" id="navbarNavDropdown">
             <!-- Links da página -->
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link h5 text-uppercase text-primary mx-2" href="achados.php">Achados</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle h5 text-uppercase text-primary mx-2" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Achados
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="achados_cao.php">Cães Achados</a>
+                        <a class="dropdown-item" href="achados_gatos.php">Gatos Achados</a>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link h5 text-uppercase text-primary mx-2" href="perdidos.php">Perdidos</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle h5 text-uppercase text-primary mx-2" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Perdidos
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="perdidos_cao.php">Cães Perdidos</a>
+                        <a class="dropdown-item" href="perdidos_gatos.php">Gatos Perdidos</a>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link h5 text-uppercase text-primary mx-2" href="adote.php">Adote</a>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle h5 text-uppercase text-primary mx-2" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Adote
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="adote_cao.php">Adote Cães</a>
+                        <a class="dropdown-item" href="adote_gatos.php">Adote Gatos</a>
+                    </div>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link h5 text-uppercase text-primary mx-2" href="quemsomos.php">Quem somos</a>
                 </li>
@@ -53,7 +73,7 @@
                 <!--Adicionado botão de Login-->
                 <li class="dropleft ">
 
-                    <button type="button" class="btn btn-primary btn-sm font-weight-bold mr-2 mb-3 p-1" 
+                    <button type="button" class="btn btn-primary btn-sm font-weight-bold mr-2 mb-3 p-1"
                         id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Entrar
                     </button>

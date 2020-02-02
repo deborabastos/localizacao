@@ -39,7 +39,7 @@
                 <li><a class="privacidade" href="#">Política de Privacidade</a></li> <!-- Abrir popup com política de privacidade -->
             </ul>
         </div>
-</div>
+    </div>
 
     <div class="footer-bottom">
         copyright &copy; LocalizaCão 2020. all rights reserved.
