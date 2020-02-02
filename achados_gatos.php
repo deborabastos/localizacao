@@ -13,7 +13,7 @@
         require_once("./includes/fonts.php");
     ?>
 
-    <title>Cães Perdidos</title>
+    <title>Gatos Achados</title>
 
 </head>
 
@@ -30,11 +30,11 @@
     <section class="icones">
         <div class="row">
             <div class="imagedog">
-                <a class="icone_cao" href="perdidos_cao.php">
+                <a class="icone_cao" href="achados_cao.php">
                     <img src="images/cao1.png" alt="icone de um cachorro">
             </div>
             <div class="imagecat">
-                <a class="icone_gato" href="perdidos_gatos.php">
+                <a class="icone_gato" href="achados_gatos.php">
                     <img src="images/gato2.png" alt="icone de um gato">
                 </a>
             </div>
@@ -132,10 +132,8 @@
             </div>
 
         </div>
-
     </section>
 </main>
-
 
 <!-- Footer -->
 <footer>
