@@ -116,9 +116,9 @@
                     </button>
 
                     <!--Formulário de cadastro suspenso-->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"
                         aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
+                        <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="exampleModalLabel">Cadastro</h5>
@@ -132,7 +132,7 @@
                                             <legend>Dados Pessoais</legend>
                                             <div class="form-group">
                                                 <label for="nome" class="col-sm-2 control-label">Nome</label>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-8   ">
                                                     <input type="text" class="form-control" id="nome">
                                                 </div>
                                             </div>
@@ -140,7 +140,7 @@
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">Sexo</label>
                                                 <div class="col-sm-4">
-                                                    <label class="radio-inline">
+                                                    <label class="radio-inline mr-2">
                                                         <input type="radio" name="sexo" id="feminino" value="FEMININO">
                                                         Feminino
                                                     </label>
@@ -153,11 +153,38 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="data-nascimento" class="col-sm-2 control-label">Data de
-                                                    Nascimento</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="data-nascimento">
-                                                </div>
+                                                <label for="data-nascimento" class="col-sm-4 control-label">Data de Nascimento</label>
+			                                    <div class= "col-sm-8">
+				                                <select class="mr-2" name = "dia">
+				                                <option value="">Selecione o dia</option>
+				                                <?php
+				                                for ($i=1; $i<=31; $i++){?>
+				                                <option value="<?php echo $i;?>"> <?php echo $i;}?></option>
+				                                </select>
+				 
+			                                    <select class="mr-2" name="mes">
+                                                <option>Selecione o mês</option>
+                                                <option value="01">Janeiro  </option>
+                                                <option value="02">Fevereiro</option>
+                                                <option value="03">Março    </option>
+                                                <option value="04">Abril    </option>
+                                                <option value="05">Maio     </option>
+                                                <option value="06">Junho    </option>
+                                                <option value="07">Julho    </option>
+                                                <option value="08">Agosto   </option>
+                                                <option value="09">Setembro </option>
+                                                <option value="10">Outubro  </option>
+                                                <option value="11">Novembro </option>
+                                                <option value="12">Dezembro </option>
+
+                                            </select>					 
+	                                        <select name = "ano">
+				                            <option value="">Selecione o ano</option>
+				                            <?php
+				                            for ($i=1900; $i<=2030; $i++){?>
+				                            <option value="<?php echo $i;?>"> <?php echo $i;}?></option>
+				                            </select>	
+                                            </div>
                                             </div>
                                         </fieldset>
 
@@ -165,7 +192,7 @@
                                             <legend>Contato</legend>
                                             <div class="form-group">
                                                 <label for="email" class="col-sm-2 control-label">Email</label>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-8">
                                                     <input type="email" class="form-control" id="email">
                                                 </div>
                                             </div>
@@ -182,8 +209,22 @@
                                             <legend>Endereço</legend>
                                             <div class="form-group">
                                                 <label for="logradouro" class="col-sm-2 control-label">Logradouro</label>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="logradouro">
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="cep" class="col-sm-2 control-label">CEP</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" class="form-control" id="cep">
+                                                </div>
+                                            </div>       
+
+                                            <div class="form-group">
+                                                <label for="estado" class="col-sm-2 control-label">Estado</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" class="form-control" id="estado">
                                                 </div>
                                             </div>
 
