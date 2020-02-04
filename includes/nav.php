@@ -49,6 +49,33 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="perdidos_cao.php">Cães Perdidos</a>
                         <a class="dropdown-item" href="perdidos_gatos.php">Gatos Perdidos</a>
+
+                        <!-- Botão de cadastro do PET -->
+                        <button type="button" class="dropdown-item" data-toggle="modal" data-target="#example2">
+                         Cadastro Pet Perdido
+                        </button>
+                        </div>
+
+                        <!-- Modal com Form para incersão de dados do PET -->
+                        <div class="modal fade" id="example2" tabindex=" " role="dialog" aria-labelledby="example2Label" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="example2Label">Cadastro Pet</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+
+                        </div>
+                        
+                        <button type="button" class="btn btn-primary">Salvar</button>
+
+                        </div>
+                        </div>
+                        </div>
+
                     </div>
                 </li>
 
@@ -116,19 +143,24 @@
                     </button>
 
                     <!--Formulário de cadastro suspenso-->
+                    
                     <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"
                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
+                                
                                     <h5 class="modal-title" id="exampleModalLabel">Cadastro</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
+                                
                                 <div class="modal-body">
                                     <form action="#" class="form-horizontal">
+                                    
                                         <fieldset>
+                                        
                                             <legend>Dados Pessoais</legend>
                                             <div class="form-group">
                                                 <label for="nome" class="col-sm-2 control-label">Nome</label>
@@ -267,7 +299,7 @@
                                                 </div>
                                             </div>
                                             </fieldset>
-
+                                            
                                         <button type="submit" class="btn btn-primary">
                                             <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Enviar
                                         </button>
