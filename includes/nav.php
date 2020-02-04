@@ -52,22 +52,180 @@
 
                         <!-- Botão de cadastro do PET -->
                         <button type="button" class="dropdown-item" data-toggle="modal" data-target="#example2">
-                         Cadastro Pet Perdido
+                        Cadastro Pet Perdido
                         </button>
                         </div>
 
                         <!-- Modal com Form para incersão de dados do PET -->
-                        <div class="modal fade" id="example2" tabindex=" " role="dialog" aria-labelledby="example2Label" aria-hidden="true">
+                        <div class="modal fade bd-example2-modal-sm" id="example2" tabindex=" " role="dialog" aria-labelledby="example2Label" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                         <div class="modal-content">
                         <div class="modal-header">
-                        <h5 class="modal-title" id="example2Label">Cadastro Pet</h5>
+                        <h5 class="modal-title" id="example2Label">Cadastro do animal</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
                         </div>
                         <div class="modal-body">
+                            <form action="#" class="form-horizontal">
 
+                            <h4>Dados do animal</h4>
+
+                            <div class="form-group">
+                                 <label class="col-sm-8 control-label">Espécie</label>
+                                  <div class="col-sm-4">
+                                  <label class="radio-inline mr-2">
+                                   <input type="radio" name="especie" id="gato" value="GATO">
+                                    Gato
+                                    </label>
+                                    <label class="radio-inline">
+                                    <input type="radio" name="especie" id="cachorro" value="CACHORRO">
+                                    Cachorro
+                                    </label>
+                                    </div>
+                            </div>
+
+                            <div class="form-group">
+                                 <label class="col-sm-2 control-label">Sexo</label>
+                                  <div class="col-sm-4">
+                                  <label class="radio-inline">
+                                   <input type="radio" name="sexo" id="femea" value="FEMEA">
+                                    Fêmea
+                                    </label>
+                                    <label class="radio-inline">
+                                    <input type="radio" name="sexo" id="macho" value="MACHO">
+                                    Macho
+                                    </label>
+                                    </div>
+                            </div>
+
+                            <div class="form-group">
+                                                <label for="uf" class="col-sm-8 control-label">Tipo de Pelo</label>
+                                                <div class="col-sm-4">
+                                                    <select class="form-control" name="pelo" id="pelo">
+                                                        <option value="CURTO">Curto</option>
+                                                        <option value="MEDIO">Médio</option>
+                                                        <option value="LONGO">Longo</option>
+                                                        <option value="OUTRO">Outro</option>                                                       
+                                                    </select>
+                                                </div>
+                                            </div>    
+                            
+                                            <div class="form-group">
+                                                <label for="uf" class="col-sm-8 control-label">Cor Primária</label>
+                                                <div class="col-sm-4">
+                                                    <select class="form-control" name="cor_primaria" id="cor_primaria">
+                                                        <option value="PRETO">Preto</option>
+                                                        <option value="MARRON">Marron</option>
+                                                        <option value="BEGE">Bege</option>
+                                                        <option value="BRANCO">Branco</option>    
+                                                        <option value="CINZA">Cinza</option>
+                                                        <option value="CARAMELO">Caramelo</option>
+                                                        <option value="TIGRADO">Tigrado</option>
+                                                        <option value="OUTRO">Outro</option>                                                    
+                                                    </select>
+                                                </div>
+                                            </div>  
+
+                                            <div class="form-group">
+                                                <label for="uf" class="col-sm-8 control-label">Cor Secundária</label>
+                                                <div class="col-sm-4">
+                                                    <select class="form-control" name="cor_secundaria" id="cor_secundaria">
+                                                        <option value="PRETO">Preto</option>
+                                                        <option value="MARRON">Marron</option>
+                                                        <option value="BEGE">Bege</option>
+                                                        <option value="BRANCO">Branco</option>    
+                                                        <option value="CINZA">Cinza</option>
+                                                        <option value="CARAMELO">Caramelo</option>
+                                                        <option value="TIGRADO">Tigrado</option>
+                                                        <option value="OUTRO">Outro</option>                                                    
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="raca" class="col-sm-8 control-label">Raça (Opcional)</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="raca" placeholder="Sem raça definida">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="idade" class="col-sm-8 control-label">Idade (Opcional)</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" class="form-control" id="idade" placeholder="Digite a idade">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="nome" class="col-sm-8 control-label">Nome (Opcional)</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="nome" placeholder="Digite o nome">
+                                                </div>
+                                            </div>
+
+                                            <h4>Localidade</h4>
+                                            
+                                            <div class="form-group">
+                                                <label for="uf" class="col-sm-2 control-label">UF</label>
+                                                <div class="col-sm-4">
+                                                    <select class="form-control" name="uf" id="uf">
+                                                        <option value="AC">AC</option>
+                                                        <option value="AL">AL</option>
+                                                        <option value="AM">AM</option>
+                                                        <option value="AP">AP</option>
+                                                        <option value="BA">BA</option>
+                                                        <option value="CE">CE</option>
+                                                        <option value="DF">DF</option>
+                                                        <option value="ES">ES</option>
+                                                        <option value="GO">GO</option>
+                                                        <option value="MA">MA</option>
+                                                        <option value="MG">MG</option>
+                                                        <option value="MS">MS</option>
+                                                        <option value="MT">MT</option>
+                                                        <option value="PA">PA</option>
+                                                        <option value="PE">PE</option>
+                                                        <option value="PI">PI</option>
+                                                        <option value="PR">PR</option>
+                                                        <option value="RJ">RJ</option>
+                                                        <option value="RN">RN</option>
+                                                        <option value="RO">RO</option>
+                                                        <option value="RR">RR</option>
+                                                        <option value="RS">RS</option>
+                                                        <option value="SC">SC</option>
+                                                        <option value="SE">SE</option>
+                                                        <option value="SP">SP</option>
+                                                        <option value="TO">TO</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="estado" class="col-sm-2 control-label">Estado</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="estado" placeholder="Digite o Estado">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="bairro" class="col-sm-2 control-label">Bairro</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="bairro" placeholder="Digite o Bairro">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                            <label for="observacao" class="col-sm-2 control-label">Observações: </label>
+                                            <textarea class="form-control ml-3 col-sm-10" id="observacao" rows="4" placeholder="Digite informações que possam ajudar na identificação de seu animal!"></textarea>
+                                            </div>
+
+                                            <div class="form-group">
+                                            <label for="foto_pet" class="col-sm-8 control-label">Enviar foto</label>
+                                            <input type="file" class="form-control-file ml-3" id="foto_pet">
+                                            </div>
+
+
+                            </form>
                         </div>
                         
                         <button type="button" class="btn btn-primary">Salvar</button>
@@ -75,8 +233,7 @@
                         </div>
                         </div>
                         </div>
-
-                    </div>
+   
                 </li>
 
                 <li class="nav-item dropdown">
@@ -142,11 +299,11 @@
                         Cadastrar
                     </button>
 
-                    <!--Formulário de cadastro suspenso-->
+                    <!--Form e Modal para cadastro do usuário-->
                     
-                    <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"
+                    <div class="modal fade bd-example-modal-md" id="exampleModal" tabindex="-1" role="dialog"
                         aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-dialog modal-md" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                 
@@ -164,7 +321,7 @@
                                             <legend>Dados Pessoais</legend>
                                             <div class="form-group">
                                                 <label for="nome" class="col-sm-2 control-label">Nome</label>
-                                                <div class="col-sm-8   ">
+                                                <div class="col-sm-10   ">
                                                     <input type="text" class="form-control" id="nome">
                                                 </div>
                                             </div>
@@ -185,17 +342,17 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="data-nascimento" class="col-sm-4 control-label">Data de Nascimento</label>
+                                                <label for="data-nascimento" class="col-sm-8 control-label">Data de Nascimento</label>
 			                                    <div class= "col-sm-8">
 				                                <select class="mr-2" name = "dia">
-				                                <option value="">Selecione o dia</option>
+				                                <option value="">Dia</option>
 				                                <?php
 				                                for ($i=1; $i<=31; $i++){?>
 				                                <option value="<?php echo $i;?>"> <?php echo $i;}?></option>
 				                                </select>
 				 
 			                                    <select class="mr-2" name="mes">
-                                                <option>Selecione o mês</option>
+                                                <option>Mês</option>
                                                 <option value="01">Janeiro  </option>
                                                 <option value="02">Fevereiro</option>
                                                 <option value="03">Março    </option>
@@ -211,7 +368,7 @@
 
                                             </select>					 
 	                                        <select name = "ano">
-				                            <option value="">Selecione o ano</option>
+				                            <option value="">Ano</option>
 				                            <?php
 				                            for ($i=1900; $i<=2030; $i++){?>
 				                            <option value="<?php echo $i;?>"> <?php echo $i;}?></option>
@@ -220,8 +377,8 @@
                                             </div>
                                                 
                                             <div class="form-group ">
-                                            <label class="col-sm-4 control-label mt-2" for="exampleFormControlFile1">Adicione uma foto</label>
-                                            <input type="file" class="form-control-file col-sm-8     control-label"id="exampleFormControlFile1">
+                                            <label class="col-sm-8 control-label mt-2" for="exampleFormControlFile1">Adicione uma foto</label>
+                                            <input type="file" class="form-control-file col-sm-10     control-label"id="exampleFormControlFile1">
                                             </div>
                                         </fieldset>
 
@@ -229,7 +386,7 @@
                                             <legend>Contato</legend>
                                             <div class="form-group">
                                                 <label for="email" class="col-sm-2 control-label">Email</label>
-                                                <div class="col-sm-8">
+                                                <div class="col-sm-10">
                                                     <input type="email" class="form-control" id="email">
                                                 </div>
                                             </div>
@@ -246,7 +403,7 @@
                                             <legend>Endereço</legend>
                                             <div class="form-group">
                                                 <label for="logradouro" class="col-sm-2 control-label">Logradouro</label>
-                                                <div class="col-sm-8">
+                                                <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="logradouro">
                                                 </div>
                                             </div>
@@ -260,7 +417,7 @@
 
                                             <div class="form-group">
                                                 <label for="estado" class="col-sm-2 control-label">Estado</label>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="estado">
                                                 </div>
                                             </div>
