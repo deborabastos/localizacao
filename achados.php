@@ -47,7 +47,7 @@
     <section class="container">
         <div class="row">
             <div class="mx-auto">
-                <div class="col-sm-4 col-xs-12">
+                <div class="col-md-6 col-12">
                     <div class="card text-center" style="width: 18rem;">
                         <img class="card-img-top" src="images/perdido3.jpg" alt="Imagem de capa do card">
                         <div class="card-body">
@@ -61,7 +61,7 @@
             </div>
 
             <div class="mx-auto">
-                <div class="col-sm-4 col-xs-12">
+                <div class="col-md-6 col-12">
                     <div class="card text-center" style="width: 18rem;">
                         <img class="card-img-top" src="images/perdido2.jpg" alt="Imagem de capa do card">
                         <div class="card-body">
@@ -75,7 +75,7 @@
             </div>
 
             <div class="mx-auto">
-                <div class="col-sm-4 col-xs-12">
+                <div class="col-md-6 col-12">
                     <div class="card text-center" style="width: 18rem;">
                         <img class="card-img-top" src="images/perdido1.jpg" alt="Imagem de capa do card">
                         <div class="card-body">
@@ -91,7 +91,7 @@
         </div>
         <div class="row">
             <div class="mx-auto">
-                <div class="col-sm-4 col-xs-12">
+                <div class="col-md-6 col-12">
                     <div class="card text-center" style="width: 18rem;">
                         <img class="card-img-top" src="images/perdido4.jpg" alt="Imagem de capa do card">
                         <div class="card-body">
@@ -105,7 +105,7 @@
             </div>
 
             <div class="mx-auto">
-                <div class="col-sm-4 col-xs-12">
+                <div class="col-md-6 col-12">
                     <div class="card text-center" style="width: 18rem;">
                         <img class="card-img-top" src="images/perdido5.jpg" alt="Imagem de capa do card">
                         <div class="card-body">
@@ -119,7 +119,7 @@
             </div>
 
             <div class="mx-auto">
-                <div class="col-sm-4 col-xs-12">
+                <div class="col-md-6 col-12">
                     <div class="card text-center" style="width: 18rem;">
                         <img class="card-img-top" src="images/perdido6.jpg" alt="Imagem de capa do card">
                         <div class="card-body">

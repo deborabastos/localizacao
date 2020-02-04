@@ -102,9 +102,9 @@
                     <div class="mx-auto">
                         <div class="col-sm-4 col-xs-12">
                             <div class="card text-center" style="width: 18rem;">
-                                <img class="card-img-top" src="images/perdido1.jpg" alt="Imagem de capa do card">
+                                <img class="card-img-top" src="images/gato4.jpeg" alt="Imagem de capa do card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Domingo</h5>
+                                    <h5 class="card-title">Feijão</h5>
                                     <p class="card-text">Um exemplo de texto rápido para construir o título do card e
                                         fazer preencher o conteúdo do card.</p>
                                     <a href="#" class="btn btn-primary">Visitar</a>
@@ -118,9 +118,9 @@
                     <div class="mx-auto">
                         <div class="col-sm-4 col-xs-12">
                             <div class="card text-center" style="width: 18rem;">
-                                <img class="card-img-top" src="images/perdido4.jpg" alt="Imagem de capa do card">
+                                <img class="card-img-top" src="images/gato02.jpg" alt="Imagem de capa do card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Dahora</h5>
+                                    <h5 class="card-title">Belezinha</h5>
                                     <p class="card-text">Um exemplo de texto rápido para construir o título do card e
                                         fazer preencher o conteúdo do card.</p>
                                     <a href="#" class="btn btn-primary">Visitar</a>
@@ -146,9 +146,9 @@
                     <div class="mx-auto">
                         <div class="col-sm-4 col-xs-12">
                             <div class="card text-center" style="width: 18rem;">
-                                <img class="card-img-top" src="images/perdido6.jpg" alt="Imagem de capa do card">
+                                <img class="card-img-top" src="images/gato6.jpeg" alt="Imagem de capa do card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Miauu</h5>
+                                    <h5 class="card-title">Jupiter</h5>
                                     <p class="card-text">Um exemplo de texto rápido para construir o título do card e
                                         fazer preencher o conteúdo do card.</p>
                                     <a href="#" class="btn btn-primary">Visitar</a>
