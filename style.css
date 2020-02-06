@@ -351,6 +351,13 @@ body {
   transform: scale(1.1);
 }
 
+/*PAGINA CAO */
+.tabela{
+  position: relative;
+  right: 50px;
+
+}
+
 /* ÍCONES DOG CAT */
 
 .imagedog,

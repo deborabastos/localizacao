@@ -56,7 +56,7 @@
 
     <div class="diff_services_item1">
         <h1 class="title">Mapas</h1>
-        <img src="images/maps1 copy 3.jpg" width=45%>
+        <img src="images/mapa1.jpg" width=45%>
         <h3 class="sub_title">Mapas</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
     </div>
