@@ -110,11 +110,11 @@
 
 
         <!-- Footer -->
-<footer>
+    <footer>
     <?php
         require_once("./includes/footer.php");
     ?>
-</footer>
+    </footer>
 
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
