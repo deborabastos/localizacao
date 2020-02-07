@@ -650,7 +650,9 @@
                                 </label>
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Entrar</button>
+                            <a href="user_page.php" class="btn btn-primary" role="button" aria-pressed="true">Entrar</a>
+
+                            <!-- <button type="submit" class="btn btn-primary"  data-target="#user_page">Entrar</button> -->
                         </form>
 
                         <div class="dropdown-divider"></div>
