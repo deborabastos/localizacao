@@ -107,5 +107,13 @@
 
         </section>
 
+        <!-- Footer -->
+<footer>
+    <?php
+        require_once("./includes/footer.php");
+    ?>
+</footer>
+
+
 
     </main>
