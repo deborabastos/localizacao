@@ -430,7 +430,7 @@
                     
                         <!-- Botão de cadastro Adote-->
                         <button type="button" class="dropdown-item" data-toggle="modal" data-target="#adote">
-                        Cadastro Pet Perdido
+                        Cadastro Pet Para Adoção
                         </button>
                         </div>
                      <!-- Modal com Form para incersão de dados do PET -->
