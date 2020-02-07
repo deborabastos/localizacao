@@ -617,14 +617,10 @@
                 </li>
 
 
-                <li class="nav-item">
-                    <a class="nav-link h5 text-uppercase text-primary mx-2" href="user_page.php">Minha Página</a>
-                </li>
-
 
             </ul>
-            Olá, Fulaninho.
-            <a href="#">   Sair?</a>
+            <a class="nav-link h5 text-primary mx-2" href="user_page.php">Olá, Usuário!</a>
+            
         </div>
 
 </div>
