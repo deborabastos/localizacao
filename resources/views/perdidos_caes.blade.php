@@ -1,5 +1,9 @@
 @extends('layout.layout')
 
+@section('title')
+LocalizaCão - Cães Perdidos
+@endsection
+
 @section('content')
 
 <main>

@@ -1,5 +1,9 @@
 @extends('layout.layout')
 
+@section('title')
+LocalizaCão - Casos de sucesso
+@endsection
+
 @section('content')
 
 <main>

@@ -1,5 +1,10 @@
 @extends('layout.layout')
 
+@section('title')
+LocalizaCão
+@endsection
+
+
 @section('content')
 
 <!-- banner -->

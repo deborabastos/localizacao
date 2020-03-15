@@ -1,5 +1,9 @@
 @extends('layout.layout')
 
+@section('title')
+LocalizaCão - Quem Somos
+@endsection
+
 @section('content')
 
     <main>

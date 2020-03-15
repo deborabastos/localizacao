@@ -20,7 +20,7 @@
     <!-- Font Awsome -->
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-    <title>LocalizaCão</title>
+    <title>@yield('title')</title>
     
 </head>
 
@@ -679,7 +679,7 @@
                                     </label>
                                 </div>
 
-                                <a href="user_page" class="btn btn-primary" role="button" aria-pressed="true">Entrar</a>
+                                <a href="pagina_usuario" class="btn btn-primary" role="button" aria-pressed="true">Entrar</a>
 
                                 <!-- <button type="submit" class="btn btn-primary"  data-target="#user_page">Entrar</button> -->
                             </form>

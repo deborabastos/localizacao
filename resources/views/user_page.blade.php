@@ -1,5 +1,9 @@
 @extends('layout.layout')
 
+@section('title')
+LocalizaCão - Página do Usuário
+@endsection
+
 @section('content')
 
     <main class="main_user">
