@@ -13,55 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
-
-Route::get('/achados_caes', function () {
-    return view('achados_caes');
-});
-
-Route::get('/achados_gatos', function () {
-    return view('achados_gatos');
-});
-
-Route::get('/achados_perfil', function () {
-    return view('achados_perfil');
-});
-
-Route::get('/adote_caes', function () {
-    return view('adote_caes');
-});
-
-Route::get('/adote_gatos', function () {
-    return view('adote_gatos');
-});
-
-Route::get('/adote_perfil', function () {
-    return view('adote_perfil');
-});
-
-Route::get('/perdidos_caes', function () {
-    return view('perdidos_caes');
-});
-
-Route::get('/perdidos_gatos', function () {
-    return view('perdidos_gatos');
-});
-
-Route::get('/perdidos_perfil', function () {
-    return view('perdidos_perfil');
-});
-
-Route::get('/quem_somos', function () {
-    return view('quem_somos');
-});
-
-Route::get('/sucesso', function () {
-    return view('sucesso');
-});
-
-Route::get('/pagina_usuario', function () {
-    return view('user_page');
-});
+Route::get('/', 'PetController@index');
+Route::get('/achados_caes', 'PetController@achadosCaes');
+Route::get('/achados_gatos', 'PetController@achadosGatos');
+Route::get('/achados_perfil', 'PetController@achadosPerfil'); //alterar para {id}
+Route::get('/adote_caes', 'PetController@adoteCaes');
+Route::get('/adote_gatos', 'PetController@adoteGatos');
+Route::get('/adote_perfil/{id}', 'PetController@adotePerfil');
+Route::get('/perdidos_caes', 'PetController@perdidosCaes');
+Route::get('/perdidos_gatos', 'PetController@perdidosGatos');
+Route::get('/perdidos_perfil/{id}', 'PetController@perdidosPerfil');
+Route::get('/quem_somos', 'PetController@quemSomos');
+Route::get('/sucesso', 'PetController@sucesso');
+Route::get('/pagina_usuario', 'UserController@paginaUsuario');
+ 

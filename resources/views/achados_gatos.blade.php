@@ -8,6 +8,8 @@ LocalizaCão - Gatos Achados
 @section('content')
 
 <main>
+
+    <!-- Ícones Cachorro e Gato -->
     <section class="icones">
         <div class="row">
             <div class="imagedog">

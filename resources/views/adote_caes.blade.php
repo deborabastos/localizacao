@@ -108,13 +108,28 @@ LocalizaCão - Adote Cães
 
 
 
- 
-
 
     <!-- !!!!!!!!COMEÇO DOS CARDS!!!!! -->
 
         <section class="container">
         <section class="main-section">
+
+          <!-- Ícones Cachorro e Gato -->
+          <section class="icones">
+            <div class="row">
+                <div class="imagedog">
+                    <a class="icone_cao" href="adote_caes">
+                        <img src="images/cao1.png" alt="icone de um cachorro">
+                </div>
+                <div class="imagecat">
+                    <a class="icone_gato" href="adote_gatos">
+                        <img src="images/gato2.png" alt="icone de um gato">
+                    </a>
+                </div>
+            </div>
+          </section>
+
+          <!-- Cards -->
             <div class="row">
                 <div class="mx-auto">
                     <div class="col-sm-4 col-xs-12" >
