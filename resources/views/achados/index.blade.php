@@ -1,7 +1,7 @@
 @extends('layout.layout')
 
 @section('title')
-LocalizaCão - Cães Achados
+LocalizaCão - Achados
 @endsection
 
 @section('content')
@@ -10,11 +10,11 @@ LocalizaCão - Cães Achados
     <section class="icones">
         <div class="row">
             <div class="imagedog">
-                <a class="icone_cao" href="achados_caes">
+                <a class="icone_cao" href="achados?especie=caes">
                     <img src="images/cao1.png" alt="icone de um cachorro">
             </div>
             <div class="imagecat">
-                <a class="icone_gato" href="achados_gatos">
+                <a class="icone_gato" href="achados?especie=gatos">
                     <img src="images/gato2.png" alt="icone de um gato">
                 </a>
             </div>
