@@ -10,40 +10,40 @@ class PetController extends Controller
         return view('index');
     }
 
-    public function achadosCaes() {
-        return view('achados_caes');
-    }
-
-    public function achadosGatos(){
-        return view('achados_gatos');
+    public function achados() {
+        return view('achados.index');
     }
 
     public function achadosPerfil(){
-        return view('achados_perfil');
+        return view('achados.show');
     }
 
-    public function adoteCaes() {
-        return view('adote_caes');
+    public function achadosCreate(){
+        return view('achados.create');
     }
 
-    public function adoteGatos(){
-        return view('adote_gatos');
-    }
-
-    public function adotePerfil($id){
-        return view('adote_perfil', ['id' => $id]);
-    }
-
-    public function perdidosCaes() {
-        return view('perdidos_caes');
-    }
-
-    public function perdidosGatos(){
-        return view('perdidos_gatos');
+    public function perdidos() {
+        return view('perdidos.index');
     }
 
     public function perdidosPerfil($id){
-        return view('perdidos_perfil', ['id' => $id]);
+        return view('perdidos.show', ['id' => $id]);
+    }
+
+    public function perdidosCreate(){
+        return view('perdidos.create');
+    }
+
+    public function adote() {
+        return view('adote.index');
+    }
+
+    public function adotePerfil($id){
+        return view('adote.show', ['id' => $id]);
+    }
+
+    public function adoteCreate(){
+        return view('adote.create');
     }
 
     public function quemSomos(){
@@ -53,6 +53,5 @@ class PetController extends Controller
     public function sucesso(){
         return view('sucesso');
     }
-
 
 }

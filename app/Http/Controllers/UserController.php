@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function paginaUsuario(){
-        return view('user_page');
+    public function user(){
+        return view('user.user');
+    }
+
+    public function userCreate(){
+        return view('user.create');
     }
 }
