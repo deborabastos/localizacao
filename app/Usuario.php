@@ -11,6 +11,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Usuario extends Model
 {
+    protected $fillable = [
+        'id_usuario',
+        'nome',
+        'cpf',
+        'email',
+        'foto_perfil',
+        'senha'
+    ];
+    
     public function mensagem(){
 
         return $this->hasMany(Mensagen::class);

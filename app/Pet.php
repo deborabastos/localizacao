@@ -9,6 +9,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pet extends Model
 {
+    protected $fillable = [
+        'id_foto',
+        'link_foto',
+        'posicao_foto',
+        'id_pet'
+
+    ];
     public function fotos(){
 
         return $this->hasMany(Fotos_pet::class);
