@@ -11,6 +11,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Alerta extends Model
 {
+    protected $fillable = [
+
+        'id_alerta',
+        'tipo_alerta',
+        'created_at',
+        'id_match',
+        'alerta_encerrado_match',
+        'alerta_encerrado_delete',
+        'data_encerrado',
+        'id_usuario',
+        'id_pet'
+
+    ];
+
+
+
     public function pet()
     {
 
