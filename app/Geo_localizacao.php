@@ -9,6 +9,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Geo_localizacao extends Model
 {
+    protected $fillable = [
+        'id_localizacao',
+        'latitude',
+        'longitude',
+        'updated_at',
+        'id_alerta',
+        'id_usuario'
+        
+    ];
     public function usuario(){
 
         return $this->belongsTo(Usuario::class);
