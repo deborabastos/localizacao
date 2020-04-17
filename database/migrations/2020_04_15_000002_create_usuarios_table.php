@@ -27,7 +27,10 @@ class CreateUsuariosTable extends Migration
             $table->string('cpf', 45);
             $table->string('email', 45);
             $table->string('foto_perfil', 45)->nullable()->default(null);
-            $table->string('senha', 45);
+            $table->string('password', 45);
+            $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 

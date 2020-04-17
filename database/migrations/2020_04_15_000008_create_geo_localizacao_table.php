@@ -26,8 +26,8 @@ class CreateGeoLocalizacaoTable extends Migration
             $table->float('latitude');
             $table->float('longitude');
             $table->date('updated_at');
-            $table->integer('id_alerta');
-            $table->integer('id_usuario');
+            $table->integer('id_alerta')->unsigned();
+            $table->integer('id_usuario')->unsigned();
 
             $table->index(["id_alerta"], 'fk_geo_localizacao_alertas1_idx');
 

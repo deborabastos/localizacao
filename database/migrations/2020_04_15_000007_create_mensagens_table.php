@@ -25,8 +25,8 @@ class CreateMensagensTable extends Migration
             $table->increments('id_mensagens');
             $table->string('mensagem', 200);
             $table->date('send_at');
-            $table->integer('id_usuario');
-            $table->integer('id_chats');
+            $table->integer('id_usuario')->unsigned();
+            $table->integer('id_chats')->unsigned();
 
             $table->index(["id_usuario"], 'fk_mensagens_usuario1_idx');
 

@@ -25,8 +25,8 @@ class CreateComentariosTable extends Migration
             $table->increments('id_comentario');
             $table->string('comentario', 200);
             $table->date('created_at');
-            $table->integer('id_alerta');
-            $table->integer('id_usuario');
+            $table->integer('id_alerta')->unsigned();
+            $table->integer('id_usuario')->unsigned();
 
             $table->index(["id_alerta"], 'fk_comentarios_alertas1_idx');
 

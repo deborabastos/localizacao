@@ -25,7 +25,7 @@ class CreateFotosPetsTable extends Migration
             $table->increments('id_foto');
             $table->string('link_foto', 45);
             $table->integer('posicao_foto');
-            $table->integer('id_pet');
+            $table->integer('id_pet')->unsigned();
 
             $table->index(["id_pet"], 'fk_fotos_pet_pet_idx');
 

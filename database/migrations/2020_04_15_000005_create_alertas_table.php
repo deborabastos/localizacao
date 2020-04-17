@@ -25,12 +25,12 @@ class CreateAlertasTable extends Migration
             $table->increments('id_alerta');
             $table->string('tipo_alerta', 10);
             $table->date('created_at');
-            $table->integer('id_match')->nullable()->default(null);
+            $table->integer('id_match')->nullable()->default(null)->unsigned();
             $table->binary('alerta_encerrado_match');
             $table->binary('alerta_encerrado_delete');
             $table->date('data_encerrado')->nullable()->default(null);
-            $table->integer('id_usuario');
-            $table->integer('id_pet');
+            $table->integer('id_usuario')->unsigned();
+            $table->integer('id_pet')->unsigned();
 
             $table->index(["id_pet"], 'fk_alertas_pet1_idx');
 

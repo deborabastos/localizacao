@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+
 Route::get('/', 'PetController@index');
 
 Route::get('/achados', 'PetController@achados'); // alterar para pegar ?especie=gato ou ?especie=cao
@@ -23,3 +25,6 @@ Route::get('/pagina_usuario', 'UserController@user');
 Route::get('/user/create', 'UserController@userCreate');
  
  
+Route::auth();
+
+Route::get('/home', 'HomeController@index')->name('home');

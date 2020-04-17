@@ -23,11 +23,11 @@ class CreateChatsTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id_chats');
-            $table->integer('id_alerta');
+            $table->integer('id_alerta')->unsigned();
             $table->date('created_at');
             $table->binary('chat_encerrado');
-            $table->integer('id_usuario_primario');
-            $table->integer('id_usuario_secundario');
+            $table->integer('id_usuario_primario')->unsigned();
+            $table->integer('id_usuario_secundario')->unsigned();
 
             $table->index(["id_usuario_primario"], 'fk_chats_usuario1_idx');
 
