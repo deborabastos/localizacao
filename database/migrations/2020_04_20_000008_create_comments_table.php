@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateComentariosTable extends Migration
+class CreateCommentsTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'comentarios';
+    public $tableName = 'comments';
 
     /**
      * Run the migrations.
-     * @table comentarios
+     * @table comments
      *
      * @return void
      */
@@ -22,24 +22,24 @@ class CreateComentariosTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('id_comentario');
-            $table->string('comentario', 200);
-            $table->date('created_at');
-            $table->integer('id_alerta')->unsigned();
-            $table->integer('id_usuario')->unsigned();
+            $table->increments('id');
+            $table->string('comment', 200);
+            $table->unsignedInteger('alert_id');
+            $table->unsignedInteger('user_id');
+            $table->timestamps();
 
-            $table->index(["id_alerta"], 'fk_comentarios_alertas1_idx');
+            $table->index(["alert_id"], 'fk_comments_alert_id');
 
-            $table->index(["id_usuario"], 'fk_comentarios_usuario1_idx');
+            $table->index(["user_id"], 'fk_comments_user_id');
 
 
-            $table->foreign('id_alerta', 'fk_comentarios_alertas1_idx')
-                ->references('id_alerta')->on('alertas')
+            $table->foreign('alert_id', 'fk_comments_alert_id')
+                ->references('id')->on('alerts')
                 ->onDelete('no action')
                 ->onUpdate('no action');
 
-            $table->foreign('id_usuario', 'fk_comentarios_usuario1_idx')
-                ->references('id_usuario')->on('usuarios')
+            $table->foreign('user_id', 'fk_comments_user_id')
+                ->references('id')->on('users')
                 ->onDelete('no action')
                 ->onUpdate('no action');
         });

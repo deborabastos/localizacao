@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsuariosTable extends Migration
+class CreatePetPicsTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'usuarios';
+    public $tableName = 'pet_pics';
 
     /**
      * Run the migrations.
-     * @table usuarios
+     * @table pet_pics
      *
      * @return void
      */
@@ -22,15 +22,17 @@ class CreateUsuariosTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('id_usuario');
-            $table->string('nome', 45);
-            $table->string('cpf', 45);
-            $table->string('email', 45);
-            $table->string('foto_perfil', 45)->nullable()->default(null);
-            $table->string('password', 45);
-            $table->timestamp('email_verified_at')->nullable();
-            $table->rememberToken();
-            $table->timestamps();
+            $table->increments('id');
+            $table->string('link_pic', 45);
+            $table->unsignedInteger('position_pic');
+            $table->unsignedInteger('pet_id');
+
+            $table->index(["pet_id"], 'fk_pet_pics_pet_id');
+
+            $table->foreign('pet_id', 'fk_pet_pics_pet_id')
+                ->references('id')->on('pets')
+                ->onDelete('no action')
+                ->onUpdate('no action');
         });
     }
 

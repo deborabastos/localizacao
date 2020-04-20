@@ -14,3 +14,4 @@ class UserController extends Controller
         return view('user.create');
     }
 }
+

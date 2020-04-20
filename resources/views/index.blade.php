@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layouts.layout')
 
 @section('title')
 LocalizaCão
@@ -45,95 +45,50 @@ LocalizaCão
     <!-- isto tambem vai ne-->
     <main>
         <div class="adote" id="adote">
-            <h1 class="title">Adote</h1>
+            <h1 class="title">Últimos cadastros</h1>
             <section class="container">
-                <div class="row">
-                    <div class="mx-auto">
-                        <div class="col-sm-4 col-xs-12">
-                            <div class="card text-center" style="width: 18rem;">
-                                <img class="card-img-top" src="images/perdido3.jpg" alt="Imagem de capa do card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Da vinci</h5>
-                                    <p class="card-text">Um exemplo de texto rápido para construir o título do card e
-                                        fazer preencher o conteúdo do card.</p>
-                                    <a href="#" class="btn btn-primary">Visitar</a>
+                <div class="row">                    
+                    @foreach ($pets as $i => $pet)
+                        @if($i < 6)
+                            <div class="mx-auto">
+                                <div class="col-md-6 col-12">
+                                    <div class="card text-center" style="width: 18rem;">
+                                        
+                                        <div class="box">
+                                            <img class="card-img-top" src="images/pet/{{$pet->id}}.jpg" alt="Imagem de capa do card">
+
+                                            @if( $pet->alert_type == "achado")
+                                                <div class="corner corner_achado">  
+                                                    <span href="#">Achado</span>
+                                                </div>                                            
+                                            @else
+                                                <div class="corner corner_perdido">  
+                                                    <span href="#">Perdido</span>
+                                                </div>                                            
+                                            @endif                                      
+                                          
+                                        </div>
+                                        
+                                        
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                @if( $pet->name == "")
+                                                    {{ ucfirst($pet->breed) }}
+                                                @else
+                                                    {{ ucfirst($pet->name) }}
+                                                @endif
+                                            
+                                            </h5>
+                                            <div class="text-limit">
+                                                <p class="card-text"> {{ ucfirst($pet->description) }}</p>
+                                            </div>
+                                            <a href="adote/{{$pet->id}}" class="btn btn-primary mt-3">Visitar</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="mx-auto">
-                        <div class="col-sm-4 col-xs-12">
-                            <div class="card text-center" style="width: 18rem;">
-                                <img class="card-img-top" src="images/perdido2.jpg" alt="Imagem de capa do card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Doido</h5>
-                                    <p class="card-text">Um exemplo de texto rápido para construir o título do card e
-                                        fazer preencher o conteúdo do card.</p>
-                                    <a href="#" class="btn btn-primary">Visitar</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mx-auto">
-                        <div class="col-sm-4 col-xs-12">
-                            <div class="card text-center" style="width: 18rem;">
-                                <img class="card-img-top" src="images/gato4.jpeg" alt="Imagem de capa do card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Feijão</h5>
-                                    <p class="card-text">Um exemplo de texto rápido para construir o título do card e
-                                        fazer preencher o conteúdo do card.</p>
-                                    <a href="#" class="btn btn-primary">Visitar</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="row">
-                    <div class="mx-auto">
-                        <div class="col-sm-4 col-xs-12">
-                            <div class="card text-center" style="width: 18rem;">
-                                <img class="card-img-top" src="images/gato02.jpg" alt="Imagem de capa do card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Belezinha</h5>
-                                    <p class="card-text">Um exemplo de texto rápido para construir o título do card e
-                                        fazer preencher o conteúdo do card.</p>
-                                    <a href="#" class="btn btn-primary">Visitar</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mx-auto">
-                        <div class="col-sm-4 col-xs-12">
-                            <div class="card text-center" style="width: 18rem;">
-                                <img class="card-img-top" src="images/perdido5.jpg" alt="Imagem de capa do card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Gato</h5>
-                                    <p class="card-text">Um exemplo de texto rápido para construir o título do card e
-                                        fazer preencher o conteúdo do card.</p>
-                                    <a href="#" class="btn btn-primary">Visitar</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mx-auto">
-                        <div class="col-sm-4 col-xs-12">
-                            <div class="card text-center" style="width: 18rem;">
-                                <img class="card-img-top" src="images/gato6.jpeg" alt="Imagem de capa do card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Jupiter</h5>
-                                    <p class="card-text">Um exemplo de texto rápido para construir o título do card e
-                                        fazer preencher o conteúdo do card.</p>
-                                    <a href="#" class="btn btn-primary">Visitar</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                        @endif
+                    @endforeach
                 </div>
             </section>
     </main>

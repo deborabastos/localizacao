@@ -83,6 +83,48 @@ body {
 }
 
 
+.box {
+  position:relative;
+  overflow:hidden;
+}
+
+.corner_perdido {
+    background-color: rgba(225, 83, 97, 0.7);
+    overflow: hidden;
+    position: absolute;
+    left: -0.5em;
+    top: 0.5em;
+}
+
+.corner_achado {
+  background-color: rgba(83, 134, 76, 0.7);
+  overflow: hidden;
+  position: absolute;
+  left: -0.1em;
+  top: 0.5em;
+}
+
+.corner_adote {
+  background-color: rgba(63, 80, 177, 0.7);
+  overflow: hidden;
+  position: absolute;
+  left: -0.1em;
+  top: 0.5em;
+}
+
+.corner span {
+    color: #fff;
+    display: block;
+    font-size:.8em;
+    font-weight:bold;
+    padding: 5px 25px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #000;
+}
+
+
+
 /* About */
 .sobrenos,
 .servicos,
@@ -4771,6 +4813,7 @@ input[type=button].btn-block {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+  height: 390px;
 }
 .card > hr {
   margin-right: 0;
@@ -4800,8 +4843,16 @@ input[type=button].btn-block {
   margin-bottom: 0;
 }
 
+.text-limit{
+  overflow: hidden; 
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
 .card-text:last-child {
   margin-bottom: 0;
+  
 }
 
 .card-link:hover {

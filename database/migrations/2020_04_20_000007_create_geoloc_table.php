@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMensagensTable extends Migration
+class CreateGeolocTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'mensagens';
+    public $tableName = 'geoloc';
 
     /**
      * Run the migrations.
-     * @table mensagens
+     * @table geoloc
      *
      * @return void
      */
@@ -22,24 +22,25 @@ class CreateMensagensTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('id_mensagens');
-            $table->string('mensagem', 200);
-            $table->date('send_at');
-            $table->integer('id_usuario')->unsigned();
-            $table->integer('id_chats')->unsigned();
+            $table->increments('id');
+            $table->float('latitude');
+            $table->float('longitude');
+            $table->unsignedInteger('alert_id');
+            $table->unsignedInteger('user_id');
+            $table->timestamps();
 
-            $table->index(["id_usuario"], 'fk_mensagens_usuario1_idx');
+            $table->index(["user_id"], 'fk_geoloc_user_id');
 
-            $table->index(["id_chats"], 'fk_mensagens_chats1_idx');
+            $table->index(["alert_id"], 'fk_geoloc_alert_id');
 
 
-            $table->foreign('id_chats', 'fk_mensagens_chats1_idx')
-                ->references('id_chats')->on('chats')
+            $table->foreign('alert_id', 'fk_geoloc_alert_id')
+                ->references('id')->on('alerts')
                 ->onDelete('no action')
                 ->onUpdate('no action');
 
-            $table->foreign('id_usuario', 'fk_mensagens_usuario1_idx')
-                ->references('id_usuario')->on('usuarios')
+            $table->foreign('user_id', 'fk_geoloc_user_id')
+                ->references('id')->on('users')
                 ->onDelete('no action')
                 ->onUpdate('no action');
         });

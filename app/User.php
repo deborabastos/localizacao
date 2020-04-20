@@ -2,11 +2,11 @@
 
 namespace App;
 
-use App\Mensagen;
+use App\Message;
 use App\Chat;
-use App\Geo_localizacao;
-use App\Comentario;
-use App\Alerta;
+use App\Geoloc;
+use App\Comment;
+use App\Alert;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -16,44 +16,42 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    protected $table = "users";
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
+
     protected $fillable = [
-        'password',
-        'nome',
+        'name',
         'cpf',
         'email',
-        'foto_perfil',
+        'pic_profile',
+        'password',
     ];
-    public function mensagem()
-    {
 
-        return $this->hasMany(Mensagen::class);
+    public function message(){
+        return $this->hasMany(Message::class);
     }
-    public function chat()
-    {
 
+    public function chat(){
         return $this->hasMany(Chat::class);
     }
-    public function geo_localizacao()
-    {
 
-        return $this->hasMany(Geo_localizacao::class);
+    public function geoloc(){
+        return $this->hasMany(Geoloc::class);
     }
-    public function comentario()
-    {
 
-        return $this->hasMany(Comentario::class);
+    public function comment(){
+        return $this->hasMany(Comment::class);
     }
-    public function alerta()
-    {
+   
+    public function alert(){
+        return $this->hasMany(Alert::class);
+    }
 
-        return $this->hasMany(Alerta::class);
-    }
 
     /**
      * The attributes that should be hidden for arrays.

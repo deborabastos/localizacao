@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset( '/css/style.css') }}">
+
+
 
     <!-- Fontes -->
     <!-- Roboto -->
@@ -54,7 +56,7 @@
                 <!-- Logo -->
                 <div class="logo">
                     <a class="logo_link" href="/">
-                        <img src="images/logo_sn.jpg" alt="Localizacão">
+                        <img src="/images/logo_sn.jpg" alt="Localizacão">
                         <p class="logo_p">LocalizaCão</p>
                     </a>
                 </div>
@@ -73,8 +75,8 @@
                                 Achados
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="achados?especie=caes">Cães Achados</a>
-                                <a class="dropdown-item" href="achados?especie=gatos">Gatos Achados</a>
+                                <a class="dropdown-item" href="/achados?especie=cao">Cães Achados</a>
+                                <a class="dropdown-item" href="/achados?especie=gato">Gatos Achados</a>
                                 <a class="dropdown-item" href="/achados/create" id="link-modal-achados">Cadastro Pet Achado</a>
                             </div>
 
@@ -95,8 +97,8 @@
                                 Perdidos
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="perdidos?especie=caes">Cães Perdidos</a>
-                                <a class="dropdown-item" href="perdidos?especie=gatos">Gatos Perdidos</a>
+                                <a class="dropdown-item" href="/perdidos?especie=cao">Cães Perdidos</a>
+                                <a class="dropdown-item" href="/perdidos?especie=gato">Gatos Perdidos</a>
                                 <a class="dropdown-item" href="/perdidos/create" id="link-modal-perdidos">Cadastro Pet Perdido</a>
                             </div>
 
@@ -116,8 +118,8 @@
                                 Adote
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="adote?especie=caes">Adote Cães</a>
-                                <a class="dropdown-item" href="adote?especie=gatos">Adote Gatos</a>
+                                <a class="dropdown-item" href="/adote?especie=cao">Adote Cães</a>
+                                <a class="dropdown-item" href="/adote?especie=gato">Adote Gatos</a>
                                 <a class="dropdown-item" href="/adote/create" id="link-modal-adote">Cadastro Pet Adoção</a>
                             </div>
 
@@ -133,7 +135,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link h5 text-uppercase text-primary mx-2" href="quem_somos">Quem somos</a>
+                            <a class="nav-link h5 text-uppercase text-primary mx-2" href="/quem_somos">Quem somos</a>
                         </li>
                     </ul>
 
@@ -166,7 +168,7 @@
                                         </label>
                                     </div>
 
-                                    <a href="pagina_usuario" class="btn btn-primary" role="button" aria-pressed="true">Entrar</a>
+                                    <a href="/pagina_usuario" class="btn btn-primary" role="button" aria-pressed="true">Entrar</a>
                                 </form>
 
                                 <div class="dropdown-divider"></div>
@@ -208,7 +210,7 @@
     <footer class="footer">
         <div class="inner-footer">
             <div class="footer-items">
-                <h1 class="footer-h1"><a class="footer-h1" href="index">LocalizaCão</a></h1>
+                <h1 class="footer-h1"><a class="footer-h1" href="/index">LocalizaCão</a></h1>
                 <p>O LocalizaCão é um serviço gratuito, criado para te ajudar a encontrar seu amiguinho.</p>
             </div>
 
@@ -216,8 +218,8 @@
                 <h2 class="footer-h2">QUEM SOMOS?</h2>
                 <div class="footer-border"></div>
                 <ul>
-                    <li><a href="quemsomos">Sobre nós</a></li>
-                    <li><a href="sucesso">Casos de sucesso</li></a>
+                    <li><a href="/quem_somos">Sobre nós</a></li>
+                    <li><a href="/sucesso">Casos de sucesso</li></a>
                     <li><i class="fa fa-phone" aria-hidden="true"></i> 11- 997979981</li>
                     <li><i class="fa fa-envelope" aria-hidden="true"></i> support@gmail.com</li>
                 </ul>
@@ -227,9 +229,9 @@
                 <h2 class="footer-h2">MAPA DO SITE</h2>
                 <div class="footer-border"></div>
                 <ul>
-                    <li><a href="achados">Achados</a></li>
-                    <li><a href="perdidos">Perdidos</a></li>
-                    <li><a href="adote">Adote</a> </li>
+                    <li><a href="/achados">Achados</a></li>
+                    <li><a href="/perdidos">Perdidos</a></li>
+                    <li><a href="/adote">Adote</a> </li>
                 </ul>
             </div>
 
@@ -262,7 +264,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
     <!-- Meu JS -->
-    <script src="js/localizacao.js"></script>
+    <script src="/js/localizacao.js"></script>
 
 </body>
 

@@ -2,31 +2,29 @@
 
 namespace App;
 
-use App\Mensagen;
-use App\Usuario;
-
+use App\Message;
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Chat extends Model
 {
+    protected $table = "chats";
+
     protected $fillable = [
-        'id_chats',
-        'id_alerta',
-        'created_at',
-        'chat_encerrado',
-        'id_usuario_primario',
-        'id_usuario_secudario'
+        'alert_id',
+        'ended_at',
+        'primary_user_id',
+        'secondary_user_id'
     ];
 
 
-
-    public function mensagem(){
-
-        return $this->hasMany(Mensagen::class);
+    public function message(){
+        return $this->hasMany(Message::class);
     }
 
-    public function usuario(){
-
-        return $this->belongsTo(Usuario::class);
+    public function user(){
+        return $this->belongsTo(User::class);
     }
+    
+
 }
