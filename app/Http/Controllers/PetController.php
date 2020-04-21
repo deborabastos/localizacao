@@ -57,7 +57,7 @@ class PetController extends Controller
             ->orderBy('id', 'desc')
             ->get();    
         } else {
-            $pets_perdidos = Pet::where('tipo_alerta','perdido')
+            $pets_perdidos = Pet::where('alert_type','perdido')
             ->orderBy('id', 'desc')->get();    
         }
         
