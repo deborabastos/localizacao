@@ -24,7 +24,7 @@ class CreateAlertsTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('alert_type', 10);
-            $table->timestamp('event_date');
+            $table->date('event_date');
             $table->unsignedInteger('id_match')->nullable()->default(null);
             $table->binary('alert_ended_match');
             $table->binary('alert_ended_delete');

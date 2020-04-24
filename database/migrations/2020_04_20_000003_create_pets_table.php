@@ -24,17 +24,20 @@ class CreatePetsTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('alert_type', 10);
-            $table->timestamp('event_date');
+            $table->date('event_date');
             $table->string('species', 10);
-            $table->string('breed', 45);
+            $table->string('breed', 45)->nullable();;
             $table->string('primary_color', 15);
-            $table->string('secondary_color', 15)->nullable()->default(null);
+            $table->string('secondary_color', 15)->nullable();
             $table->string('sex', 10);
             $table->string('coat', 5);
             $table->unsignedInteger('size');
-            $table->string('name', 45)->nullable()->default(null);
-            $table->string('age', 45)->nullable()->default(null);
-            $table->string('description',600)->nullable()->default(null);
+            $table->string('name', 45)->nullable();
+            $table->string('age', 45)->nullable();
+            $table->string('state', 10);
+            $table->string('city', 40);
+            $table->string('nbhood', 40);
+            $table->string('description',600)->nullable();
             $table->binary('avaliable_adoption')->nullable();
             
             $table->unsignedInteger('user_id');

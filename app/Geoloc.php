@@ -13,6 +13,9 @@ class Geoloc extends Model
     protected $fillable = [
         'latitude',
         'longitude',
+        'state',
+        'city',
+        'nbhood',
         'alert_id',
         'user_id'
     ];

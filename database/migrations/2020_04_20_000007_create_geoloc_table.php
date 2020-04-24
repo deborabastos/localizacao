@@ -23,10 +23,14 @@ class CreateGeolocTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->float('latitude');
-            $table->float('longitude');
+            $table->float('latitude')->default(null);;
+            $table->float('longitude')->default(null);;
             $table->unsignedInteger('alert_id');
             $table->unsignedInteger('user_id');
+            $table->string('state', 10);
+            $table->string('city', 40);
+            $table->string('nbhood', 40);
+
             $table->timestamps();
 
             $table->index(["user_id"], 'fk_geoloc_user_id');

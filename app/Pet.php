@@ -23,6 +23,9 @@ class Pet extends Model
         'size',
         'name',
         'age',
+        'state',
+        'city',
+        'nbhood',
         'description',
         'avaliable_adoption',
         'user_id',
@@ -32,11 +35,11 @@ class Pet extends Model
         return $this->hasMany(Alert::class);
     }
 
-    public function Pet_pic(){
+    public function pet_pic(){
         return $this->hasMany(Pet_pic::class);
     }
 
-    public function User(){
+    public function user(){
         return $this->belongsTo(User::class);
     }
 

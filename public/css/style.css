@@ -66,6 +66,22 @@ body {
 }
 
 
+.btn-cadastro{
+  width: 100%;
+}
+
+.titulo-form{
+  font-size: 20px;
+}
+
+.p-form{
+  margin-bottom: 0;
+}
+
+#achadoLabel{
+  font-size: 28px;
+}
+
 /* BANNER */
 .banner {
   background-image: url("../images/banner.jpg");
@@ -111,6 +127,8 @@ body {
   left: -0.1em;
   top: 0.5em;
 }
+
+
 
 .corner span {
     color: #fff;

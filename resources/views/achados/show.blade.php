@@ -11,7 +11,19 @@ LocalizaCão - Achado
         <section class="container mt-5">
             <div class="row">
                 <div class="col-md-6 col-12">
-                    <img src="/images/pet/{{ $pet->id }}.jpg" class="rounded img-thumbnail" alt="foto de um cachorro perdido">
+                    
+                    <div class="box">
+
+                        <img src="/images/pet/{{ $pet->id }}.jpg" class="rounded img-thumbnail" alt="foto de um cachorro perdido">
+                        <div class="corner corner_achado corner_show">  
+                            <span href="#">Achado</span>
+                        </div>                                            
+                                        
+                    </div>                                            
+                                    
+
+                
+                
                 </div>
 
                 <div class="col-md-6 col-12">
@@ -63,14 +75,21 @@ LocalizaCão - Achado
                                         @else
                                             Macho
                                         @endif
-                                        
-                                        
+                                                                                
                                         </td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <th scope="row" class="text-primary">Tipo de pelo:</th>
-                                    <td colspan="2">{{ ucfirst($pet->coat) }}</td>
+                                    <td colspan="2">
+                                        @if($pet->coat == 1)
+                                            Curto
+                                        @elseif($pet->coat == 2)
+                                            Médio
+                                        @else
+                                            Longo
+                                        @endif  
+                                    </td>
                                     <td></td>
                                 </tr>
                                 <tr>
@@ -78,7 +97,7 @@ LocalizaCão - Achado
                                     <td colspan="2">
                                         @if( $pet->primary_color == $pet->secondary_color)
                                             {{ ucfirst($pet->primary_color)}}
-                                        @elseif($pet->secondary_color == 'NULL')
+                                        @elseif($pet->secondary_color == '')
                                             {{ ucfirst($pet->primary_color)}}
                                         @else
                                             {{ ucfirst($pet->primary_color)}} e {{ucfirst($pet->secondary_color) }}
@@ -90,7 +109,15 @@ LocalizaCão - Achado
                                 </tr>
                                 <tr>
                                     <th scope="row" class="text-primary">Raça:</th>
-                                    <td colspan="2">{{ ucfirst($pet->breed) }}</td>
+                                    <td colspan="2">
+                                        @if($pet->breed == "")    
+                                            SRD
+                                        @else
+                                        {{ ucfirst($pet->breed) }}
+                                        @endif
+                                    
+                                    
+                                    </td>
                                     <td></td>
                                 </tr>
                             </tbody>
@@ -101,9 +128,17 @@ LocalizaCão - Achado
                     <img src="/images/mapa1.jpg" class="rounded float-right img-thumbnail" alt="foto de um cachorro perdido">
                 </div>
             </div>
-
-
         </section>       
+
+
+        <div class="comentarios">
+
+        {{ ucfirst($comment->comment) }}
+
+
+        </div>
+
+
     </main>
 
 @endsection
