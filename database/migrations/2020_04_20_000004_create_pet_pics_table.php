@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
+
 
 class CreatePetPicsTable extends Migration
 {
@@ -34,6 +36,19 @@ class CreatePetPicsTable extends Migration
                 ->onDelete('no action')
                 ->onUpdate('no action');
         });
+
+        DB::table('pet_pics')->insert([
+            ['id' => 1, 'link_pic' => "images/pet/1.jpg", 'position_pic' => 1, 'pet_id' => 1, ],        
+            ['id' => 2, 'link_pic' => "images/pet/1_2.jpg", 'position_pic' => 2, 'pet_id' => 1, ],        
+            ['id' => 3, 'link_pic' => "images/pet/1_3.jpg", 'position_pic' => 3, 'pet_id' => 1, ],        
+            ['id' => 4, 'link_pic' => "images/pet/2.jpg", 'position_pic' => 1, 'pet_id' => 2, ],
+            ['id' => 5, 'link_pic' => "images/pet/2_2.jpg", 'position_pic' => 2, 'pet_id' => 2, ],
+            ['id' => 6, 'link_pic' => "images/pet/3.jpg", 'position_pic' => 1, 'pet_id' => 3, ],
+            ['id' => 7, 'link_pic' => "images/pet/4.jpg", 'position_pic' => 1, 'pet_id' => 4, ],
+            ['id' => 8, 'link_pic' => "images/pet/4_2.jpg", 'position_pic' => 2, 'pet_id' => 4, ],
+            ['id' => 9, 'link_pic' => "images/pet/5.jpg", 'position_pic' => 1, 'pet_id' => 5, ],
+        ]);
+
     }
 
     /**

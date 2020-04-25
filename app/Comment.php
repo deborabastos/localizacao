@@ -10,7 +10,7 @@ class Comment extends Model
 
     protected $fillable = [
         'comment',
-        'alert_id',
+        'pet_id',
         'user_id'
     ];
 

@@ -16,7 +16,7 @@ class Geoloc extends Model
         'state',
         'city',
         'nbhood',
-        'alert_id',
+        'pet_id',
         'user_id'
     ];
     

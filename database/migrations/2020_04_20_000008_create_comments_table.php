@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
+
 
 class CreateCommentsTable extends Migration
 {
@@ -24,17 +26,15 @@ class CreateCommentsTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('comment', 200);
-            $table->unsignedInteger('alert_id');
+            $table->unsignedInteger('pet_id');
             $table->unsignedInteger('user_id');
             $table->timestamps();
 
-            $table->index(["alert_id"], 'fk_comments_alert_id');
-
+            $table->index(["pet_id"], 'fk_comments_pet_id');
             $table->index(["user_id"], 'fk_comments_user_id');
 
-
-            $table->foreign('alert_id', 'fk_comments_alert_id')
-                ->references('id')->on('alerts')
+            $table->foreign('pet_id', 'fk_comments_pet_id')
+                ->references('id')->on('pets')
                 ->onDelete('no action')
                 ->onUpdate('no action');
 
@@ -43,6 +43,14 @@ class CreateCommentsTable extends Migration
                 ->onDelete('no action')
                 ->onUpdate('no action');
         });
+
+        DB::table('comments')->insert([
+            ['id' => 1, 'comment' => "Primeiro comentário", 'pet_id' => 1, 'user_id' => 3, 'created_at' => "2020/03/03 17:55:00", 'updated_at' => "2020/04/03 17:55:00"],
+            ['id' => 2, 'comment' => "Iniciou chat", 'pet_id' => 2, 'user_id' => 2, 'created_at' => "2020/03/03 17:55:00",'updated_at' => "2020/04/03 17:55:00"],
+            ['id' => 3, 'comment' => "Outro comentário", 'pet_id' => 3, 'user_id' => 3, 'created_at' => "2020/03/03 17:55:00",'updated_at' => "2020/04/03 17:55:00"],
+            ['id' => 4, 'comment' => "Encerrou o char", 'pet_id' => 1, 'user_id' => 1, 'created_at' => "2020/03/03 17:55:00",'updated_at' => "2020/04/03 17:55:00"],
+        ]);
+
     }
 
     /**

@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
+
 
 class CreateMessagesTable extends Migration
 {
@@ -29,9 +31,7 @@ class CreateMessagesTable extends Migration
             $table->unsignedInteger('chat_id');
 
             $table->index(["chat_id"], 'fk_messages_chat_id');
-
             $table->index(["user_id"], 'fk_messages_user_id');
-
 
             $table->foreign('chat_id', 'fk_messages_chat_id')
                 ->references('id')->on('chats')
