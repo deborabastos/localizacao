@@ -48,7 +48,8 @@ class CreateCommentsTable extends Migration
             ['id' => 1, 'comment' => "Primeiro comentário", 'pet_id' => 1, 'user_id' => 3, 'created_at' => "2020/03/03 17:55:00", 'updated_at' => "2020/04/03 17:55:00"],
             ['id' => 2, 'comment' => "Iniciou chat", 'pet_id' => 2, 'user_id' => 2, 'created_at' => "2020/03/03 17:55:00",'updated_at' => "2020/04/03 17:55:00"],
             ['id' => 3, 'comment' => "Outro comentário", 'pet_id' => 3, 'user_id' => 3, 'created_at' => "2020/03/03 17:55:00",'updated_at' => "2020/04/03 17:55:00"],
-            ['id' => 4, 'comment' => "Encerrou o char", 'pet_id' => 1, 'user_id' => 1, 'created_at' => "2020/03/03 17:55:00",'updated_at' => "2020/04/03 17:55:00"],
+            ['id' => 4, 'comment' => "Olá, bom dia", 'pet_id' => 4, 'user_id' => 1, 'created_at' => "2020/03/03 17:55:00",'updated_at' => "2020/04/03 17:55:00"],
+            ['id' => 5, 'comment' => "Encontrou o meu animal?", 'pet_id' => 4, 'user_id' => 2, 'created_at' => "2020/03/04 17:55:00",'updated_at' => "2020/04/04 17:55:00"],
         ]);
 
     }
