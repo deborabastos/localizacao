@@ -22,8 +22,12 @@ Route::get('/adote/{id}', 'PetController@adotePerfil');
 Route::get('/quem_somos', 'PetController@quemSomos');
 Route::get('/sucesso', 'PetController@sucesso');
 
-Route::get('/pagina_usuario', 'UserController@user');
-Route::get('/user/create', 'UserController@userCreate');
+
+Route::resource('/user', 'UserController');
+//Route::post('/user/create', 'UserController');
+//Route::get('/user/create', 'UserController');
+//Route::get('/pagina_usuario', 'UserController');
+//Route::get('/user/create', 'UserController@userCreate');
 
 
  
@@ -33,4 +37,4 @@ Route::get('/user/create', 'UserController@userCreate');
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
