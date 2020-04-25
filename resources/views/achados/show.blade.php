@@ -128,15 +128,30 @@ LocalizaCão - Achado
                     <img src="/images/mapa1.jpg" class="rounded float-right img-thumbnail" alt="foto de um cachorro perdido">
                 </div>
             </div>
+
+            <div class="col-md-6">
+                <h1 class="display-6 text-primary mt-5">Deixe seu comentário!</h1>
+            <div class="comentarios">
+    
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Tem alguma informação que pode nos ajudar?</label>
+                    <textarea class="form-control mb-4" id="exampleFormControlTextarea1" rows="9">
+                        @foreach ($comment as $commen)
+       
+    
+                        {{ $commen->comment }}
+        
+                        @endforeach 
+                    </textarea>
+                    <button class="btn btn-primary" type="submit">Enviar</button>
+                  </div>
+    
+
+            </div>
+        </div>
         </section>       
 
 
-        <div class="comentarios">
-
-        {{ ucfirst($comment->comment) }}
-
-
-        </div>
 
 
     </main>
