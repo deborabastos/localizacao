@@ -129,26 +129,52 @@ LocalizaCão - Achado
                 </div>
             </div>
 
+            <form action="/achados' method="POST">
+                
             <div class="col-md-6">
                 <h1 class="display-6 text-primary mt-5">Deixe seu comentário!</h1>
             <div class="comentarios">
-    
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Tem alguma informação que pode nos ajudar?</label>
-                    <textarea class="form-control mb-4" id="exampleFormControlTextarea1" rows="9">
-                        @foreach ($comment as $commen)
-       
-    
-                        {{ $commen->comment }}
-        
-                        @endforeach 
+
+                    <div class="form-group ">
+                    <label for="exampleFormControlTextarea1">Tem alguma informação que possa nos ajudar?</label>
+                    <form>
+                        <div class="row mt-3 mb-4">
+                            <div class="col">
+                            <input type="text" class="form-control" placeholder="Nome">
+                            </div>
+                            <div class="col">
+                            <input type="text" class="form-control" placeholder="Sobrenome">
+                            </div>
+                        </div>
+                        </form>
+                    <textarea class="form-control mb-4" id="exampleFormControlTextarea1" name="comment" rows="7">
+                     
                     </textarea>
                     <button class="btn btn-primary" type="submit">Enviar</button>
                   </div>
-    
+            </form>
+
+                  <div class="form-group">
+                      <label class="mt-5" for="exampleFormControlTextarea1">
+                          @foreach ($user as $use)
+                          
+                          {{ $use->name }}
+                          
+                          @endforeach
+                        </label>
+                        <textarea class="comment form-control mb-4" id="exampleFormControlTextarea1" rows="7">
+                            @foreach ($comment as $commen)
+                            
+                            
+                            {{ $commen->comment }}
+                            
+                            @endforeach 
+                        </textarea>
+                    </div>
+                    
+                </div>
 
             </div>
-        </div>
         </section>       
 
 

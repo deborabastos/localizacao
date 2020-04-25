@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Pet;
 use App\Geoloc;
 use App\Comment;
-
+use App\User;
+use Symfony\Component\VarDumper\Caster\RedisCaster;
 
 class PetController extends Controller
 {
@@ -42,14 +43,19 @@ class PetController extends Controller
     public function achadosPerfil($id){
         $pet = Pet::findOrFail($id);
 
-        $comment = Comment::where('pet_id',$id)
+        $comment = Comment::where('id' , $id)
         ->orderBy('created_at', 'desc')
         ->get(); 
+
+        $user = Comment::where('user_id',$id)
+        ->orderBy('created_at', 'desc')
+        ->get();
 
 
         return view('achados.show', [
             'pet' => $pet,
             'comment' => $comment,
+            'user'=> $user,
 
         ]);
     }
@@ -84,6 +90,23 @@ class PetController extends Controller
         $pet->save();
 
         return redirect('achados');
+    }
+
+    ///tentando criar a logica de salvar comentario//
+
+    public function commentStore(Request $request){
+    
+        $comment = $request->comment;
+        $newComment = new Comment();
+
+        $newComment->fill($comment);
+        // $comment->pet_id = request('pet_id');
+        // $comment->user_id = request('user_id');
+
+        $newComment->save();
+
+        return redirect('achados.show');
+
     }
 
 
