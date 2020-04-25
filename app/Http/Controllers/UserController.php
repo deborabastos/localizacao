@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\PetController;
 use App\User;   
-use Resources\Views;
 use Illuminate\Http\Request;
 
 
@@ -43,7 +42,7 @@ class UserController extends Controller
     {
         User::create($request->all());
 
-        return redirect()->route('user.pagina_user');
+        return view('user.pagina_user');
     }
 
     /**

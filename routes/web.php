@@ -25,7 +25,7 @@ Route::get('/sucesso', 'PetController@sucesso');
 Route::resource('/user', 'UserController');
 //Route::post('/user/create', 'UserController');
 //Route::get('/user/create', 'UserController');
-//Route::get('/pagina_usuario', 'UserController@user');
+//Route::get('/pagina_usuario', 'UserController');
 //Route::get('/user/create', 'UserController@userCreate');
 
 
