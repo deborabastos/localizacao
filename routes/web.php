@@ -24,11 +24,7 @@ Route::get('/sucesso', 'PetController@sucesso');
 Route::get('/pagina_usuario', 'UserController@user');
 Route::get('/user/create', 'UserController@userCreate');
 
-Route::get('/comentario', 'CommentController@index');
-Route::get('/comentario/create', 'CommentController@create');
-Route::get('/comentarios/read', 'CommentController@read');
-Route::get('/comentario/edit', 'CommentController@edit');
-Route::get('/comentario/delete', 'CommentController@delete');
+
  
 
 

@@ -42,7 +42,7 @@ class PetController extends Controller
     public function achadosPerfil($id){
         $pet = Pet::findOrFail($id);
 
-        $comment = Comment::where('alert_id',$id)
+        $comment = Comment::where('pet_id',$id)
         ->orderBy('created_at', 'desc')
         ->get(); 
 
