@@ -16,14 +16,14 @@
             <div class="form-group">
                 <label for="name" class="col-sm-2 control-label">Nome</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="name">
+                    <input type="text" required placeholder="Digite o seu nome" class="form-control" name="name">
                 </div>
             </div>
 
             <div class="form-group">
             <label for="cpf" class="col-sm-2 control-label">CPF</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="cpf">
+                    <input type="text" required placeholder="Digite o seu cpf" class="form-control" name="cpf">
 
                 </div>
             </div>
@@ -39,16 +39,16 @@
             <div class="form-group">
                 <label for="email" class="col-sm-2 control-label">Email</label>
                 <div class="col-sm-10">
-                    <input type="email" class="form-control" name="email">
+                    <input type="email" required placeholder="Digite o seu e-mail" class="form-control" name="email">
                 </div>
             </div>
 
         <fieldset>
         <legend>Senha</legend>
         <div class="form-group">
-            <label for="password" class="col-sm-2 control-label">Senha</label>
+            <label for="password" class="col-sm-2 control-label @error('password') is-invalid @enderror">Senha</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" name="password">
+                    <input type="password" required class="form-control" name="password" placeholder="Digite uma senha">
 
                 </div>
             </div>
