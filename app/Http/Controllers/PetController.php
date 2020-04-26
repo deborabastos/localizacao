@@ -86,11 +86,19 @@ class PetController extends Controller
 
         $pet->user_id = request('user_id');
 
-
         $pet->save();
 
-        return redirect('achados');
+        return redirect('achados')->with('msg','Animal cadastrado com sucesso');
     }
+
+
+    public function achadosDestroy($id){
+        $pet = Pet::findOrFail($id);
+        $pet->delete();
+
+        return redirect('achados')->with('msg','Registro deletado com sucesso');
+
+        }
 
     ///tentando criar a logica de salvar comentario//
 

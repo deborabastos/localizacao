@@ -33,8 +33,8 @@ class CreatePetPicsTable extends Migration
 
             $table->foreign('pet_id', 'fk_pet_pics_pet_id')
                 ->references('id')->on('pets')
-                ->onDelete('no action')
-                ->onUpdate('no action');
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
 
         DB::table('pet_pics')->insert([

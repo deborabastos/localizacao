@@ -121,13 +121,30 @@ LocalizaCão - Achado
                                     <td></td>
                                 </tr>
                             </tbody>
+                         
                         </table>
+
+            <div>
+                <form class="btn-delete" action="/achados/{{ $pet->id }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger">Excluir</button>
+                </form>  
+            </div>
+
+
+
+            {{-- Comentárioa --}}
                     </div>
                 </div>
                 <div class="col-md-6 col-12 mt-5 mb-5">
                     <img src="/images/mapa1.jpg" class="rounded float-right img-thumbnail" alt="foto de um cachorro perdido">
                 </div>
             </div>
+
+
+
+
 
             <form method="POST">
                 @csrf

@@ -7,6 +7,7 @@ LocalizaCão - Achados
 @section('content')
 
 <main>
+<div class="msg">{{ session('msg') }}</div>
     <section class="icones">
         <div class="row">
             <div class="imagedog">
