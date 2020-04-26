@@ -132,19 +132,17 @@ LocalizaCão - Achado
             <form method="POST">
                 @csrf
                 
-            <div class="col-md-6">
+                <div class="col-md-6 mt-6">
+                    <div class="border rounded px-3">
                 <h1 class="display-6 text-primary mt-5">Deixe seu comentário!</h1>
-            <div class="comentarios">
 
-                    <div class="form-group ">
+
+                    <div class="form-group">
                     <label for="exampleFormControlTextarea1">Tem alguma informação que possa nos ajudar?</label>
                     <form>
                         <div class="row mt-3 mb-4">
                             <div class="col">
                             <input type="text" class="form-control" placeholder="Nome">
-                            </div>
-                            <div class="col">
-                            <input type="text" class="form-control" placeholder="Sobrenome">
                             </div>
                         </div>
                         </form>
@@ -154,7 +152,10 @@ LocalizaCão - Achado
                     <button class="btn btn-primary" type="submit">Enviar</button>
                   </div>
             </form>
+        </div>
 
+            <div class="mt-5 mb-5">
+                <div class="border rounded px-3">
                   <div class="form-group">
                       <label class="mt-5" for="exampleFormControlTextarea1">
                           @foreach ($user as $use)
@@ -163,15 +164,24 @@ LocalizaCão - Achado
                           
                           @endforeach
                         </label>
-                        <textarea class="comment form-control mb-4" id="exampleFormControlTextarea1" rows="7">
+                        
+                            <div class="comment">
+                                <h4>
+                                    Rogério
+                                </h4>
+                                <h5 class="mb-4">
                             @foreach ($comment as $commen)
                             
                             
                             {{ $commen->comment }}
                             
                             @endforeach 
-                        </textarea>
+                                </h5>
+                            </div>
+                        
                     </div>
+                </div>
+            </div>
                     
                 </div>
 
