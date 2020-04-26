@@ -129,7 +129,8 @@ LocalizaCão - Achado
                 </div>
             </div>
 
-            <form action="/achados' method="POST">
+            <form method="POST">
+                @csrf
                 
             <div class="col-md-6">
                 <h1 class="display-6 text-primary mt-5">Deixe seu comentário!</h1>

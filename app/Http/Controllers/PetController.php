@@ -95,17 +95,18 @@ class PetController extends Controller
     ///tentando criar a logica de salvar comentario//
 
     public function commentStore(Request $request){
-    
-        $comment = $request->comment;
+        
+        $pet = Pet::all();
+        $comment = $request->all();
         $newComment = new Comment();
 
         $newComment->fill($comment);
-        // $comment->pet_id = request('pet_id');
-        // $comment->user_id = request('user_id');
+        $newComment->pet_id = 1;
+        $newComment->user_id = 3;
 
         $newComment->save();
 
-        return redirect('achados.show');
+        return redirect()->route('perfil', ['id' => 1]);
 
     }
 

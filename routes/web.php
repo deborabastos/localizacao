@@ -9,7 +9,7 @@ Route::get('/achados', 'PetController@achados');
 Route::get('/achados/create', 'PetController@achadosCreate');
 Route::post('/achados', 'PetController@achadosStore'); 
 Route::get('/achados/{id}', 'PetController@achadosPerfil');
-Route::post('/achados/{id}', 'PetController@commentStore');
+Route::post('/achados/{id}', 'PetController@commentStore')->name('perfil');
 
 Route::get('/perdidos', 'PetController@perdidos');
 Route::get('/perdidos/create', 'PetController@perdidosCreate');
