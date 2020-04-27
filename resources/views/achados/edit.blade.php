@@ -10,7 +10,7 @@ LocalizaCão - Achado
 <main>
     <a href="javascript:history.back()"> <<-- Voltar </a>
 
-<form action="{{ action('PetController@achadosUpdate', $pet->id) }}" class="form-horizontal" method="POST" enctype="multipart/form-data">
+<form action="../achados/update" class="form-horizontal" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
