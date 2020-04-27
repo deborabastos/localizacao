@@ -126,8 +126,11 @@ LocalizaCão - Achado
                          
                         </table>
 
-            <div>
-                <form class="btn-delete" action="/achados/{{ $pet->id }}" method="POST">
+            <div class="btn-show mt-4">
+                
+            <a href="/achados/{{ $pet->id }}/edit" class="btn btn-primary btn-sm mr-3">Editar</a>
+
+                <form class="ml-3" action="/achados/{{ $pet->id }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-danger btn-sm">Excluir</button>

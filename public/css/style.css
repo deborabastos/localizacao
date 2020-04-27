@@ -148,9 +148,10 @@ body {
   width: 200px;
 }
 
-.btn-delete{
-  text-align: center;
-  margin: 20px 0;
+.btn-show{
+  display: flex;
+  /* justify-content: center; */
+
 }
 
 /* About */
