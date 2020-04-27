@@ -8,13 +8,15 @@ LocalizaCão - Achado
 @section('content')
 
 <main>
+    <a href="javascript:history.back()"> <<-- Voltar</a>
+
         <section class="container mt-5">
             <div class="row">
                 <div class="col-md-6 col-12">
                     
                     <div class="box">
 
-                        <img src="/images/pet/{{ $pet->id }}.jpg" class="rounded img-thumbnail" alt="foto de um cachorro perdido">
+                        <img src="/storage/images/pet/{{ $pet->id }}.jpg" class="rounded img-thumbnail" alt="foto de um cachorro perdido">
                         <div class="corner corner_achado corner_show">  
                             <span href="#">Achado</span>
                         </div>                                            
@@ -121,13 +123,33 @@ LocalizaCão - Achado
                                     <td></td>
                                 </tr>
                             </tbody>
+                         
                         </table>
+
+            <div class="btn-show mt-4">
+                
+            <a href="/achados/{{ $pet->id }}/edit" class="btn btn-primary btn-sm mr-3">Editar</a>
+
+                <form class="ml-3" action="/achados/{{ $pet->id }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger btn-sm">Excluir</button>
+                </form>  
+            </div>
+
+
+
+            {{-- Comentárioa --}}
                     </div>
                 </div>
                 <div class="col-md-6 col-12 mt-5 mb-5">
                     <img src="/images/mapa1.jpg" class="rounded float-right img-thumbnail" alt="foto de um cachorro perdido">
                 </div>
             </div>
+
+
+
+
 
             <form method="POST">
                 @csrf

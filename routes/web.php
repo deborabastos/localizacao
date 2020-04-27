@@ -9,6 +9,10 @@ Route::get('/achados', 'PetController@achados');
 Route::get('/achados/create', 'PetController@achadosCreate');
 Route::post('/achados', 'PetController@achadosStore'); 
 Route::get('/achados/{id}', 'PetController@achadosPerfil');
+Route::put('/achados/{id}/edit', 'PetController@achadosEdit');
+Route::put('/achados/{id}', 'PetController@achadosUpdate');
+Route::delete('/achados/{id}', 'PetController@achadosDestroy');
+
 Route::post('/achados/{id}', 'PetController@commentStore')->name('perfil');
 
 Route::get('/perdidos', 'PetController@perdidos');

@@ -40,8 +40,8 @@ class CreateAlertsTable extends Migration
 
             $table->foreign('pet_id', 'fk_alerts_pet_id')
                 ->references('id')->on('pets')
-                ->onDelete('no action')
-                ->onUpdate('no action');
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
 
             $table->foreign('user_id', 'fk_alerts_user_id')
                 ->references('id')->on('users')

@@ -11,6 +11,7 @@
     <form action="achados" class="form-horizontal" method="POST" enctype="multipart/form-data">
     
     @csrf
+    @method('PUT')
 
         <h4 class="titulo-form">Dados do animal</h4>
 
