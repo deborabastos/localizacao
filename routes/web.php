@@ -6,11 +6,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PetController@index');
 Route::get('/achados', 'PetController@achados'); 
 Route::post('/achados/store', 'PetController@achadosStore'); 
-
-
-
 Route::get('/achados/create', 'PetController@achadosCreate');
-
 Route::put('/achados/update', 'PetController@achadosUpdate');
 
 
@@ -20,7 +16,7 @@ Route::delete('/achados/{id}', 'PetController@achadosDestroy')->where('id', '[0-
 Route::post('/achados/{id}', 'PetController@commentStore')->name('perfil');
 
 
-Route::get('/achados/{id}/edit', 'PetController@achadosEdit');
+Route::get('/achados-edit/{id}', 'PetController@achadosEdit');
 
 
 

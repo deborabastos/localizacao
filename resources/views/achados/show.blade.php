@@ -136,7 +136,7 @@ LocalizaCão - Achado
                         </table>
 
                         <div class="btn-show mt-4">
-                            <a href="/achados/{{ $pet->id }}/edit" class="btn btn-primary btn-sm mr-3">Editar</a>
+                            <a href="/achados-edit/{{ $pet->id }}" class="btn btn-primary btn-sm mr-3">Editar</a>
 
                             <form class="ml-3" action="/achados/{{ $pet->id }}" method="POST">
                                 @csrf
