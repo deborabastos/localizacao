@@ -144,13 +144,20 @@ body {
     text-shadow: 1px 1px 1px #000;
 }
 
+.mapa-perfil{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
 .comment{
   width: 200px;
 }
 
-.btn-delete{
-  text-align: center;
-  margin: 20px 0;
+.btn-show{
+  display: flex;
+  justify-content: center;
+
 }
 
 /* About */
@@ -1014,7 +1021,8 @@ mark,
   padding: 0.25rem;
   background-color: #fff;
   border: 1px solid #dee2e6;
-  border-radius: 0.25rem;
+  border-radius: 0.25rem; 
+  min-width: 80%;
   max-width: 100%;
   height: auto;
 }

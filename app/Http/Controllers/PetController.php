@@ -61,6 +61,8 @@ class PetController extends Controller
         ]);
     }
 
+   
+
     public function achadosCreate(){
         return view('achados.create');
     }
@@ -110,6 +112,62 @@ class PetController extends Controller
 
 
         return redirect('achados')->with('msg','Animal cadastrado com sucesso');
+    }
+
+    public function achadosEdit($id){
+        $pet = Pet::find($id);
+        $users = User::all();
+
+        return view('achados.edit', [
+            'pet' => $pet,
+            'users' => $users,
+        ]);
+        
+    }
+
+    public function achadosUpdate(Request $request, $id){
+        $pet = Pet::find($id);
+
+        $pet->alert_type = request('alert_type');
+        $pet->species = request('species');
+        $pet->sex = request('sex');
+        $pet->coat = request('coat');
+        $pet->primary_color = request('primary_color');
+        $pet->secondary_color = request('secondary_color');
+        $pet->size = request('size');
+        $pet->breed = request('breed');
+        $pet->name = request('name');
+        $pet->event_date = request('event_date');
+        $pet->description = request('description');
+        $pet->state = request('state');
+        $pet->city = request('city');
+        $pet->nbhood = request('nbhood');
+
+        $pet->save();
+
+
+        // Upload de foto - salva na tabela pet_pics
+        $pet_id = $pet->id;
+        $pet_pic = Pet_pic::find($pet_id);
+
+        $pet_pic->position_pic = 1; // ALTERAR DEPOIS !!!!!!!!!!!!!!!!!!
+        $pet_pic->pet_id = $pet_id; 
+
+
+        if($request->hasFile('pet_pic')){
+            $extension = $request->file('pet_pic')->getClientOriginalExtension();
+            
+            $fileNameToStore = $pet_id.'.'.$extension;
+        
+            $pet_pic->link_pic = 'storage/images/pet/'.$fileNameToStore;
+
+            $path = $request->file('pet_pic')->storeAs('public/images/pet', $fileNameToStore);
+        } 
+
+        $pet_pic->save();
+
+
+        return redirect('achados')->with('msg','Cadastro atualizado com sucesso');
     }
 
 
