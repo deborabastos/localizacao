@@ -43,19 +43,25 @@ class PetController extends Controller
     public function achadosPerfil($id){
         $pet = Pet::findOrFail($id);
 
+        
+
         $comment = Comment::where('id' , $id)
         ->orderBy('created_at', 'desc')
         ->get(); 
 
-        $user = Comment::where('user_id',$id)
-        ->orderBy('created_at', 'desc')
-        ->get();
+
+
+        $users = Comment::leftjoin('comments', 'comments.user_id', '=','users.id')
+        ->select('comments.*','users.name')
+        ->where('users.id', '=', 'name')->get();
+
+
 
 
         return view('achados.show', [
             'pet' => $pet,
             'comment' => $comment,
-            'user'=> $user,
+            'user' => $users,
 
         ]);
     }
@@ -109,6 +115,8 @@ class PetController extends Controller
         return redirect()->route('perfil', ['id' => 1]);
 
     }
+
+
 
 
 
