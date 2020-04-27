@@ -10,9 +10,9 @@ LocalizaCão - Achado
 <main>
     <a href="javascript:history.back()"> <<-- Voltar </a>
 
-<form action="../achados/update" class="form-horizontal" method="POST" enctype="multipart/form-data">
+<form action="../achados-update/{{ $pet->id }}" class="form-horizontal" method="POST" enctype="multipart/form-data">
         @csrf
-        @method('PUT')
+            @method('PUT')
 
         <section class="container mt-5">
                 <div class="row">

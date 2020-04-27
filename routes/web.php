@@ -7,16 +7,15 @@ Route::get('/', 'PetController@index');
 Route::get('/achados', 'PetController@achados'); 
 Route::post('/achados/store', 'PetController@achadosStore'); 
 Route::get('/achados/create', 'PetController@achadosCreate');
-Route::put('/achados/update', 'PetController@achadosUpdate');
-
 
 Route::get('/achados/{id}', 'PetController@achadosPerfil')->where('id', '[0-9]+');
 Route::delete('/achados/{id}', 'PetController@achadosDestroy')->where('id', '[0-9]+');
 
-Route::post('/achados/{id}', 'PetController@commentStore')->name('perfil');
-
+// Route::post('/achados/{id}', 'PetController@commentStore')->name('perfil');
 
 Route::get('/achados-edit/{id}', 'PetController@achadosEdit');
+Route::put('/achados-update/{id}', 'PetController@achadosUpdate');
+
 
 
 
