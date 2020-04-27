@@ -8,7 +8,7 @@
 <div class="modal-body">
     
     
-    <form action="achados" class="form-horizontal" method="POST">
+    <form action="achados" class="form-horizontal" method="POST" enctype="multipart/form-data">
     
     @csrf
 
@@ -59,7 +59,7 @@
             <label for="coat" class="col-sm-8 control-label" >Tipo de Pelo</label>
             <div class="col-sm-4">
                 <select class="form-control" name="coat" id="coat">
-                    <option disabled selected value>Escolha</option>
+                    <option disabled selected value="0">Escolha</option>
                     <option value="1">Curto</option>
                     <option value="2">Médio</option>
                     <option value="3">Longo</option>
@@ -71,7 +71,7 @@
             <label for="primary_color" class="col-sm-8 control-label">Cor Primária</label>
             <div class="col-sm-4">
                 <select class="form-control" name="primary_color" id="primary_color">
-                    <option disabled selected value>Escolha</option>
+                    <option disabled selected value="0">Escolha</option>
                     <option value="preto">Preto</option>
                     <option value="marrom">Marrom</option>
                     <option value="bege">Bege</option>
@@ -86,7 +86,7 @@
             <label for="secondary_color" class="col-sm-8 control-label">Cor Secundária (opcional)</label>
             <div class="col-sm-4">
                 <select class="form-control" name="secondary_color" id="secondary_color">
-                    <option disabled selected value>Escolha</option>
+                    <option disabled selected value="0">Escolha</option>
                     <option value="preto">Preto</option>
                     <option value="marrom">Marrom</option>
                     <option value="bege">Bege</option>
@@ -101,7 +101,7 @@
             <label for="size" class="col-sm-8 control-label">Tamanho</label>
             <div class="col-sm-4">
                 <select class="form-control" name="size" id="size">
-                    <option selected>Escolha</option>
+                    <option selected value="0">Escolha</option>
                     <option value="1">Pequeno</option>
                     <option value="2">Médio</option>
                     <option value="3">Grande</option>
@@ -140,7 +140,7 @@
             <label for="state" class="col-sm-2 control-label">UF</label>
             <div class="col-sm-4">
                 <select class="form-control" name="state" id="state">
-                    <option disabled selected value>Escolha</option>
+                    <option disabled selected value="0">Escolha</option>
                     <option value="ac">AC</option>
                     <option value="al">AL</option>
                     <option value="am">AM</option>
@@ -202,9 +202,9 @@
             <textarea class="form-control ml-3 col-sm-10" name="description" id="description" rows="4" placeholder="Digite informações que possam ajudar na identificação do bixinho!"></textarea>
         </div>
 
-        <div class="form-group">
-            <label for="pet_pic" class="col-sm-8 control-label">Enviar foto</label>
-            <input type="file" class="form-control-file ml-3" name="pet_pic" id="pet_pic">
+        <div class="form-group custom-file altura_file mb-2">
+            <label for="pet_pic" class="custom-file-label">Selecione a foto</label>
+            <input type="file" name="pet_pic" id="pet_pic" class="custom-file-input" accept="image/*"><br> 
         </div>
 
         <input type="submit" class="btn-cadastro btn btn-primary" value="Cadastrar">

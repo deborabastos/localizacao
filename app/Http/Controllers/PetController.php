@@ -7,6 +7,7 @@ use App\Pet;
 use App\Geoloc;
 use App\Comment;
 use App\User;
+use App\Pet_pic;
 use Symfony\Component\VarDumper\Caster\RedisCaster;
 
 class PetController extends Controller
@@ -64,7 +65,9 @@ class PetController extends Controller
         return view('achados.create');
     }
 
-    public function achadosStore(){
+    public function achadosStore(Request $request){
+
+        // Salva dados na tabela PET
         $pet = new Pet();
 
         $pet->alert_type = request('alert_type');
@@ -76,17 +79,35 @@ class PetController extends Controller
         $pet->size = request('size');
         $pet->breed = request('breed');
         $pet->name = request('name');
-
         $pet->event_date = request('event_date');
         $pet->description = request('description');
-
         $pet->state = request('state');
         $pet->city = request('city');
         $pet->nbhood = request('nbhood');
-
         $pet->user_id = request('user_id');
 
         $pet->save();
+
+        // Upload de foto - salva na tabela pet_pics
+        $pet_pic = new Pet_pic();
+        $pet_id = $pet->id;
+
+        $pet_pic->position_pic = 1; // ALTERAR DEPOIS !!!!!!!!!!!!!!!!!!
+        $pet_pic->pet_id = $pet_id; 
+
+
+        if($request->hasFile('pet_pic')){
+            $extension = $request->file('pet_pic')->getClientOriginalExtension();
+            
+            $fileNameToStore = $pet_id.'.'.$extension;
+        
+            $pet_pic->link_pic = 'storage/images/pet/'.$fileNameToStore;
+
+            $path = $request->file('pet_pic')->storeAs('public/images/pet', $fileNameToStore);
+        } 
+
+        $pet_pic->save();
+
 
         return redirect('achados')->with('msg','Animal cadastrado com sucesso');
     }
