@@ -43,20 +43,13 @@ class PetController extends Controller
 
     public function achadosPerfil($id){
         $pet = Pet::findOrFail($id);
-
-        $comment = Comment::where('id' , $id)
-        ->orderBy('created_at', 'desc')
-        ->get(); 
-
-        $user = Comment::where('user_id',$id)
-        ->orderBy('created_at', 'desc')
-        ->get();
-
+        $users = User::all();
+        $comments = Comment::all(); 
 
         return view('achados.show', [
             'pet' => $pet,
-            'comment' => $comment,
-            'user'=> $user,
+            'comments' => $comments,
+            'users'=> $users,
 
         ]);
     }
@@ -127,6 +120,8 @@ class PetController extends Controller
 
     public function achadosUpdate(Request $request, $id){
         $pet = Pet::find($id);
+        $users = User::all();
+
 
         $pet->alert_type = request('alert_type');
         $pet->species = request('species');
@@ -167,7 +162,11 @@ class PetController extends Controller
         $pet_pic->save();
 
 
-        return redirect('achados')->with('msg','Cadastro atualizado com sucesso');
+        return view('achados.show', [
+            'pet' => $pet,
+            'users' => $users,
+
+        ])->with('msg','Cadastro atualizado com sucesso');
     }
 
 

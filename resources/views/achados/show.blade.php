@@ -221,13 +221,13 @@ LocalizaCão - Achado
             </form>
             </div>
 
-            <div class="mt-5 mb-5">
+            {{-- <div class="mt-5 mb-5">
                 <div class="border rounded px-3">
                     <div class="form-group">
                         <label class="mt-5" for="exampleFormControlTextarea1">
-                            @foreach ($user as $use)
+                            @foreach ($users as $user)
 
-                            {{ $use->name }}
+                            {{ $user->name }}
 
                             @endforeach
                         </label>
@@ -248,7 +248,7 @@ LocalizaCão - Achado
 
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             </div>
 
