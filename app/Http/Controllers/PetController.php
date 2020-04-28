@@ -93,6 +93,7 @@ class PetController extends Controller
         $pet->size = request('size');
         $pet->breed = request('breed');
         $pet->name = request('name');
+        $pet->age = request('age');       
         $pet->event_date = request('event_date');
         $pet->description = request('description');
         $pet->state = request('state');
@@ -156,6 +157,7 @@ class PetController extends Controller
         $pet->size = request('size');
         $pet->breed = request('breed');
         $pet->name = request('name');
+        $pet->age = request('age');       
         $pet->event_date = request('event_date');
         $pet->description = request('description');
         $pet->state = request('state');

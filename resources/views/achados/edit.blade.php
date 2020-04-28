@@ -91,13 +91,13 @@ LocalizaCão - Achado
                                     <tr>
                                         <th scope="row" class="text-primary">Nome:</th>
                                         <td>
-                                            <input type="text" class="form-control" value="{{ ucfirst($pet->name)}}">
+                                            <input type="text" class="form-control" name="name" id="name" value="{{ ucfirst($pet->name)}}">
                                         </td>
                                     </tr>
                                     <tr>
                                         <th scope="row" class="text-primary">Idade:</th>
                                         <td>
-                                            <input type="text" class="form-control" value="{{ ucfirst($pet->age)}}">
+                                            <input type="text" class="form-control" name="age" id="age" value="{{ ucfirst($pet->age)}}">
                                         </td>
                                     </tr>
                                     <tr>
@@ -192,7 +192,7 @@ LocalizaCão - Achado
                                     <tr>
                                         <th scope="row" class="text-primary">Raça:</th>
                                         <td colspan="2">
-                                            <input type="text" class="form-control" value="{{ ucfirst($pet->breed) }}">
+                                            <input type="text" class="form-control" name="breed" id="breed" value="{{ ucfirst($pet->breed) }}">
                                 
                                         </td>
                                         <td></td>

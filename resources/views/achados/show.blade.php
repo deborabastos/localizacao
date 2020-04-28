@@ -126,11 +126,10 @@ LocalizaCão - Achado
                                         @else
                                         {{ ucfirst($pet->breed) }}
                                         @endif
-
-
                                     </td>
                                     <td></td>
                                 </tr>
+                                
                             </tbody>
 
                         </table>
