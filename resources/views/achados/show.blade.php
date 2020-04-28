@@ -176,6 +176,7 @@ LocalizaCão - Achado
             </form>
         </div>
 
+        @foreach ($pet->comments as $comment)
         <div class="mt-5 mb-5">
             <div class="border rounded px-3">
                 <div class="form-group">
@@ -184,18 +185,15 @@ LocalizaCão - Achado
                     </label>
                     
                     <div class="comment">
-                        <h4>
-                            @foreach($users as $user)
-
-                            {{ $user->name}}    
-                            @endforeach
-                        </h4>
                         <h5 class="mb-4">
                             
-                            @foreach ($comment as $commen)
-                            
-                            {{ $commen->comment }}
-                            @endforeach 
+                               <h3>
+                                    {{$comment->user->name}}
+                                </h3>
+                                <h6>
+                                    
+                                    {{ $comment->comment }}
+                                </h6>
                             
                         </h5>
                     </div>
@@ -203,6 +201,7 @@ LocalizaCão - Achado
                 </div>
             </div>
         </div>
+        @endforeach 
                     
                 </div>
 

@@ -45,24 +45,18 @@ class PetController extends Controller
         $pet = Pet::findOrFail($id);
 
         
-
-        $comment = Comment::where('id' , $id)
+        $comments = Comment::where('id' , $id)
         ->orderBy('created_at', 'desc')
         ->get(); 
 
-
-
-        $users = Comment::leftjoin('comments', 'comments.user_id', '=','users.id')
-        ->select('comments.*','users.name')
-        ->where('users.id', '=', 'name')->get();
 
 
 
 
         return view('achados.show', [
             'pet' => $pet,
-            'comment' => $comment,
-            'user' => $users,
+            'comment' => $comments,
+  
 
         ]);
     }
