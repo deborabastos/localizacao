@@ -40,8 +40,6 @@ LocalizaCão
 
     <!-- mapas termina-->
 
-
-
     <!-- cards com últimos cadastros-->
     <main>
         <div class="adote" id="adote">
@@ -55,7 +53,7 @@ LocalizaCão
                                     <div class="card text-center" style="width: 18rem;">
                                         
                                         <div class="box">
-                                            <img class="card-img-top" src="/storage/images/pet/{{$pet->id}}.jpg" alt="Imagem de capa do card">
+                                            <img class="card-img-top" src="{{$pet->link_pic}}" alt="Imagem de capa do card">
 
                                             @if( $pet->alert_type == "achado")
                                                 <div class="corner corner_achado">  

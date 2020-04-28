@@ -45,9 +45,14 @@ class PetController extends Controller
         $pet = Pet::findOrFail($id);
 
         
+
+
+
         $comments = Comment::where('id' , $id)
         ->orderBy('created_at', 'desc')
         ->get(); 
+
+
 
 
 

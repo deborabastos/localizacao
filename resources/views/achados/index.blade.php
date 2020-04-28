@@ -26,7 +26,7 @@ LocalizaCão - Achados
 
     <section class="container">
         <div class="row">
-
+            
             @foreach ($pets_achados as $pet_achado)
                 
                 <div class="mx-auto">
@@ -34,7 +34,7 @@ LocalizaCão - Achados
                         <div class="card text-center" style="width: 18rem;">
                             
                             <div class="box">
-                                <img class="card-img-top" src="/storage/images/pet/{{$pet_achado->id}}.jpg" alt="Imagem de capa do card">
+                                <img class="card-img-top" src="{{$pet_achado->link_pic}}" alt="Imagem de capa do card">
                                 
                                 @if( $pet_achado->alert_type == "achado")
                                     <div class="corner corner_achado">  

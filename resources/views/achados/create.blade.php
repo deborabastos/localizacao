@@ -8,7 +8,7 @@
 <div class="modal-body">
     
     
-    <form action="achados" class="form-horizontal" method="POST" enctype="multipart/form-data">
+    <form action="../achados/store" class="form-horizontal" method="POST" enctype="multipart/form-data">
     
     @csrf
 
