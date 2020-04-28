@@ -22,7 +22,6 @@ class PetController extends Controller
         return view('index', [
             'pets' => $pets,
             'i' => $i,
-
         ]);
     }
 
@@ -145,8 +144,6 @@ class PetController extends Controller
         $pet = Pet::find($id);
         $users = User::all();
         $pet_pic = Pet_pic::findOrFail($id);
-
-
 
         $pet->alert_type = request('alert_type');
         $pet->species = request('species');
