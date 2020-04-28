@@ -156,7 +156,11 @@ body {
 
 .btn-show{
   display: flex;
+<<<<<<< HEAD
   justify-content: center;
+=======
+  /* justify-content: center; */
+>>>>>>> f3a4ea5273bdb658f7e8628cedce0cf622599204
 
 }
 

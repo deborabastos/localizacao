@@ -40,7 +40,9 @@ LocalizaCão
 
     <!-- mapas termina-->
 
-    <!-- isto tambem vai ne-->
+
+
+    <!-- cards com últimos cadastros-->
     <main>
         <div class="adote" id="adote">
             <h1 class="title">Últimos cadastros</h1>
