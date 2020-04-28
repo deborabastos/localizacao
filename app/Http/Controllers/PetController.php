@@ -13,10 +13,12 @@ use Symfony\Component\VarDumper\Caster\RedisCaster;
 class PetController extends Controller
 {
     public function index() {
-        $pets = Pet::orderBy('id', 'desc')->get();    
-
+        $pets = Pet::orderBy('pets.id', 'desc')
+        ->join('pet_pics', 'pet_pics.pet_id', 'pets.id')
+        ->get();
         $i = Pet::count();
-        
+
+
         return view('index', [
             'pets' => $pets,
             'i' => $i,
@@ -29,11 +31,13 @@ class PetController extends Controller
         if($especie != ''){
             $pets_achados = Pet::where('species',$especie)
             ->where('alert_type','achado')
-            ->orderBy('id', 'desc')
+            >join('pet_pics', 'pet_pics.pet_id', 'pets.id')
+            ->orderBy('pets.id', 'desc')
             ->get();    
         } else {
             $pets_achados = Pet::where('alert_type','achado')
-            ->orderBy('id', 'desc')->get();    
+            ->join('pet_pics', 'pet_pics.pet_id', 'pets.id')
+            ->orderBy('pets.id', 'desc')->get(); 
         }
         
         return view('achados.index', [
@@ -43,41 +47,22 @@ class PetController extends Controller
 
     public function achadosPerfil($id){
         $pet = Pet::findOrFail($id);
-
-        
-
-
-
-        $comments = Comment::where('id' , $id)
-        ->orderBy('created_at', 'desc')
-        ->get(); 
-
-
-
-
-
-
+        $pet_pic = Pet_pic::findOrFail($id);
+        $users = User::all();
+        $comments = Comment::all();
 
         return view('achados.show', [
             'pet' => $pet,
-            'comment' => $comments,
-  
-
+            'pet_pic' => $pet_pic,
+            'comments' => $comments,
+            'users'=> $users,
         ]);
-    }
-
-    public function achadosEdit($id){
-        $pet = Pet::findOrFail($id);
-
-        return view('achados.edit', [
-            'pet' => $pet,
-        ]);
-        
     }
 
     public function achadosCreate(){
         return view('achados.create');
     }
+
 
     public function achadosStore(Request $request){
 
@@ -127,8 +112,24 @@ class PetController extends Controller
     }
 
 
+    public function achadosEdit($id){
+        $pet = Pet::find($id);
+        $users = User::all();
+        $pet_pic = Pet_pic::findOrFail($id);
+
+
+        return view('achados.edit', [
+            'pet' => $pet,
+            'users' => $users,
+            'pet_pic' => $pet_pic,
+
+        ]); 
+    }
+
     public function achadosUpdate(Request $request, $id){
         $pet = Pet::find($id);
+        $users = User::all();
+        $pet_pic = Pet_pic::findOrFail($id);
 
         $pet->alert_type = request('alert_type');
         $pet->species = request('species');
@@ -139,12 +140,12 @@ class PetController extends Controller
         $pet->size = request('size');
         $pet->breed = request('breed');
         $pet->name = request('name');
+        $pet->age = request('age');       
         $pet->event_date = request('event_date');
         $pet->description = request('description');
         $pet->state = request('state');
         $pet->city = request('city');
         $pet->nbhood = request('nbhood');
-        $pet->user_id = request('user_id');
 
         $pet->save();
 
@@ -170,10 +171,16 @@ class PetController extends Controller
         $pet_pic->save();
 
 
-        return redirect('achados')->with('msg','Cadastro atualizado com sucesso');
+        return view('achados.show', [
+            'pet' => $pet,
+            'users' => $users,
+            'pet_pic' => $pet_pic,
+
+
+        ])->with('msg','Cadastro atualizado com sucesso');
+
+        
     }
-
-
 
 
     public function achadosDestroy($id){
@@ -186,19 +193,20 @@ class PetController extends Controller
 
     ///tentando criar a logica de salvar comentario//
 
-    public function commentStore(Request $request){
+    public function commentStore(Request $request, $id){
         
-        $pet = Pet::all();
-        $comment = $request->all();
+
         $newComment = new Comment();
 
-        $newComment->fill($comment);
-        $newComment->pet_id = 1;
-        $newComment->user_id = 3;
+        $newComment->fill($request->all());
+        $newComment->pet_id = $id;
+        $newComment->user_id = auth()->user()->id;
 
         $newComment->save();
 
-        return redirect()->route('perfil', ['id' => 1]);
+        return redirect()->route('perfil', 
+            [$newComment->pet_id]
+    );
 
     }
 
