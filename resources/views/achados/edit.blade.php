@@ -18,7 +18,7 @@ LocalizaCão - Achado
                 <div class="row">
                     <div class="col-md-6 col-12">
                         <div class="box">
-                            <img src="/storage/images/pet/{{ $pet->id }}.jpg" class="rounded img-thumbnail" alt="foto do cachorro achado">
+                            <img src="../{{ $pet_pic->link_pic }}" class="rounded img-thumbnail" alt="foto do cachorro achado">
                             <div class="corner corner_achado corner_show">
                                 <span href="#">Achado</span>
                             </div>
@@ -192,7 +192,7 @@ LocalizaCão - Achado
                                     <tr>
                                         <th scope="row" class="text-primary">Raça:</th>
                                         <td colspan="2">
-                                            <input type="text" class="form-control" value="{{ ucfirst($pet->breed)}}">
+                                            <input type="text" class="form-control" value="{{ ucfirst($pet->breed) }}">
                                 
                                         </td>
                                         <td></td>

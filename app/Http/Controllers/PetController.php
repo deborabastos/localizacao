@@ -13,13 +13,16 @@ use Symfony\Component\VarDumper\Caster\RedisCaster;
 class PetController extends Controller
 {
     public function index() {
-        $pets = Pet::orderBy('id', 'desc')->get();    
-
+        $pets = Pet::orderBy('pets.id', 'desc')
+        ->join('pet_pics', 'pet_pics.pet_id', 'pets.id')
+        ->get();
         $i = Pet::count();
-        
+
+
         return view('index', [
             'pets' => $pets,
             'i' => $i,
+
         ]);
     }
 
@@ -29,11 +32,13 @@ class PetController extends Controller
         if($especie != ''){
             $pets_achados = Pet::where('species',$especie)
             ->where('alert_type','achado')
-            ->orderBy('id', 'desc')
+            ->join('pet_pics', 'pet_pics.pet_id', 'pets.id')
+            ->orderBy('pets.id', 'desc')
             ->get();    
         } else {
             $pets_achados = Pet::where('alert_type','achado')
-            ->orderBy('id', 'desc')->get();    
+            ->join('pet_pics', 'pet_pics.pet_id', 'pets.id')
+            ->orderBy('pets.id', 'desc')->get();    
         }
         
         return view('achados.index', [
@@ -43,11 +48,13 @@ class PetController extends Controller
 
     public function achadosPerfil($id){
         $pet = Pet::findOrFail($id);
+        $pet_pic = Pet_pic::findOrFail($id);
         $users = User::all();
         $comments = Comment::all(); 
 
         return view('achados.show', [
             'pet' => $pet,
+            'pet_pic' => $pet_pic,
             'comments' => $comments,
             'users'=> $users,
 
@@ -110,10 +117,14 @@ class PetController extends Controller
     public function achadosEdit($id){
         $pet = Pet::find($id);
         $users = User::all();
+        $pet_pic = Pet_pic::findOrFail($id);
+
 
         return view('achados.edit', [
             'pet' => $pet,
             'users' => $users,
+            'pet_pic' => $pet_pic,
+
         ]);
         
     }
@@ -121,6 +132,8 @@ class PetController extends Controller
     public function achadosUpdate(Request $request, $id){
         $pet = Pet::find($id);
         $users = User::all();
+        $pet_pic = Pet_pic::findOrFail($id);
+
 
 
         $pet->alert_type = request('alert_type');
@@ -165,6 +178,8 @@ class PetController extends Controller
         return view('achados.show', [
             'pet' => $pet,
             'users' => $users,
+            'pet_pic' => $pet_pic,
+
 
         ])->with('msg','Cadastro atualizado com sucesso');
     }

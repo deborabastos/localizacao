@@ -14,7 +14,7 @@ LocalizaCão - Achado
 
                 <div class="col-md-6 col-12">
                     <div class="box">
-                        <img src="/storage/images/pet/{{ $pet->id }}.jpg" class="rounded img-thumbnail img-perfil" alt="foto do cachorro achado">
+                    <img src="../{{ $pet_pic->link_pic }}" class="rounded img-thumbnail img-perfil" alt="foto do cachorro achado">
                         <div class="corner corner_achado corner_show">
                             <span href="#">Achado</span>
                         </div>
