@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PetController@home');
 Route::get('/pet', 'PetController@index'); 
-Route::post('/pet-store', 'PetController@store'); 
+Route::post('/pet-store', 'PetController@store');
+Route::post('/comment-store', 'PetController@commentStore'); 
+
 Route::get('/pet-create', 'PetController@create');
 
 

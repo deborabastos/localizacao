@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Pet;
 use App\Geoloc;
 use App\Comment;
@@ -70,15 +69,17 @@ class PetController extends Controller
         $users = User::all();
         $comments = Comment::all(); 
 
+        // Capturar nome do usuário e passar para página show
+
         return view('pet.show', [
             'pet' => $pet,
             'pet_pic' => $pet_pic,
             'tipo' => $tipo,
-
             'comments' => $comments,
             'users'=> $users,
             ]);
         }
+
         // Verificar com Lu se estava funcionando
         // $comment = Comment::where('id' , $id)
         // ->orderBy('created_at', 'desc')
@@ -163,7 +164,8 @@ class PetController extends Controller
         $pet_pic->save();
 
 
-        return redirect("pet?tipo='{{ $pet->alert_type }}'&especie='{{ $pet->species }}'")->with('msg','Animal cadastrado com sucesso');
+        return redirect("pet?tipo=$pet->alert_type&especie=$pet->species")->with('msg','Animal cadastrado com sucesso');
+    
     }
 
     public function edit($id){
@@ -244,8 +246,6 @@ class PetController extends Controller
             'pet' => $pet,
             'users' => $users,
             'pet_pic' => $pet_pic,
-
-
         ])->with('msg','Cadastro atualizado com sucesso');
     }
 
@@ -257,6 +257,25 @@ class PetController extends Controller
         return redirect("pet?tipo=$pet->alert_type&especie=$pet->species")->with('msg','Registro deletado com sucesso');
 
         }
+
+
+    //SALVANDO COMENTARIO NO BD//
+    public function commentStore(Request $request, $id){
+
+        $newComment = new Comment();
+
+        $newComment->comment = request('comment');
+        $newComment->pet_id = $id;
+        $newComment->user_id = auth()->user()->id;
+
+        $newComment->save();
+
+        return redirect()->route('show', 
+            [$newComment->pet_id]
+    );
+
+    }
+
 
 
 
