@@ -35,8 +35,8 @@ class CreateCommentsTable extends Migration
 
             $table->foreign('pet_id', 'fk_comments_pet_id')
                 ->references('id')->on('pets')
-                ->onDelete('no action')
-                ->onUpdate('no action');
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
 
             $table->foreign('user_id', 'fk_comments_user_id')
                 ->references('id')->on('users')

@@ -128,7 +128,10 @@ body {
   top: 0.5em;
 }
 
-
+.corner_show{
+  margin-top: 0.3rem;
+  margin-left: 0.5rem;
+}
 
 .corner span {
     color: #fff;
@@ -141,6 +144,25 @@ body {
     text-shadow: 1px 1px 1px #000;
 }
 
+.mapa-perfil{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.comment{
+  width: 200px;
+}
+
+.btn-show{
+  display: flex;
+<<<<<<< HEAD
+  justify-content: center;
+=======
+  /* justify-content: center; */
+>>>>>>> f3a4ea5273bdb658f7e8628cedce0cf622599204
+
+}
 
 /* About */
 .sobrenos,
@@ -1003,7 +1025,8 @@ mark,
   padding: 0.25rem;
   background-color: #fff;
   border: 1px solid #dee2e6;
-  border-radius: 0.25rem;
+  border-radius: 0.25rem; 
+  min-width: 80%;
   max-width: 100%;
   height: auto;
 }

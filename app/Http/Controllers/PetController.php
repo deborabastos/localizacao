@@ -6,15 +6,19 @@ use Illuminate\Http\Request;
 use App\Pet;
 use App\Geoloc;
 use App\Comment;
-
+use App\User;
+use App\Pet_pic;
+use Symfony\Component\VarDumper\Caster\RedisCaster;
 
 class PetController extends Controller
 {
     public function index() {
-        $pets = Pet::orderBy('id', 'desc')->get();    
-
+        $pets = Pet::orderBy('pets.id', 'desc')
+        ->join('pet_pics', 'pet_pics.pet_id', 'pets.id')
+        ->get();
         $i = Pet::count();
-        
+
+
         return view('index', [
             'pets' => $pets,
             'i' => $i,
@@ -27,11 +31,13 @@ class PetController extends Controller
         if($especie != ''){
             $pets_achados = Pet::where('species',$especie)
             ->where('alert_type','achado')
-            ->orderBy('id', 'desc')
+            >join('pet_pics', 'pet_pics.pet_id', 'pets.id')
+            ->orderBy('pets.id', 'desc')
             ->get();    
         } else {
             $pets_achados = Pet::where('alert_type','achado')
-            ->orderBy('id', 'desc')->get();    
+            ->join('pet_pics', 'pet_pics.pet_id', 'pets.id')
+            ->orderBy('pets.id', 'desc')->get(); 
         }
         
         return view('achados.index', [
@@ -41,16 +47,15 @@ class PetController extends Controller
 
     public function achadosPerfil($id){
         $pet = Pet::findOrFail($id);
-
-        $comment = Comment::where('pet_id',$id)
-        ->orderBy('created_at', 'desc')
-        ->get(); 
-
+        $pet_pic = Pet_pic::findOrFail($id);
+        $users = User::all();
+        $comments = Comment::all();
 
         return view('achados.show', [
             'pet' => $pet,
-            'comment' => $comment,
-
+            'pet_pic' => $pet_pic,
+            'comments' => $comments,
+            'users'=> $users,
         ]);
     }
 
@@ -58,7 +63,10 @@ class PetController extends Controller
         return view('achados.create');
     }
 
-    public function achadosStore(){
+
+    public function achadosStore(Request $request){
+
+        // Salva dados na tabela PET
         $pet = new Pet();
 
         $pet->alert_type = request('alert_type');
@@ -70,21 +78,140 @@ class PetController extends Controller
         $pet->size = request('size');
         $pet->breed = request('breed');
         $pet->name = request('name');
-
+        $pet->age = request('age');       
         $pet->event_date = request('event_date');
         $pet->description = request('description');
+        $pet->state = request('state');
+        $pet->city = request('city');
+        $pet->nbhood = request('nbhood');
+        $pet->user_id = request('user_id');
 
+        $pet->save();
+
+        // Upload de foto - salva na tabela pet_pics
+        $pet_pic = new Pet_pic();
+        $pet_id = $pet->id;
+
+        $pet_pic->position_pic = 1; // ALTERAR DEPOIS !!!!!!!!!!!!!!!!!!
+        $pet_pic->pet_id = $pet_id; 
+
+
+        if($request->hasFile('pet_pic')){
+            $extension = $request->file('pet_pic')->getClientOriginalExtension();
+            
+            $fileNameToStore = $pet_id.'.'.$extension;
+        
+            $pet_pic->link_pic = 'storage/images/pet/'.$fileNameToStore;
+
+            $path = $request->file('pet_pic')->storeAs('public/images/pet', $fileNameToStore);
+        } 
+
+        $pet_pic->save();
+
+
+        return redirect('achados')->with('msg','Animal cadastrado com sucesso');
+    }
+
+
+    public function achadosEdit($id){
+        $pet = Pet::find($id);
+        $users = User::all();
+        $pet_pic = Pet_pic::findOrFail($id);
+
+
+        return view('achados.edit', [
+            'pet' => $pet,
+            'users' => $users,
+            'pet_pic' => $pet_pic,
+
+        ]); 
+    }
+
+    public function achadosUpdate(Request $request, $id){
+        $pet = Pet::find($id);
+        $users = User::all();
+        $pet_pic = Pet_pic::findOrFail($id);
+
+        $pet->alert_type = request('alert_type');
+        $pet->species = request('species');
+        $pet->sex = request('sex');
+        $pet->coat = request('coat');
+        $pet->primary_color = request('primary_color');
+        $pet->secondary_color = request('secondary_color');
+        $pet->size = request('size');
+        $pet->breed = request('breed');
+        $pet->name = request('name');
+        $pet->age = request('age');       
+        $pet->event_date = request('event_date');
+        $pet->description = request('description');
         $pet->state = request('state');
         $pet->city = request('city');
         $pet->nbhood = request('nbhood');
 
-        $pet->user_id = request('user_id');
-
-
         $pet->save();
 
-        return redirect('achados');
+
+        // Upload de foto - salva na tabela pet_pics
+        $pet_id = $pet->id;
+        $pet_pic = Pet_pic::find($pet_id);
+
+        $pet_pic->position_pic = 1; // ALTERAR DEPOIS !!!!!!!!!!!!!!!!!!
+        $pet_pic->pet_id = $pet_id; 
+
+
+        if($request->hasFile('pet_pic')){
+            $extension = $request->file('pet_pic')->getClientOriginalExtension();
+            
+            $fileNameToStore = $pet_id.'.'.$extension;
+        
+            $pet_pic->link_pic = 'storage/images/pet/'.$fileNameToStore;
+
+            $path = $request->file('pet_pic')->storeAs('public/images/pet', $fileNameToStore);
+        } 
+
+        $pet_pic->save();
+
+
+        return view('achados.show', [
+            'pet' => $pet,
+            'users' => $users,
+            'pet_pic' => $pet_pic,
+
+
+        ])->with('msg','Cadastro atualizado com sucesso');
+
+        
     }
+
+
+    public function achadosDestroy($id){
+        $pet = Pet::findOrFail($id);
+        $pet->delete();
+
+        return redirect('achados')->with('msg','Registro deletado com sucesso');
+
+        }
+
+    //SALVANDO COMENTARIO NO BD//
+
+    public function commentStore(Request $request, $id){
+        
+
+        $newComment = new Comment();
+
+        $newComment->fill($request->all());
+        $newComment->pet_id = $id;
+        $newComment->user_id = auth()->user()->id;
+
+        $newComment->save();
+
+        return redirect()->route('perfil', 
+            [$newComment->pet_id]
+    );
+
+    }
+
+
 
 
 

@@ -40,9 +40,7 @@ LocalizaCão
 
     <!-- mapas termina-->
 
-
-
-    <!-- isto tambem vai ne-->
+    <!-- cards com últimos cadastros-->
     <main>
         <div class="adote" id="adote">
             <h1 class="title">Últimos cadastros</h1>
@@ -55,7 +53,7 @@ LocalizaCão
                                     <div class="card text-center" style="width: 18rem;">
                                         
                                         <div class="box">
-                                            <img class="card-img-top" src="images/pet/{{$pet->id}}.jpg" alt="Imagem de capa do card">
+                                            <img class="card-img-top" src="{{$pet->link_pic}}" alt="Imagem de capa do card">
 
                                             @if( $pet->alert_type == "achado")
                                                 <div class="corner corner_achado">  
@@ -82,7 +80,7 @@ LocalizaCão
                                             <div class="text-limit">
                                                 <p class="card-text"> {{ ucfirst($pet->description) }}</p>
                                             </div>
-                                            <a href="adote/{{$pet->id}}" class="btn btn-primary mt-3">Visitar</a>
+                                            <a href="{{ $pet->alert_type}}s/{{$pet->id}}" class="btn btn-primary mt-3">Visitar</a>
                                         </div>
                                     </div>
                                 </div>

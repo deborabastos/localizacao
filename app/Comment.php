@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\User;
+use App\Pet;
 use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
@@ -18,8 +20,8 @@ class Comment extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function alert(){
-        return $this->belongsTo(Alert::class);
+    public function pet(){
+        return $this->belongsTo(Pet::class);
     }
 
 }

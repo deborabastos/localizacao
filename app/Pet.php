@@ -3,7 +3,7 @@
 namespace App;
 
 use App\Pet_pic;
-use App\Alert;
+use App\Comment;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 
@@ -31,8 +31,8 @@ class Pet extends Model
         'user_id',
     ];
 
-    public function alert(){
-        return $this->hasMany(Alert::class);
+    public function comments(){
+        return $this->hasMany(Comment::class);
     }
 
     public function pet_pic(){
@@ -43,4 +43,5 @@ class Pet extends Model
         return $this->belongsTo(User::class);
     }
 
+    
 }
