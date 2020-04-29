@@ -108,7 +108,7 @@ body {
     background-color: rgba(225, 83, 97, 0.7);
     overflow: hidden;
     position: absolute;
-    left: -0.5em;
+    left: -0.1em;
     top: 0.5em;
 }
 
@@ -144,6 +144,12 @@ body {
     text-shadow: 1px 1px 1px #000;
 }
 
+.form-cadastro{
+  width: 600px;
+  border: solid 1px gray;
+  margin: auto;
+}
+
 .mapa-perfil{
   display: flex;
   justify-content: center;
@@ -156,12 +162,12 @@ body {
 
 .btn-show{
   display: flex;
-<<<<<<< HEAD
   justify-content: center;
-=======
-  /* justify-content: center; */
->>>>>>> f3a4ea5273bdb658f7e8628cedce0cf622599204
 
+}
+
+.ast-required{
+  color: red;
 }
 
 /* About */

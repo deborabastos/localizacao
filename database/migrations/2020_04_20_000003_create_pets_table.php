@@ -25,23 +25,23 @@ class CreatePetsTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('alert_type', 10)->nullable(); //TIRAR
-            $table->date('event_date')->nullable(); //TIRAR
-            $table->string('species', 10)->nullable(); //TIRAR
+            $table->string('alert_type', 10);
+            $table->date('event_date');
+            $table->string('species', 10);
             $table->string('breed', 45)->nullable();
-            $table->string('primary_color', 15)->nullable(); //TIRAR
+            $table->string('primary_color', 15);
             $table->string('secondary_color', 15)->nullable();
-            $table->string('sex', 10)->nullable(); //TIRAR
-            $table->string('coat', 5)->nullable(); //TIRAR
-            $table->unsignedInteger('size')->nullable(); //TIRAR
+            $table->string('sex', 10);
+            $table->string('coat', 5);
+            $table->unsignedInteger('size');
             $table->string('name', 45)->nullable();
             $table->string('age', 45)->nullable();
-            $table->string('state', 10)->nullable(); //TIRAR
-            $table->string('city', 40)->nullable(); //TIRAR
-            $table->string('nbhood', 40)->nullable(); //TIRAR
+            $table->string('state', 10);
+            $table->string('city', 40);
+            $table->string('nbhood', 40);
             $table->string('description',600)->nullable();
             $table->unsignedInteger('avaliable_adoption')->nullable();
-            $table->unsignedInteger('user_id')->nullable(); //TIRAR
+            $table->unsignedInteger('user_id');
             $table->timestamps();
 
             $table->index(["user_id"], 'fk_pets_user_id');

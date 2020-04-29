@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Pet;
 use App\Geoloc;
 use App\Comment;
@@ -12,12 +13,11 @@ use Symfony\Component\VarDumper\Caster\RedisCaster;
 
 class PetController extends Controller
 {
-    public function index() {
+    public function home() {
         $pets = Pet::orderBy('pets.id', 'desc')
         ->join('pet_pics', 'pet_pics.pet_id', 'pets.id')
         ->get();
         $i = Pet::count();
-
 
         return view('index', [
             'pets' => $pets,
@@ -25,46 +25,100 @@ class PetController extends Controller
         ]);
     }
 
-    public function achados() {
+    public function index() {
         $especie = request('especie');
+        $tipo = request('tipo');
+        $adotar = request('adotar');
 
-        if($especie != ''){
-            $pets_achados = Pet::where('species',$especie)
-            ->where('alert_type','achado')
-            >join('pet_pics', 'pet_pics.pet_id', 'pets.id')
-            ->orderBy('pets.id', 'desc')
-            ->get();    
+        if($adotar == "s"){
+            if($especie != ''){
+                $pets = Pet::where('species',$especie)
+                ->where('avaliable_adoption','1')
+                ->orderBy('pets.id', 'desc')
+                ->get();
+            } else {
+                $pets = Pet::where('avaliable_adoption','1')
+                ->orderBy('pets.id', 'desc')->get();    
+            }
         } else {
-            $pets_achados = Pet::where('alert_type','achado')
-            ->join('pet_pics', 'pet_pics.pet_id', 'pets.id')
-            ->orderBy('pets.id', 'desc')->get(); 
+            if($especie != ''){
+                $pets = Pet::where('species',$especie)
+                ->where('alert_type', $tipo)
+                ->orderBy('pets.id', 'desc')
+                ->get();    
+            } else {
+                $pets = Pet::where('alert_type', $tipo)
+                ->orderBy('pets.id', 'desc')->get();    
+            }
+    
         }
-        
-        return view('achados.index', [
-            'pets_achados' => $pets_achados,
-        ]);
+            
+            return view('pet.index', [
+                'pets' => $pets,
+                'especie' => $especie,
+                'tipo' => $tipo,
+                'adotar' => $adotar,
+            ]);
     }
 
-    public function achadosPerfil($id){
+    
+    public function show($id){
         $pet = Pet::findOrFail($id);
         $pet_pic = Pet_pic::findOrFail($id);
-        $users = User::all();
-        $comments = Comment::all();
+        $tipo = request('tipo');
 
-        return view('achados.show', [
+        $users = User::all();
+        $comments = Comment::all(); 
+
+        return view('pet.show', [
             'pet' => $pet,
             'pet_pic' => $pet_pic,
+            'tipo' => $tipo,
+
             'comments' => $comments,
             'users'=> $users,
+            ]);
+        }
+        // Verificar com Lu se estava funcionando
+        // $comment = Comment::where('id' , $id)
+        // ->orderBy('created_at', 'desc')
+        // ->get(); 
+
+        // $users = Comment::leftjoin('comments', 'comments.user_id', '=','users.id')
+        // ->select('comments.*','users.name')
+        // ->where('users.id', '=', 'name')->get();
+
+        // return view('achados.show', [
+        //     'pet' => $pet,
+        //     'comment' => $comment,
+        //     'user' => $users,
+
+   
+
+    public function create(){
+        $tipo = request('tipo');
+        
+        return view('pet.create', [
+            'tipo' => $tipo,
         ]);
     }
 
-    public function achadosCreate(){
-        return view('achados.create');
-    }
+    public function store(Request $request){
 
-
-    public function achadosStore(Request $request){
+        $request->validate([
+            'alert_type' => "required",
+            'species' => "required",
+            'sex' => "required",
+            'coat' => "required",
+            'primary_color' => "required",
+            'size' => "required",
+            'breed' => "required",
+            'event_date' => "required",
+            'state' => "required",
+            'city' => "required",
+            'nbhood' => "required",
+            'user_id' => "required"
+         ]);
 
         // Salva dados na tabela PET
         $pet = new Pet();
@@ -109,17 +163,16 @@ class PetController extends Controller
         $pet_pic->save();
 
 
-        return redirect('achados')->with('msg','Animal cadastrado com sucesso');
+        return redirect('pet')->with('msg','Animal cadastrado com sucesso');
     }
 
-
-    public function achadosEdit($id){
+    public function edit($id){
         $pet = Pet::find($id);
         $users = User::all();
         $pet_pic = Pet_pic::findOrFail($id);
 
 
-        return view('achados.edit', [
+        return view('pet.edit', [
             'pet' => $pet,
             'users' => $users,
             'pet_pic' => $pet_pic,
@@ -127,7 +180,22 @@ class PetController extends Controller
         ]); 
     }
 
-    public function achadosUpdate(Request $request, $id){
+    public function update(Request $request, $id){
+        $request->validate([
+            'alert_type' => "required",
+            'species' => "required",
+            'sex' => "required",
+            'coat' => "required",
+            'primary_color' => "required",
+            'size' => "required",
+            'breed' => "required",
+            'event_date' => "required",
+            'state' => "required",
+            'city' => "required",
+            'nbhood' => "required",
+         ]);
+        
+        
         $pet = Pet::find($id);
         $users = User::all();
         $pet_pic = Pet_pic::findOrFail($id);
@@ -172,116 +240,27 @@ class PetController extends Controller
         $pet_pic->save();
 
 
-        return view('achados.show', [
+        return view('pet.show', [
             'pet' => $pet,
             'users' => $users,
             'pet_pic' => $pet_pic,
 
 
         ])->with('msg','Cadastro atualizado com sucesso');
-
-        
     }
 
 
-    public function achadosDestroy($id){
+    public function destroy($id){
         $pet = Pet::findOrFail($id);
         $pet->delete();
 
-        return redirect('achados')->with('msg','Registro deletado com sucesso');
+        return redirect("pet?tipo=$pet->alert_type&especie=$pet->species")->with('msg','Registro deletado com sucesso');
 
         }
 
-    //SALVANDO COMENTARIO NO BD//
-
-    public function commentStore(Request $request, $id){
-        
-
-        $newComment = new Comment();
-
-        $newComment->fill($request->all());
-        $newComment->pet_id = $id;
-        $newComment->user_id = auth()->user()->id;
-
-        $newComment->save();
-
-        return redirect()->route('perfil', 
-            [$newComment->pet_id]
-    );
-
-    }
 
 
-
-
-
-
-    public function perdidos() {
-        $especie = request('especie');
-
-        if($especie != ''){
-            $pets_perdidos = Pet::where('species',$especie)
-            ->where('alert_type','perdido')
-            ->orderBy('id', 'desc')
-            ->get();    
-        } else {
-            $pets_perdidos = Pet::where('alert_type','perdido')
-            ->orderBy('id', 'desc')->get();    
-        }
-        
-        return view('perdidos.index', [
-            'pets_perdidos' => $pets_perdidos,
-        ]);
-    }
-
-    public function perdidosPerfil($id){
-        $pet = Pet::findOrFail($id);
-
-
-        return view('perdidos.show', [
-            'pet' => $pet,
-        ]);
-    }
-
-    public function perdidosCreate(){
-        return view('perdidos.create');
-    }
-
-    public function adote() {
-    $especie = request('especie');
-
-        if($especie != ''){
-            $pets_adocao = Pet::where('species',$especie)
-            ->where('avaliable_adoption',1)
-            ->orderBy('id', 'desc')
-            ->get();    
-        } else {
-            $pets_adocao = Pet::where('avaliable_adoption',1)
-            ->orderBy('id', 'desc')
-            ->get();    
-        }
-        
-        return view('adote.index', [
-            'pets_adocao' => $pets_adocao,
-        ]);
-
-
-
-        return view('adote.index');
-    }
-
-    public function adotePerfil($id){
-        $pet = Pet::findOrFail($id);
-
-        return view('adote.show', [
-            'pet' => $pet,
-        ]);
-    }
-
-    public function adoteCreate(){
-        return view('adote.create');
-    }
-
+    
     public function quemSomos(){
         return view('quem_somos');
     }

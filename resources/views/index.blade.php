@@ -45,15 +45,16 @@ LocalizaCão
         <div class="adote" id="adote">
             <h1 class="title">Últimos cadastros</h1>
             <section class="container">
-                <div class="row">                    
+                <div class="row">             
+       
                     @foreach ($pets as $i => $pet)
                         @if($i < 6)
                             <div class="mx-auto">
                                 <div class="col-md-6 col-12">
                                     <div class="card text-center" style="width: 18rem;">
-                                        
-                                        <div class="box">
-                                            <img class="card-img-top" src="{{$pet->link_pic}}" alt="Imagem de capa do card">
+                                        <div class="box">      
+                                                
+                                            <img class="card-img-top" src=" {{ $pet->link_pic }}" alt="Imagem de capa do card">
 
                                             @if( $pet->alert_type == "achado")
                                                 <div class="corner corner_achado">  
@@ -80,13 +81,14 @@ LocalizaCão
                                             <div class="text-limit">
                                                 <p class="card-text"> {{ ucfirst($pet->description) }}</p>
                                             </div>
-                                            <a href="{{ $pet->alert_type}}s/{{$pet->id}}" class="btn btn-primary mt-3">Visitar</a>
+                                            <a href="pet/{{$pet->id}}" class="btn btn-primary mt-3">Visitar</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         @endif
                     @endforeach
+
                 </div>
             </section>
     </main>

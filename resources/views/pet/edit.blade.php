@@ -10,7 +10,7 @@ LocalizaCão - Achado
 <main>
     <a href="javascript:history.back()"> <<-- Voltar </a>
 
-<form action="../achados-update/{{ $pet->id }}" class="form-horizontal" method="POST" enctype="multipart/form-data">
+<form action="../pet-update/{{ $pet->id }}" class="form-horizontal" method="POST" enctype="multipart/form-data">
         @csrf
             @method('PUT')
 
@@ -18,10 +18,19 @@ LocalizaCão - Achado
                 <div class="row">
                     <div class="col-md-6 col-12">
                         <div class="box">
-                            <img src="../{{ $pet_pic->link_pic }}" class="rounded img-thumbnail" alt="foto do cachorro achado">
-                            <div class="corner corner_achado corner_show">
-                                <span href="#">Achado</span>
-                            </div>
+                            <img src="../{{ $pet_pic->link_pic }}" class="rounded img-thumbnail" alt="foto do cachorro">
+                            
+                            @if($pet->alert_type == "achado")
+                                <div class="corner corner_achado">  
+                                    <span href="#">Achado</span>
+                                </div>                                            
+                            @elseif($pet->alert_type == "perdido")
+                                <div class="corner corner_perdido">  
+                                    <span href="#">Perdido</span>
+                                </div> 
+                            @endif
+
+
 
                         </div>
                     </div>
@@ -51,7 +60,7 @@ LocalizaCão - Achado
                             <table class="table table-borderless table-sm">
                                 <tbody>
                                     <tr>
-                                        <th scope="row" class="text-primary">Tipo de Alerta:</th>
+                                        <th scope="row" class="text-primary">Tipo de Alerta<sup class="ast-required">*</sup>    </th>
                                         <td colspan="2">
                                             <div class="form-group">
                                                 <div class="">
@@ -69,7 +78,7 @@ LocalizaCão - Achado
                                     </tr>
 
                                     <tr>
-                                        <th scope="row" class="text-primary">Espécie:</th>
+                                        <th scope="row" class="text-primary">Espécie<sup class="ast-required">*</sup></th>
                                         <td colspan="2">
                                             <div class="form-group">
                                                 <div class="">
@@ -89,19 +98,19 @@ LocalizaCão - Achado
 
 
                                     <tr>
-                                        <th scope="row" class="text-primary">Nome:</th>
+                                        <th scope="row" class="text-primary">Nome</th>
                                         <td>
                                             <input type="text" class="form-control" name="name" id="name" value="{{ ucfirst($pet->name)}}">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row" class="text-primary">Idade:</th>
+                                        <th scope="row" class="text-primary">Idade</th>
                                         <td>
                                             <input type="text" class="form-control" name="age" id="age" value="{{ ucfirst($pet->age)}}">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row" class="text-primary">Sexo:</th>
+                                        <th scope="row" class="text-primary">Sexo<sup class="ast-required">*</sup></th>
                                         <td colspan="2">
                                             <div class="form-group">
                                                 <div class="">
@@ -119,7 +128,7 @@ LocalizaCão - Achado
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row" class="text-primary">Tipo de pelo:</th>
+                                        <th scope="row" class="text-primary">Tipo de pelo<sup class="ast-required">*</sup></th>
                                         <td colspan="2">
                                             <div class="form-group">
                                                 <div class="">
@@ -136,10 +145,10 @@ LocalizaCão - Achado
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <th scope="row" class="text-primary">Cor:</th>
+                                        <th scope="row" class="text-primary">Cor</th>
                                         <td colspan="2">
                                             <div class="form-group">
-                                                <label for="primary_color" class="control-label">Cor Primária</label>
+                                                <label for="primary_color" class="control-label">Cor Primária<sup class="ast-required">*</sup></label>
                                                 <div class="">
                                                     <select class="form-control" name="primary_color" id="primary_color">
                                                         <option disabled selected value="0" {{ $pet->primary_color == 0 ? 'selected' : '' }}>Escolha</option>
@@ -172,7 +181,7 @@ LocalizaCão - Achado
                                     </tr>
 
                                     <tr>
-                                        <th>Tamanho</th>
+                                        <th>Tamanho<sup class="ast-required">*</sup></th>
                                         <td>
                                             <div class="form-group">
                                                 <div class="">
@@ -190,7 +199,7 @@ LocalizaCão - Achado
                                     </tr>
 
                                     <tr>
-                                        <th scope="row" class="text-primary">Raça:</th>
+                                        <th scope="row" class="text-primary">Raça</th>
                                         <td colspan="2">
                                             <input type="text" class="form-control" name="breed" id="breed" value="{{ ucfirst($pet->breed) }}">
                                 
@@ -221,7 +230,7 @@ LocalizaCão - Achado
                             <table class="table table-borderless table-sm">
                                 <tbody>
                                     <tr>
-                                       <th>UF</th>
+                                       <th>UF<sup class="ast-required">*</sup></th>
                                         <td>
                                             <div class="form-group">
                                                 <div class="">
@@ -259,7 +268,7 @@ LocalizaCão - Achado
                                         </td>                                     
                                     </tr>
                                     <tr>
-                                        <th>Cidade</th>
+                                        <th>Cidade<sup class="ast-required">*</sup></th>
                                         <td>
                                             <div class="form-group">
                                                 <div class="">
@@ -269,7 +278,7 @@ LocalizaCão - Achado
                                         </td> 
                                     </tr>
                                     <tr>
-                                        <th>Bairro</th>
+                                        <th>Bairro<sup class="ast-required">*</sup></th>
                                         <td>
                                             <div class="form-group">
                                                 <div class="">
@@ -279,7 +288,7 @@ LocalizaCão - Achado
                                        </td>                                    
                                     </tr>
                                     <tr>
-                                        <th>Data</th>
+                                        <th>Data<sup class="ast-required">*</sup></th>
                                         <td>
                                             <div class="form-group">
                                                 <div class="">

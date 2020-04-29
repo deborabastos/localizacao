@@ -1,23 +1,28 @@
 @extends('layouts.layout')
 
 @section('title')
-LocalizaCão - Achado
+LocalizaCão 
 @endsection
 
 
 @section('content')
 
 <main>
-    <a href="javascript:history.back()">
-        <<-- Voltar</a> <section class="container mt-5">
+    <a href="javascript:history.back()"> <<-- Voltar </a> <section class="container mt-5">
             <div class="row">
 
                 <div class="col-md-6 col-12">
                     <div class="box">
                     <img src="../{{ $pet_pic->link_pic }}" class="rounded img-thumbnail img-perfil" alt="foto do cachorro achado">
-                        <div class="corner corner_achado corner_show">
-                            <span href="#">Achado</span>
-                        </div>
+                        @if($pet->alert_type == "achado")
+                            <div class="corner corner_achado corner_show">  
+                                <span href="#">Achado</span>
+                            </div>                                              
+                        @elseif($pet->alert_type == "perdido")
+                            <div class="corner corner_perdido corner_show">  
+                                <span href="#">Perdido</span>
+                            </div> 
+                        @endif
 
                     </div>
                 </div>
@@ -135,9 +140,9 @@ LocalizaCão - Achado
                         </table>
 
                         <div class="btn-show mt-4">
-                            <a href="/achados-edit/{{ $pet->id }}" class="btn btn-primary btn-sm mr-3">Editar</a>
+                            <a href="/pet-edit/{{ $pet->id }}" class="btn btn-primary btn-sm mr-3">Editar</a>
 
-                            <form class="ml-3" action="/achados/{{ $pet->id }}" method="POST">
+                            <form class="ml-3" action="/pet/{{ $pet->id }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger btn-sm">Excluir</button>
@@ -176,6 +181,7 @@ LocalizaCão - Achado
                                 <tr>
                                     <th>Data</th>
                                     <td>
+
                                         {{ $pet->event_date }}
                                     </td>
                                 </tr>
@@ -214,42 +220,43 @@ LocalizaCão - Achado
                             </form>
                             <textarea class="form-control mb-4" id="exampleFormControlTextarea1" name="comment" rows="7">
 
-                    </textarea>
+</textarea>
                             <button class="btn btn-primary" type="submit">Enviar</button>
                         </div>
             </form>
-        </div>
+            </div>
 
-        @foreach ($pet->comments as $comment)
-        <div class="mt-5 mb-5">
-            <div class="border rounded px-3">
-                <div class="form-group">
-                    <label class="mt-5" for="exampleFormControlTextarea1">
-                        
-                    </label>
-                    
-                    <div class="comment">
-                        <h5 class="mb-4">
-                            
-                               <h3>
-                                    {{$comment->user->name}}
-                                </h3>
-                                <h6>
-                                    
-                                    {{ $comment->comment }}
-                                </h6>
-                            
-                        </h5>
+            {{-- <div class="mt-5 mb-5">
+                <div class="border rounded px-3">
+                    <div class="form-group">
+                        <label class="mt-5" for="exampleFormControlTextarea1">
+                            @foreach ($users as $user)
+
+                            {{ $user->name }}
+
+                            @endforeach
+                        </label>
+
+                        <div class="comment">
+                            <h4>
+                                Rogério
+                            </h4>
+                            <h5 class="mb-4">
+                                @foreach ($comment as $commen)
+
+
+                                {{ $commen->comment }}
+
+                                @endforeach
+                            </h5>
+                        </div>
+
                     </div>
                     
                 </div>
-            </div> 
+            </div> --}}
 
             </div>
-        </div>
-        @endforeach 
-                    
-                </div>
 
             </div>
             </section>
