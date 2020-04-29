@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('title')
-LocalizaCão - Achado
+LocalizaCão - {{ ucfirst($tipo) }}
 @endsection
 
 
@@ -13,13 +13,17 @@ LocalizaCão - Achado
     
 <div class="container">
     <div class="form-cadastro mb-5">
-        <form action="../pet-store" class="form-horizontal p-3" method="POST" enctype="multipart/form-data">
+        <form action="../pet-store" class="form-horizontal" method="POST" enctype="multipart/form-data">
         
         @csrf
+        <div class="form-header">
+            <div class="logo-pegada">
+                <img src="/images/logo_pegada.png" alt="">
+            </div>
+            <h3 class="titulo-cadastro">Cadastro Pet {{ ucfirst($tipo) }} </h3>
+        </div>
 
-            <h2>Cadastro Pet</h2>
-            <hr>    
-
+        <div class="form-body">
             <h4 class="titulo-form">Dados do animal</h4>
 
             {{-- PASSA ALERT_TYPE "ACHADO" --}}
@@ -37,7 +41,7 @@ LocalizaCão - Achado
                 <p class="col-sm-2 p-form">Espécie<sup class="ast-required">*</sup></p>
                 <div class="col-sm-4">
                     <div class="custom-control custom-radio">
-                        <input class="custom-control-input" type="radio" name="species" id="gato" value="gato" required>
+                        <input class="custom-control-input" type="radio" name="species" id="gato" value="gato">
                         <label class="custom-control-label mr-2" for="gato">Gato</label>
                     </div>
                     <div class="custom-control custom-radio">
@@ -57,7 +61,7 @@ LocalizaCão - Achado
                 <p class="col-sm-2 p-form">Sexo<sup class="ast-required">*</sup></p>
                 <div class="col-sm-4">
                     <div class="custom-control custom-radio">
-                        <input class="custom-control-input" type="radio" name="sex" id="femea" value="f" required>
+                        <input class="custom-control-input" type="radio" name="sex" id="femea" value="f">
                         <label class="custom-control-label mr-2" for="femea">Fêmea</label>
                     </div>
                     <div class="custom-control custom-radio">
@@ -71,7 +75,7 @@ LocalizaCão - Achado
             <div class="form-group">
                 <label for="coat" class="col-sm-8 control-label" >Tipo de Pelo<sup class="ast-required">*</sup></label>
                 <div class="col-sm-4">
-                    <select class="form-control" name="coat" id="coat" required>
+                    <select class="form-control" name="coat" id="coat">
                         <option disabled selected value="">Escolha</option>
                         <option value="1">Curto</option>
                         <option value="2">Médio</option>
@@ -83,8 +87,8 @@ LocalizaCão - Achado
             <div class="form-group">
                 <label for="primary_color" class="col-sm-8 control-label">Cor Primária<sup class="ast-required">*</sup></label>
                 <div class="col-sm-4">
-                    <select class="form-control" name="primary_color" id="primary_color" required>
-                        <option disabled selected value="" required>Escolha</option>
+                    <select class="form-control" name="primary_color" id="primary_color">
+                        <option disabled selected value="">Escolha</option>
                         <option value="preto">Preto</option>
                         <option value="marrom">Marrom</option>
                         <option value="bege">Bege</option>
@@ -99,7 +103,7 @@ LocalizaCão - Achado
                 <label for="secondary_color" class="col-sm-8 control-label">Cor Secundária (opcional)</label>
                 <div class="col-sm-4">
                     <select class="form-control" name="secondary_color" id="secondary_color">
-                        <option disabled selected value="" required>Escolha</option>
+                        <option disabled selected value="">Escolha</option>
                         <option value="preto">Preto</option>
                         <option value="marrom">Marrom</option>
                         <option value="bege">Bege</option>
@@ -113,8 +117,8 @@ LocalizaCão - Achado
             <div class="form-group">
                 <label for="size" class="col-sm-8 control-label">Tamanho<sup class="ast-required">*</sup></label>
                 <div class="col-sm-4">
-                    <select class="form-control" name="size" id="size" required>
-                        <option selected value="" required>Escolha</option>
+                    <select class="form-control" name="size" id="size">
+                        <option selected value="">Escolha</option>
                         <option value="1">Pequeno</option>
                         <option value="2">Médio</option>
                         <option value="3">Grande</option>
@@ -152,7 +156,7 @@ LocalizaCão - Achado
             <div class="form-group">
                 <label for="state" class="col-sm-2 control-label">UF<sup class="ast-required">*</sup></label>
                 <div class="col-sm-4">
-                    <select class="form-control" name="state" id="state" required>
+                    <select class="form-control" name="state" id="state">
                         <option disabled selected value="">Escolha</option>
                         <option value="ac">AC</option>
                         <option value="al">AL</option>
@@ -187,7 +191,7 @@ LocalizaCão - Achado
             <div class="form-group">
                 <label for="city" class="col-sm-2 control-label">Cidade<sup class="ast-required">*</sup></label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" name="city" id="city" placeholder="Digite a cidade" required>
+                    <input type="text" class="form-control" name="city" id="city" placeholder="Digite a cidade">
                 
                     <div class="invalid-feedback">
                         Looks bad!
@@ -198,14 +202,14 @@ LocalizaCão - Achado
             <div class="form-group">
                 <label for="nbhood" class="col-sm-2 control-label">Bairro<sup class="ast-required">*</sup></label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" name="nbhood" id="nbhood" placeholder="Digite o Bairro" required>
+                    <input type="text" class="form-control" name="nbhood" id="nbhood" placeholder="Digite o Bairro">
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="event_date" class="col-sm-2 control-label">Data<sup class="ast-required">*</sup></label>
                 <div class="col-sm-8">
-                    <input type="date" class="form-control" name="event_date" id="event_date" placeholder="Data que o pet foi encontrado" required>
+                    <input type="date" class="form-control" name="event_date" id="event_date" placeholder="Data que o pet foi encontrado">
                 </div>
             </div>        
 
@@ -221,10 +225,11 @@ LocalizaCão - Achado
 
             <div class="form-group custom-file altura_file mb-2">
                 <label for="pet_pic" class="custom-file-label">Selecione a foto<sup class="ast-required">*</sup></label>
-                <input type="file" name="pet_pic" id="pet_pic" class="custom-file-input" accept="image/*" required><br> 
+                <input type="file" name="pet_pic" id="pet_pic" class="custom-file-input" accept="image/*"><br> 
             </div>
 
             <input type="submit" class="btn-cadastro btn btn-primary" value="Cadastrar">
+        </div>
 
         </form>
     </div>

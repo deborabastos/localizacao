@@ -1,7 +1,19 @@
 @extends('layouts.layout')
 
 @section('title')
-LocalizaCão
+LocalizaCão - 
+
+@if($adotar == "s")
+    Adote
+@else
+{{ ucfirst($tipo) }}s
+
+@endif
+
+
+
+
+
 @endsection
 
 @section('content')

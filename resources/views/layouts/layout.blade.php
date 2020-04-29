@@ -203,9 +203,9 @@
                 <h2 class="footer-h2">MAPA DO SITE</h2>
                 <div class="footer-border"></div>
                 <ul>
-                    <li><a href="/achados">Achados</a></li>
-                    <li><a href="/perdidos">Perdidos</a></li>
-                    <li><a href="/adote">Adote</a> </li>
+                    <li><a href="/pet?tipo=achado">Achados</a></li>
+                    <li><a href="/pet?tipo=perdido">Perdidos</a></li>
+                    <li><a href="/pet?adotar=s">Adote</a> </li>
                 </ul>
             </div>
 

@@ -105,20 +105,20 @@ class PetController extends Controller
 
     public function store(Request $request){
 
-        $request->validate([
-            'alert_type' => "required",
-            'species' => "required",
-            'sex' => "required",
-            'coat' => "required",
-            'primary_color' => "required",
-            'size' => "required",
-            'breed' => "required",
-            'event_date' => "required",
-            'state' => "required",
-            'city' => "required",
-            'nbhood' => "required",
-            'user_id' => "required"
-         ]);
+        // $request->validate([
+        //     'alert_type' => "required",
+        //     'species' => "required",
+        //     'sex' => "required",
+        //     'coat' => "required",
+        //     'primary_color' => "required",
+        //     'size' => "required",
+        //     'breed' => "required",
+        //     'event_date' => "required",
+        //     'state' => "required",
+        //     'city' => "required",
+        //     'nbhood' => "required",
+        //     'user_id' => "required"
+        //  ]);
 
         // Salva dados na tabela PET
         $pet = new Pet();
@@ -163,7 +163,7 @@ class PetController extends Controller
         $pet_pic->save();
 
 
-        return redirect('pet')->with('msg','Animal cadastrado com sucesso');
+        return redirect("pet?tipo=$pet->alert_type&especie=$pet->species")->with('msg','Animal cadastrado com sucesso');
     }
 
     public function edit($id){
@@ -181,19 +181,19 @@ class PetController extends Controller
     }
 
     public function update(Request $request, $id){
-        $request->validate([
-            'alert_type' => "required",
-            'species' => "required",
-            'sex' => "required",
-            'coat' => "required",
-            'primary_color' => "required",
-            'size' => "required",
-            'breed' => "required",
-            'event_date' => "required",
-            'state' => "required",
-            'city' => "required",
-            'nbhood' => "required",
-         ]);
+        // $request->validate([
+        //     'alert_type' => "required",
+        //     'species' => "required",
+        //     'sex' => "required",
+        //     'coat' => "required",
+        //     'primary_color' => "required",
+        //     'size' => "required",
+        //     'breed' => "required",
+        //     'event_date' => "required",
+        //     'state' => "required",
+        //     'city' => "required",
+        //     'nbhood' => "required",
+        //  ]);
         
         
         $pet = Pet::find($id);

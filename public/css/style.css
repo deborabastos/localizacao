@@ -99,6 +99,7 @@ body {
 }
 
 
+/* Ribbon colorido de achado,perdido e adote */
 .box {
   position:relative;
   overflow:hidden;
@@ -144,20 +145,53 @@ body {
     text-shadow: 1px 1px 1px #000;
 }
 
+/* Forulário */
 .form-cadastro{
-  width: 600px;
+  max-width: 600px;
   border: solid 1px gray;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0px 0px 7px 1px rgba(128,128,128,1);
+}
+.form-header{
+  background-color: #2c355c;
+  margin: 0;
+  padding: 0;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.form-header h3 {
+  color: white;
+  padding: 10px;
   margin: auto;
 }
 
+.logo-pegada{
+  width: 15%;
+  display: flex;
+}
+.logo-pegada img{
+  border-radius: 10px 10px 0 0;
+  padding: 5px;
+}
+
+.form-body{
+  padding: 10px 20px 20px 15px;
+}
+
+.ast-required{
+  color: red;
+}
+
+
+
+/* Página Perfil (show) */
 .mapa-perfil{
   display: flex;
   justify-content: center;
   margin-top: 30px;
-}
-
-.comment{
-  width: 200px;
 }
 
 .btn-show{
@@ -166,9 +200,14 @@ body {
 
 }
 
-.ast-required{
-  color: red;
+/* Comentários */
+.comment{
+  width: 200px;
 }
+
+
+
+
 
 /* About */
 .sobrenos,
@@ -416,7 +455,7 @@ body {
 }
 
 
-/*CSS PAGINA PERDIDOS E ACHADOS*/
+/*CSS INDEX*/
 
 .icones{
   margin-top: 20px;
@@ -528,7 +567,37 @@ aside select option {
   .logo_p {
     font-size: 1.5rem;   
   }
+  
+  .form-header h3 {
+    font-size: 1.25rem;
+  }
+  
+  .logo-pegada{
+    display: none;
+  }
+  .logo-pegada img{
+    display: none;
+  }
+
+  .form-body{
+    padding: 8px;
+  }
+
+  .form-body p{
+    padding-left: 8px;
+  }
+
+  .form-body .col-sm-4{
+    padding-left: 8px;
+  }
+
+  .form-body .col-sm-10{
+    flex: 0 0 83.3333333333%;
+    max-width: 83.3333333333%;}
+
 }
+
+
 
 /* Telefones em paisagem a tablet em retrato */
 @media (min-width: 480px) and (max-width: 767px) {
@@ -557,6 +626,7 @@ aside select option {
     height: 100px;
   }
 }
+
 
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CSS BOOSTRAP ALTERADO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
