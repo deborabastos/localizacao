@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PetController@home');
 Route::get('/pet', 'PetController@index'); 
 Route::post('/pet-store', 'PetController@store'); 
-Route::get('/pet/create', 'PetController@create');
+Route::get('/pet-create', 'PetController@create');
 
 
 Route::get('/pet/{id}', 'PetController@show')->where('id', '[0-9]+');

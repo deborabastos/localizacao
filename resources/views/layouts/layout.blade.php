@@ -77,7 +77,7 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="/pet?tipo=achado&especie=cao">Cães Achados</a>
                                 <a class="dropdown-item" href="/pet?tipo=achado&especie=gato">Gatos Achados</a>
-                                <a class="dropdown-item" href="/pet/create?tipo=achado">Cadastro Pet Achado</a>
+                                <a class="dropdown-item" href="/pet-create?tipo=achado">Cadastro Pet Achado</a>
                             </div>
 
 
@@ -91,7 +91,7 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="/pet?tipo=perdido&especie=cao">Cães Perdidos</a>
                                 <a class="dropdown-item" href="/pet?tipo=perdido&especie=gato">Gatos Perdidos</a>
-                                <a class="dropdown-item" href="/pet/create?tipo=perdido">Cadastro Pet Perdido</a>
+                                <a class="dropdown-item" href="/pet-create?tipo=perdido">Cadastro Pet Perdido</a>
                             </div>
 
 

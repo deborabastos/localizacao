@@ -2,6 +2,7 @@
 
 @section('title')
 LocalizaCão - Editar
+
 @endsection
 
 
