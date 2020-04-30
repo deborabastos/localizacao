@@ -260,13 +260,15 @@ class PetController extends Controller
 
 
     //SALVANDO COMENTARIO NO BD//
-    public function commentStore(Request $request, $id){
+    public function commentStore(Request $request){
 
         $newComment = new Comment();
 
         $newComment->comment = request('comment');
-        $newComment->pet_id = $id;
-        $newComment->user_id = auth()->user()->id;
+        $newComment->pet_id = request('id');;
+        $newComment->user_id = 1;
+        
+        // auth()->user()->id;
 
         $newComment->save();
 
@@ -277,7 +279,13 @@ class PetController extends Controller
     }
 
 
-
+    // return view('pet.show', [
+    //     'pet' => $pet,
+    //     'pet_pic' => $pet_pic,
+    //     'tipo' => $tipo,
+    //     'comments' => $comments,
+    //     'users'=> $users,
+    //     ]);
 
     
     public function quemSomos(){
