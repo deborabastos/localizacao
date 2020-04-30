@@ -39,7 +39,7 @@ Route::get('/sucesso', 'PetController@sucesso');
 
 
 Route::resource('/user', 'UserController');
-//Route::post('/user/create', 'UserController');
+Route::get('/user/my_page', 'UserController@minhaPagina');
 //Route::get('/user/create', 'UserController');
 //Route::get('/pagina_usuario', 'UserController');
 //Route::get('/user/create', 'UserController@userCreate');
@@ -49,4 +49,6 @@ Route::resource('/user', 'UserController');
 
 Route::auth();
 
-//Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/', 'HomeController@index')->name('home');
+//Está dando pau quando ativo esta rota, caso alguém for utiliza-la. Dar um toque no grupo!
+

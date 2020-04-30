@@ -89,4 +89,9 @@ class UserController extends Controller
     {
         //
     }
+
+    public function minhaPagina()
+    {
+        return view('user.my_page');
+    }
 }
