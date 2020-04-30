@@ -208,6 +208,23 @@ LocalizaCão - Editar
                                         <td></td>
                                     </tr>
                                     <tr>
+                                        <th scope="row" class="text-primary">Disponivel para adoção?</th>
+                                        <td colspan="2">
+                                            <div class="form-group">
+                                                <div class="">
+                                                    <div class="custom-control custom-radio">
+                                                        <input class="custom-control-input" type="radio" name="avaliable_adoption" id="sim" value="1" {{ $pet->avaliable_adoption == 1 ? 'checked' : '' }}>
+                                                        <label class="custom-control-label mr-2" for="sim">Sim</label>
+                                                    </div>
+                                                    <div class="custom-control custom-radio">
+                                                        <input class="custom-control-input" type="radio" name="avaliable_adoption" id="nao" value="0" {{ $pet->avaliable_adoption == 0 ? 'checked' : '' }}>
+                                                        <label class="custom-control-label mr-2" for="nao">Não</label>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </td>
+                                    </tr>
+                                    <tr>
                                         <th>Atualizar foto</th>
                                         <td>
                                             <div class="form-group custom-file altura_file mb-2">

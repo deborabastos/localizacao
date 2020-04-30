@@ -18,6 +18,7 @@ LocalizaCão - Perfil
             <div class="col-md-6 col-12">
                 <div class="box">
                     <img src="../{{ $pet_pic->link_pic }}" class="rounded img-thumbnail img-perfil" alt="foto do cachorro {{ $pet->alert_type}}">
+                    
                     @if($pet->alert_type == "achado")
                         <div class="corner corner_achado corner_show">
                             <span href="#">Achado</span>
@@ -27,6 +28,16 @@ LocalizaCão - Perfil
                             <span href="#">Perdido</span>
                         </div>
                     @endif
+                
+                
+                    {{-- @if($pet->avaliable_adoption == 1)
+                        <div class="corner corner_adote">  
+                            <span href="#">Adote</span>
+                        </div> 
+                    @endif          --}}
+                
+                
+                
                 </div>
             </div>
             {{-- Fim da linha 1, coluna 1 --}}
@@ -129,6 +140,12 @@ LocalizaCão - Perfil
                                         {{ ucfirst($pet->breed) }}
                                     @endif
                                 </td>
+                            </tr>
+                            <tr>
+                                @if($pet->avaliable_adoption == 1)
+                                    <th scope="row" class="text-primary">Disponível para adoção?</th>
+                                    <td colspan="2">Sim</td>
+                                @endif
                             </tr>
 
                         </tbody>
@@ -244,10 +261,6 @@ LocalizaCão - Perfil
 
             </div>
             @endforeach
-
-
-
-
 
         </div>
     </section>

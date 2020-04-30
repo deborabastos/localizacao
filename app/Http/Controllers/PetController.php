@@ -77,24 +77,11 @@ class PetController extends Controller
             'tipo' => $tipo,
             'comments' => $comments,
             'users'=> $users,
+
             ]);
         }
 
-        // Verificar com Lu se estava funcionando
-        // $comment = Comment::where('id' , $id)
-        // ->orderBy('created_at', 'desc')
-        // ->get(); 
 
-        // $users = Comment::leftjoin('comments', 'comments.user_id', '=','users.id')
-        // ->select('comments.*','users.name')
-        // ->where('users.id', '=', 'name')->get();
-
-        // return view('achados.show', [
-        //     'pet' => $pet,
-        //     'comment' => $comment,
-        //     'user' => $users,
-
-   
 
     public function create(){
         $tipo = request('tipo');
@@ -139,6 +126,7 @@ class PetController extends Controller
         $pet->state = request('state');
         $pet->city = request('city');
         $pet->nbhood = request('nbhood');
+        $pet->avaliable_adoption = request('avaliable_adoption');
         $pet->user_id = request('user_id');
 
         $pet->save();
@@ -217,6 +205,7 @@ class PetController extends Controller
         $pet->state = request('state');
         $pet->city = request('city');
         $pet->nbhood = request('nbhood');
+        $pet->avaliable_adoption = request('avaliable_adoption');
 
         $pet->save();
 
@@ -266,7 +255,7 @@ class PetController extends Controller
 
         $newComment->comment = request('comment');
         $newComment->pet_id = request('id');;
-        $newComment->user_id = 2;
+        $newComment->user_id = 2; //ALTERAR PARA USUÁRIO DINÂMICO
         
         // auth()->user()->id;
 

@@ -223,6 +223,11 @@ LocalizaCão - {{ ucfirst($tipo) }}
                 <textarea class="form-control ml-3 col-sm-10" name="description" id="description" rows="4" placeholder="Digite informações que possam ajudar na identificação do bixinho!"></textarea>
             </div>
 
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" name="avaliable_adoption" id="avaliable_adoption" value="1">
+                <label for="avaliable_adoption" class="control-label">Disponível para adoção?</label>
+            </div>
+
             <div class="form-group custom-file altura_file mb-2">
                 <label for="pet_pic" class="custom-file-label">Selecione a foto<sup class="ast-required">*</sup></label>
                 <input type="file" name="pet_pic" id="pet_pic" class="custom-file-input" accept="image/*"><br> 
