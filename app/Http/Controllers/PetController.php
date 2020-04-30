@@ -228,10 +228,12 @@ class PetController extends Controller
         $pet_pic->save();
 
 
-        return view('pet.show', [
+        return redirect("pet/$pet->id")->with([
+            'success' => 'Registro atualizado com sucesso',
             'pet' => $pet,
             'pet_pic' => $pet_pic,
-        ])->with('success','Cadastro atualizado com sucesso');
+            ]);
+
     }
 
 

@@ -8,10 +8,12 @@ LocalizaCão - Perfil
 @section('content')
 
 <main>
-    <a href="javascript:history.back()"> <<-- Voltar </a> 
-    
     {{-- Mensagem de erro ou sucesso --}}
     @include('inc.msg')
+
+    <a href="javascript:history.back()"> <<-- Voltar </a> 
+
+
 
 
     <section class="container mt-5">

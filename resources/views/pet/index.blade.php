@@ -20,8 +20,8 @@ LocalizaCão -
 
 <main>
 
-            {{-- Mensagem de erro ou sucesso --}}
-            @include('inc.msg')
+    {{-- Mensagem de erro ou sucesso --}}
+    @include('inc.msg')
 
 
     <section class="icones">
