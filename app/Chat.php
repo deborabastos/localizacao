@@ -17,6 +17,7 @@ class Chat extends Model
         'secondary_user_id'
     ];
 
+    protected $dates = ['created_at', 'updated_at', 'ended_at'];
 
     public function message(){
         return $this->hasMany(Message::class);

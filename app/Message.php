@@ -17,6 +17,9 @@ class Message extends Model
         'chat_id'
     ];
 
+    protected $dates = ['send_at'];
+
+
     public function chat(){
         return $this->belongsTo(Chat::class);
     }

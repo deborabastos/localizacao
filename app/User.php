@@ -31,7 +31,10 @@ class User extends Authenticatable
         'pic_profile',
         'password',
     ];
+    
+    protected $dates = ['created_at', 'updated_at', 'email_verified_at'];
 
+    
     public function message(){
         return $this->hasMany(Message::class);
     }
