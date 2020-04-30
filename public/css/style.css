@@ -145,6 +145,7 @@ body {
     text-shadow: 1px 1px 1px #000;
 }
 
+
 /* Formulário cadastro pet*/
 .form-cadastro{
   max-width: 600px;
@@ -185,6 +186,9 @@ body {
   color: red;
 }
 
+.validacao-invalido{
+  color: red;
+}
 
 
 /* Página Perfil (show) */

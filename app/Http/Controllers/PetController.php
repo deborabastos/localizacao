@@ -91,20 +91,21 @@ class PetController extends Controller
 
     public function store(Request $request){
 
-        // $request->validate([
-        //     'alert_type' => "required",
-        //     'species' => "required",
-        //     'sex' => "required",
-        //     'coat' => "required",
-        //     'primary_color' => "required",
-        //     'size' => "required",
-        //     'breed' => "required",
-        //     'event_date' => "required",
-        //     'state' => "required",
-        //     'city' => "required",
-        //     'nbhood' => "required",
-        //     'user_id' => "required"
-        //  ]);
+        $request->validate([
+            'alert_type' => "required",
+            'species' => "required",
+            'sex' => "required",
+            'coat' => "required",
+            'primary_color' => "required",
+            'size' => "required",
+            'breed' => "required",
+            'event_date' => "required",
+            'state' => "required",
+            'city' => "required",
+            'nbhood' => "required",
+            'user_id' => "required",
+            'pet_pic' => "required"
+         ]);
 
         // Salva dados na tabela PET
         $pet = new Pet();
@@ -181,6 +182,8 @@ class PetController extends Controller
         //     'state' => "required",
         //     'city' => "required",
         //     'nbhood' => "required",
+        //      'pet_pic' => "required",
+
         //  ]);
         
         

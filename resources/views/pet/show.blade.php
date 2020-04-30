@@ -253,7 +253,7 @@ LocalizaCão - Perfil
                         </div>
                         
                             <div class="comment">
-                                    <p class="comment-nome">{{ $pet->comments[$i]->user->name }} <small>{{ date($pet->comments[$i]->created_at) }}</small></p>
+                                    <p class="comment-nome">{{ $pet->comments[$i]->user->name }} <small>{{ $pet->comments[$i]->created_at->diffForHumans() }}</small></p>
                                     <p>{{ $pet->comments[$i]->comment }}</p>
                             </div>
                     </div>
