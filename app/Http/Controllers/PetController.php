@@ -67,7 +67,7 @@ class PetController extends Controller
         $tipo = request('tipo');
 
         $users = User::all();
-        $comments = Comment::all(); 
+        $comments = Comment::orderBy('created_at', 'desc')->get(); 
 
         // Capturar nome do usuário e passar para página show
 
@@ -266,7 +266,7 @@ class PetController extends Controller
 
         $newComment->comment = request('comment');
         $newComment->pet_id = request('id');;
-        $newComment->user_id = 1;
+        $newComment->user_id = 2;
         
         // auth()->user()->id;
 
@@ -276,16 +276,7 @@ class PetController extends Controller
             [$newComment->pet_id]
     );
 
-    }
-
-
-    // return view('pet.show', [
-    //     'pet' => $pet,
-    //     'pet_pic' => $pet_pic,
-    //     'tipo' => $tipo,
-    //     'comments' => $comments,
-    //     'users'=> $users,
-    //     ]);
+    }   
 
     
     public function quemSomos(){

@@ -232,18 +232,7 @@ LocalizaCão - Perfil
                 <div class="show-comment border rounded py-2 px-3">
                     
                     <div class="avatar-comment">
-
-                        {{-- AVATAR DO USER --}}
-                        {{-- AVATAR DO USER --}}
-                        {{-- AVATAR DO USER --}}
-                        @if($comment->user->name == "Pedro Henrique")
-                            <img src="/images/user/1.jpeg" alt="">
-                        @elseif ($comment->user->name == "Maria Eduarda")
-                            <img src="/images/user/4.jpeg" alt="">
-                        @else
-                            <img src="/images/user/3.jpeg" alt="">
-                        @endif
-
+                        <img src="/{{ $comment->user->pic_profile}}" alt="">
                     </div>
 
                         <div class="comment">
