@@ -150,7 +150,7 @@ class PetController extends Controller
         $pet_pic->save();
 
 
-        return redirect("pet?tipo=$pet->alert_type&especie=$pet->species")->with('msg','Animal cadastrado com sucesso');
+        return redirect("pet?tipo=$pet->alert_type&especie=$pet->species")->with('success','Animal cadastrado com sucesso');
     
     }
 
@@ -230,9 +230,8 @@ class PetController extends Controller
 
         return view('pet.show', [
             'pet' => $pet,
-            'users' => $users,
             'pet_pic' => $pet_pic,
-        ])->with('msg','Cadastro atualizado com sucesso');
+        ])->with('success','Cadastro atualizado com sucesso');
     }
 
 
@@ -240,7 +239,7 @@ class PetController extends Controller
         $pet = Pet::findOrFail($id);
         $pet->delete();
 
-        return redirect("pet?tipo=$pet->alert_type&especie=$pet->species")->with('msg','Registro deletado com sucesso');
+        return redirect("pet?tipo=$pet->alert_type&especie=$pet->species")->with('success','Registro deletado com sucesso');
 
         }
 

@@ -11,6 +11,11 @@ LocalizaCão - Editar
 <main>
     <a href="javascript:history.back()"> <<-- Voltar </a>
 
+
+        {{-- Mensagem de erro ou sucesso --}}
+        @include('inc.msg')
+
+
 <form action="../pet-update/{{ $pet->id }}" class="form-horizontal" method="POST" enctype="multipart/form-data">
         @csrf
             @method('PUT')

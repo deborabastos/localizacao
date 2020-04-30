@@ -19,7 +19,11 @@ LocalizaCão -
 @section('content')
 
 <main>
-<div class="msg">{{ session('msg') }}</div>
+
+            {{-- Mensagem de erro ou sucesso --}}
+            @include('inc.msg')
+
+
     <section class="icones">
         <div class="row">
             <div class="imagedog">

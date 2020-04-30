@@ -10,6 +10,10 @@ LocalizaCão - Perfil
 <main>
     <a href="javascript:history.back()"> <<-- Voltar </a> 
     
+    {{-- Mensagem de erro ou sucesso --}}
+    @include('inc.msg')
+
+
     <section class="container mt-5">
         <div class="row m-0">
 
