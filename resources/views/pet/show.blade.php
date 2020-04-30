@@ -242,9 +242,28 @@ LocalizaCão - Perfil
 
 
 
-
             {{-- Mostra comentários --}}
-            @foreach ($pet->comments as $comment)
+
+            @for($i = count($pet->comments)-1; $i >= 0; $i--)
+                <div class="col-md-12 my-3">
+                    <div class="show-comment border rounded py-2 px-3">
+                        
+                        <div class="avatar-comment">
+                            <img src="/{{ $pet->comments[$i]->user->pic_profile}}" alt="">
+                        </div>
+                        
+                            <div class="comment">
+                                    <p class="comment-nome">{{ $pet->comments[$i]->user->name }} <small>{{ date($pet->comments[$i]->created_at) }}</small></p>
+                                    <p>{{ $pet->comments[$i]->comment }}</p>
+                            </div>
+                    </div>
+                </div>
+
+            @endfor
+
+            {{-- USAR FOREACH é mais simples, mas não coloca na ordem inversa (mais recente primeiro) --}}
+            
+            {{-- @foreach ($pet->comments as $comment)
             <div class="col-md-12 my-3">
                 <div class="show-comment border rounded py-2 px-3">
                     
@@ -256,11 +275,9 @@ LocalizaCão - Perfil
                                 <p class="comment-nome">{{ $comment->user->name }} <small>{{ date($comment->created_at) }}</small></p>
                                 <p>{{ $comment->comment }}</p>
                         </div>
-
                 </div>
-
             </div>
-            @endforeach
+            @endforeach --}}
 
         </div>
     </section>

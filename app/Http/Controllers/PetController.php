@@ -67,7 +67,6 @@ class PetController extends Controller
         $tipo = request('tipo');
 
         $users = User::all();
-        $comments = Comment::orderBy('created_at', 'desc')->get(); 
 
         // Capturar nome do usuário e passar para página show
 
@@ -75,7 +74,6 @@ class PetController extends Controller
             'pet' => $pet,
             'pet_pic' => $pet_pic,
             'tipo' => $tipo,
-            'comments' => $comments,
             'users'=> $users,
 
             ]);
