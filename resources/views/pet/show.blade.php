@@ -194,7 +194,7 @@ LocalizaCão - Perfil
                             <tr>
                                 <th>Data</th>
                                 <td>
-                                    {{ $pet->event_date }}
+                                        {{ $pet->event_date->format('d/m/Y') }}
                                 </td>
                             </tr>
                         </tbody>

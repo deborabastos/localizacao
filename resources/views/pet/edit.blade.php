@@ -75,6 +75,11 @@ LocalizaCão - Editar
                                                     </div>
                                                 </div>
                                             </div>
+                                            
+                                            @error('alert_type')
+                                                <p class="validacao-invalido"><small> O campo <u>tipo de alerta</u> é obrigatório </small></p>
+                                            @enderror
+
                                         </td>
                                     </tr>
 
@@ -91,8 +96,12 @@ LocalizaCão - Editar
                                                         <input class="custom-control-input" type="radio" name="species" id="cao" value="cao" {{ $pet->species == "cao" ? 'checked' : '' }}>
                                                         <label class="custom-control-label mr-2" for="cao">Cachorro</label>
                                                     </div>
-                                                </div>
+                                                </div>                
                                             </div>
+
+                                                @error('species')
+                                                    <p class="validacao-invalido"><small> O campo <u>espécie</u> é obrigatório </small></p>
+                                                @enderror
                                         </td>
                                     </tr>
 
@@ -124,6 +133,10 @@ LocalizaCão - Editar
                                                         <label class="custom-control-label mr-2" for="macho">Macho</label>
                                                     </div>
                                                 </div>
+                                                
+                                                @error('sex')
+                                                    <p class="validacao-invalido"><small> O campo <u>sexo</u> é obrigatório </small></p>
+                                                @enderror
                                             </div>
 
                                         </td>
@@ -140,6 +153,10 @@ LocalizaCão - Editar
                                                         <option value=3 {{ $pet->coat == 3 ? 'selected' : '' }}>Longo</option>
                                                     </select>
                                                 </div>
+                                                
+                                                @error('coat')
+                                                    <p class="validacao-invalido"><small> O campo <u>tipo de pelo</u> é obrigatório </small></p>
+                                                @enderror
                                             </div>
                                     
                                         </td>
@@ -161,6 +178,10 @@ LocalizaCão - Editar
                                                         <option value="caramelo" {{ $pet->primary_color == "caramelo" ? 'selected' : '' }}>Caramelo</option>
                                                     </select>
                                                 </div>
+                                                
+                                                @error('primary_color')
+                                                    <p class="validacao-invalido"><small> O campo <u>cor primária</u> é obrigatório </small></p>
+                                                @enderror
                                             </div>
                                     
                                             <div class="form-group">
@@ -193,8 +214,11 @@ LocalizaCão - Editar
                                                         <option value=3 {{ $pet->size == 3 ? 'selected' : '' }}>Grande</option>
                                                     </select>
                                                 </div>
+                                                
+                                                @error('size')
+                                                    <p class="validacao-invalido"><small> O campo <u>tamanho</u> é obrigatório </small></p>
+                                                @enderror
                                             </div>
-
                                         </td>
 
                                     </tr>
@@ -203,9 +227,7 @@ LocalizaCão - Editar
                                         <th scope="row" class="text-primary">Raça</th>
                                         <td colspan="2">
                                             <input type="text" class="form-control" name="breed" id="breed" value="{{ ucfirst($pet->breed) }}">
-                                
                                         </td>
-                                        <td></td>
                                     </tr>
                                     <tr>
                                         <th scope="row" class="text-primary">Disponivel para adoção?</th>
@@ -229,8 +251,9 @@ LocalizaCão - Editar
                                         <td>
                                             <div class="form-group custom-file altura_file mb-2">
                                                 <label for="pet_pic" class="custom-file-label">Selecione a foto</label>
-                                                <input type="file" name="pet_pic" id="pet_pic" class="custom-file-input" accept="image/*"><br> 
+                                            <input type="file" name="pet_pic" id="pet_pic" class="custom-file-input" accept="image/*"><br> 
                                             </div>
+
                                         </td>
                                     </tr>
                                 </tbody>
@@ -282,6 +305,9 @@ LocalizaCão - Editar
                                                             <option value="to" {{ $pet->state == "to" ? 'selected' : '' }}>TO</option>
                                                         </select>
                                                 </div>
+                                                @error('state')
+                                                    <p class="validacao-invalido"><small> O campo <u>estado</u> é obrigatório </small></p>
+                                                @enderror
                                             </div>                                       
                                         </td>                                     
                                     </tr>
@@ -292,7 +318,10 @@ LocalizaCão - Editar
                                                 <div class="">
                                                     <input type="text" class="form-control" name="city" id="city" value="{{ ucfirst($pet->city)}}">
                                                 </div>
-                                            </div>                                       
+                                            </div>        
+                                            @error('city')
+                                                <p class="validacao-invalido"><small> O campo <u>cidade</u> é obrigatório </small></p>
+                                            @enderror                               
                                         </td> 
                                     </tr>
                                     <tr>
@@ -302,16 +331,23 @@ LocalizaCão - Editar
                                                 <div class="">
                                                     <input type="text" class="form-control" name="nbhood" id="nbhood" value="{{ ucfirst($pet->nbhood)}}">
                                                 </div>
+                                                @error('nbhood')
+                                                    <p class="validacao-invalido"><small> O campo <u>bairro</u> é obrigatório </small></p>
+                                                @enderror
                                             </div>                                            
                                        </td>                                    
                                     </tr>
                                     <tr>
+                                        
                                         <th>Data<sup class="ast-required">*</sup></th>
                                         <td>
                                             <div class="form-group">
                                                 <div class="">
-                                                    <input type="date" class="form-control" name="event_date" id="event_date" value="{{ ucfirst($pet->event_date)}}">
+                                                        <input type="date" class="form-control" name="event_date" id="event_date" value="{{ $pet->event_date == "" ? "" : $pet->event_date->format('Y-m-d')}}">
                                                 </div>
+                                                @error('event_date')
+                                                    <p class="validacao-invalido"><small> O campo <u>data</u> é obrigatório </small></p>
+                                                @enderror
                                             </div>    
                                         
                                         </td>    

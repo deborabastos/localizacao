@@ -98,7 +98,6 @@ class PetController extends Controller
             'coat' => "required",
             'primary_color' => "required",
             'size' => "required",
-            'breed' => "required",
             'event_date' => "required",
             'state' => "required",
             'city' => "required",
@@ -170,21 +169,18 @@ class PetController extends Controller
     }
 
     public function update(Request $request, $id){
-        // $request->validate([
-        //     'alert_type' => "required",
-        //     'species' => "required",
-        //     'sex' => "required",
-        //     'coat' => "required",
-        //     'primary_color' => "required",
-        //     'size' => "required",
-        //     'breed' => "required",
-        //     'event_date' => "required",
-        //     'state' => "required",
-        //     'city' => "required",
-        //     'nbhood' => "required",
-        //      'pet_pic' => "required",
-
-        //  ]);
+        $request->validate([
+            'alert_type' => "required",
+            'species' => "required",
+            'sex' => "required",
+            'coat' => "required",
+            'primary_color' => "required",
+            'size' => "required",
+            'event_date' => "required",
+            'state' => "required",
+            'city' => "required",
+            'nbhood' => "required",
+         ]);
         
         
         $pet = Pet::find($id);
