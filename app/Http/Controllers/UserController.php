@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 
 
+
 class UserController extends Controller
 {
     /**
@@ -22,6 +23,9 @@ class UserController extends Controller
         return view('user.index_user')->with(['users' -> $users]);
     }
 
+
+    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -32,6 +36,7 @@ class UserController extends Controller
         return view('user.create');
     }
 
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -90,8 +95,8 @@ class UserController extends Controller
         //
     }
 
-    public function minhaPagina()
+    public function userPerfil()
     {
-        return view('user.my_page');
-    }
+        return view ('user.page');
+    }   
 }

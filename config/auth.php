@@ -17,7 +17,17 @@ return [
         'guard' => 'web',
         'passwords' => 'users',
     ],
-
+/*
+    'guards' => [
+        'web' => [
+        'driver' => 'session',
+        'provider' => 'users',
+        ],
+        'admin' => [
+        'driver' => 'session',
+        'provider' => 'admins',
+        ],
+        ]
     /*
     |--------------------------------------------------------------------------
     | Authentication Guards

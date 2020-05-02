@@ -39,7 +39,7 @@ Route::get('/sucesso', 'PetController@sucesso');
 
 
 Route::resource('/user', 'UserController');
-Route::get('/user/my_page', 'UserController@minhaPagina');
+Route::get('/page', 'UserController@userPerfil');
 //Route::get('/user/create', 'UserController');
 //Route::get('/pagina_usuario', 'UserController');
 //Route::get('/user/create', 'UserController@userCreate');
