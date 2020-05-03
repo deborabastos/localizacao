@@ -20,7 +20,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('user.index_user')->with(['users' -> $users]);
+        return view('user.index_user', compact('users'));
     }
 
 
@@ -58,9 +58,10 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+        return view('user.show', compact('user'));
     }
-
+   
     /**
      * Show the form for editing the specified resource.
      *
@@ -69,7 +70,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        return view ('user.edit');
     }
 
     /**

@@ -98,60 +98,37 @@ LocalizaCão - Página do Usuário
             <div class="container_meio">
                 <div class="letras_user_page"> Publicar Alertas </div>
                 <div class="col text-center">
-                    <a href="/achados/create" type="button"
-                    class="btn btn-sq-lg btn-success" aria-hidden="true">
+                    <a href="#" class="btn btn-sq-lg btn-success" aria-hidden="true" data-toggle="modal" data-target="#achado">
                         <i class="fa fa-check-circle fa-4x"></i><br />
                         Encontrei um animal!
                     </a>
-                    <a href="/perdidos/create" type="button"
-                    class="btn btn-sq-lg btn-danger" aria-hidden="true" data-toggle="modal" >
+                    <a href="#" class="btn btn-sq-lg btn-danger" aria-hidden="true" data-toggle="modal" data-target="#perdido">
                         <i class="fa fa-exclamation-triangle fa-4x"></i><br />
                         Perdi um animal!
                     </a>
                 </div>
 
-            
+                <div class="letras_user_page mt-4"> Administração de Cadastros </div>
+                
+                <ul class="nav-button navbar-nav ml-auto mt-3">
 
+                <li class="nav-item">
+                    <a type="button" class="btn btn-primary btn-block font-weight-bold mr-2 mb-3 p-1" href="user">{{ __('Usuários') }}</a>
+                </li>
 
+                <li class="nav-item">
+                    <a type="button" class="btn btn-primary btn-block font-weight-bold mr-2 mb-3 p-1" href="user.index_user">{{ __('Adoção') }}</a>
+                </li>
 
+                <li class="nav-item">
+                    <a type="button" class="btn btn-primary btn-block font-weight-bold mr-2 mb-3 p-1" href="user.index_user">{{ __('Pets Achados') }}</a>
+                </li>
 
+                <li class="nav-item">
+                    <a type="button" class="btn btn-primary btn-block font-weight-bold mr-2 mb-3 p-1" href="user.index_user">{{ __('Pets Perdidos') }}</a>
+                </li>
 
-                <div class="letras_user_page"> Animais do meu interesse </div>
-                <div class="col-lg-14" margin=20px>
-                    <div class="row">
-                        <div class="mx-auto">
-                            <div class="col-md-6 col-12">
-                                <div class="card text-center" style="width: 10rem;">
-                                    <img class="card-img-top" src="images/perdido3.jpg" alt="Imagem de capa do card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Da vinci</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mx-auto">
-                            <div class="col-md-6 col-12">
-                                <div class="card text-center" style="width: 10rem;">
-                                    <img class="card-img-top" src="images/perdido2.jpg" alt="Imagem de capa do card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Doido</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mx-auto">
-                            <div class="col-md-6 col-12">
-                                <div class="card text-center" style="width: 10rem;">
-                                    <img class="card-img-top" src="images/perdido5.jpg" alt="Imagem de capa do card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Domingo</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </ul>
 
 
         </section>

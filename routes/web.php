@@ -26,10 +26,14 @@ Route::get('/sucesso', 'PetController@sucesso');
 
 Route::resource('/user', 'UserController');
 Route::get('/page', 'UserController@userPerfil');
+Route::get('/user/{id}', 'UserController@show')->where('id', '[0-9]+')->name('show');
+Route::get('/user-edit/{id}', 'UserController@edit')->where('id', '[0-9]+');
 //Route::get('/user/create', 'UserController');
 //Route::get('/pagina_usuario', 'UserController');
 //Route::get('/user/create', 'UserController@userCreate');
 
 
 
-Route::auth();
+Route::auth(['verify' => true]);
+
+//Route::get('/', 'HomeController@index')->name('home');
