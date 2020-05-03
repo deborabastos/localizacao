@@ -98,15 +98,23 @@ LocalizaCão - Página do Usuário
             <div class="container_meio">
                 <div class="letras_user_page"> Publicar Alertas </div>
                 <div class="col text-center">
-                    <a href="#" class="btn btn-sq-lg btn-success" aria-hidden="true" data-toggle="modal" data-target="#achado">
+                    <a href="/achados/create" type="button"
+                    class="btn btn-sq-lg btn-success" aria-hidden="true">
                         <i class="fa fa-check-circle fa-4x"></i><br />
                         Encontrei um animal!
                     </a>
-                    <a href="#" class="btn btn-sq-lg btn-danger" aria-hidden="true" data-toggle="modal" data-target="#perdido">
+                    <a href="/perdidos/create" type="button"
+                    class="btn btn-sq-lg btn-danger" aria-hidden="true" data-toggle="modal" >
                         <i class="fa fa-exclamation-triangle fa-4x"></i><br />
                         Perdi um animal!
                     </a>
                 </div>
+
+            
+
+
+
+
 
                 <div class="letras_user_page"> Animais do meu interesse </div>
                 <div class="col-lg-14" margin=20px>

@@ -115,64 +115,51 @@
 
                     <!-- Botões -->
                     <ul class="nav-button navbar-nav ml-auto">
-
+                    @guest
                         <!--Adicionado botão de Login-->
-                        <li class="dropleft ">
-                            <button type="button" class="btn btn-primary btn-sm font-weight-bold mr-2 mb-3 p-1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Entrar
-                            </button>
+                        <li class="nav-item">
+                                <a type="button" class="btn btn-primary btn-sm font-weight-bold mr-2 mb-3 p-1" href="{{ route('login') }}">{{ __('Entrar') }}</a>
+                            </li>
 
-                            <!--Formulário de login-->
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <form class="px-4 py-3">
-                                    <div class="form-group">
-                                        <label for="exampleDropdownFormEmail1">Endereço de email</label>
-                                        <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@exemplo.com">
-                                    </div>
+                            
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a type="button" class="btn btn-primary btn-sm font-weight-bold mr-2 mb-3 p-1" href="{{ route('register') }}">{{ __('Cadastrar') }}</a>
+                                </li>
+                            @endif
+                        @else   
 
-                                    <div class="form-group">
-                                        <label for="exampleDropdownFormPassword1">Senha</label>
-                                        <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Senha">
-                                    </div>
+                <li class="dropleft">
+           <a id="navbarDropdown" type="button" class="btn btn-primary btn-sm font-weight-bold mr-2 mb-3 p-1" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+               {{ Auth::user()->name }} <span class="caret"></span>
+           </a>
 
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                                        <label class="form-check-label" for="dropdownCheck">
-                                            Lembrar
-                                        </label>
-                                    </div>
+           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                                    <a href="/pagina_usuario" class="btn btn-primary" role="button" aria-pressed="true">Entrar</a>
-                                </form>
 
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Não tem uma conta? Cadastre-se.</a>
-                                <a class="dropdown-item" href="#">Esqueceu a senha?</a>
-                            </div>
-                        </li>
+           <a class="dropdown-item" type="button" href="page">
+            {{ __('Minha conta') }}
+            </a>
+               
+               
+               <a class="dropdown-item" href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                   {{ __('Sair') }}
+               </a>
 
-                        <!--Adicionado botão de Cadastro-->
-                        <li>
-
-                            <a href="/user/create" type="button" class="btn btn-primary btn-sm font-weight-bold mr-2 mb-3 p-1" id="link-modal-user">
-                                Cadastrar
-                            </a>
-
-                            <!--Form e Modal para cadastro do usuário-->
-                            <div class="modal fade bd-example-modal-md" id="modal-user" tabindex="-1" role="dialog" aria-labelledby="userModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-md" role="document">
-                                    <div class="modal-content">
-                                        <!-- Carrega conteúdo de user/create -->                                        
-                                    </div>
-                                </div>
-                            </div>
-
-                        </li>
+               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                   @csrf
+               </form>
+           </div>
+       </li>
+   @endguest
                     </ul>
                 </div>
             </nav>
         </div>
     </header>
+
 
     @yield('content')
 

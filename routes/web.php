@@ -23,7 +23,13 @@ Route::get('/quem_somos', 'PetController@quemSomos');
 Route::get('/sucesso', 'PetController@sucesso');
 
 
+
 Route::resource('/user', 'UserController');
+Route::get('/page', 'UserController@userPerfil');
+//Route::get('/user/create', 'UserController');
+//Route::get('/pagina_usuario', 'UserController');
+//Route::get('/user/create', 'UserController@userCreate');
+
 
 
 Route::auth();

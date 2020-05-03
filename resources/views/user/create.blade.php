@@ -1,3 +1,11 @@
+@extends('layouts.layout')
+
+@section('title')
+LocalizaCão - Página do Usuário
+@endsection
+
+@section('content')
+
 
 <div class="modal-header">
 
@@ -61,5 +69,5 @@
     </form>
 </div>
 
-
+@endsection
 
