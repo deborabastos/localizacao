@@ -23,6 +23,8 @@ class Alert extends Model
         'pet_id',
     ];
 
+    protected $dates = ['created_at', 'updated_at', 'event_date', 'ended_at'];
+
 
     public function pet(){
         return $this->belongsTo(Pet::class);

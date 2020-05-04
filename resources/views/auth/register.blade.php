@@ -56,6 +56,15 @@ LocalizaCão - Achado
                             </div>
                         </div>
 
+                        
+                        <div class="form-group row">
+                            <label for="pic_profile" class="col-md-4 col-form-label text-md-right">{{ __('Foto')}}</label>
+                            <div class="col-md-6">
+                                <input id="pic_profile" type="file" placeholder="Insira uma foto" class="form-control @error('pic_profile') is-invalid @enderror" name="pic_profile">
+                        </div>
+                        </div>
+
+
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Senha') }}</label>
 

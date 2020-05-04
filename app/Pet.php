@@ -30,6 +30,7 @@ class Pet extends Model
         'avaliable_adoption',
         'user_id',
     ];
+    protected $dates = ['created_at', 'updated_at', 'event_date'];
 
     public function comments(){
         return $this->hasMany(Comment::class);

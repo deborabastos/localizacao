@@ -69,7 +69,9 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'cpf' => $data['cpf'],
             'email' => $data['email'],
+            'pic_profile' => $data['pic_profile'],
             'password' => Hash::make($data['password']),
+            //'email_verified_at' => now()
         ]);
     }
 }

@@ -108,42 +108,27 @@ LocalizaCão - Página do Usuário
                     </a>
                 </div>
 
-                <div class="letras_user_page"> Animais do meu interesse </div>
-                <div class="col-lg-14" margin=20px>
-                    <div class="row">
-                        <div class="mx-auto">
-                            <div class="col-md-6 col-12">
-                                <div class="card text-center" style="width: 10rem;">
-                                    <img class="card-img-top" src="images/perdido3.jpg" alt="Imagem de capa do card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Da vinci</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="letras_user_page mt-4"> Administração de Cadastros </div>
+                
+                <ul class="nav-button navbar-nav ml-auto mt-3">
 
-                        <div class="mx-auto">
-                            <div class="col-md-6 col-12">
-                                <div class="card text-center" style="width: 10rem;">
-                                    <img class="card-img-top" src="images/perdido2.jpg" alt="Imagem de capa do card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Doido</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <li class="nav-item">
+                    <a type="button" class="btn btn-primary btn-block font-weight-bold mr-2 mb-3 p-1" href="user">{{ __('Usuários') }}</a>
+                </li>
 
-                        <div class="mx-auto">
-                            <div class="col-md-6 col-12">
-                                <div class="card text-center" style="width: 10rem;">
-                                    <img class="card-img-top" src="images/perdido5.jpg" alt="Imagem de capa do card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Domingo</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <li class="nav-item">
+                    <a type="button" class="btn btn-primary btn-block font-weight-bold mr-2 mb-3 p-1" href="user.index_user">{{ __('Adoção') }}</a>
+                </li>
+
+                <li class="nav-item">
+                    <a type="button" class="btn btn-primary btn-block font-weight-bold mr-2 mb-3 p-1" href="user.index_user">{{ __('Pets Achados') }}</a>
+                </li>
+
+                <li class="nav-item">
+                    <a type="button" class="btn btn-primary btn-block font-weight-bold mr-2 mb-3 p-1" href="user.index_user">{{ __('Pets Perdidos') }}</a>
+                </li>
+
+                </ul>
 
 
         </section>

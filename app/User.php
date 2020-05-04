@@ -12,7 +12,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
 
@@ -31,7 +31,10 @@ class User extends Authenticatable
         'pic_profile',
         'password',
     ];
+    
+    protected $dates = ['created_at', 'updated_at', 'email_verified_at'];
 
+    
     public function message(){
         return $this->hasMany(Message::class);
     }

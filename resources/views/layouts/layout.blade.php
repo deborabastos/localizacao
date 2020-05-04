@@ -75,19 +75,11 @@
                                 Achados
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="/achados?especie=cao">Cães Achados</a>
-                                <a class="dropdown-item" href="/achados?especie=gato">Gatos Achados</a>
-                                <a class="dropdown-item" href="/achados/create" id="link-modal-achados">Cadastro Pet Achado</a>
+                                <a class="dropdown-item" href="/pet?tipo=achado&especie=cao">Cães Achados</a>
+                                <a class="dropdown-item" href="/pet?tipo=achado&especie=gato">Gatos Achados</a>
+                                <a class="dropdown-item" href="/pet-create?tipo=achado">Cadastro Pet Achado</a>
                             </div>
 
-                            <!-- Modal com Form para inserção de dados do PET -->
-                            <div class="modal fade bd-achado-modal-sm" id="modal-achados" tabindex=" " role="dialog" aria-labelledby="achadoLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <!-- Carrega conteúdo de achados/create -->
-                                    </div>
-                                </div>
-                            </div>
 
 
                         </li>
@@ -97,19 +89,11 @@
                                 Perdidos
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="/perdidos?especie=cao">Cães Perdidos</a>
-                                <a class="dropdown-item" href="/perdidos?especie=gato">Gatos Perdidos</a>
-                                <a class="dropdown-item" href="/perdidos/create" id="link-modal-perdidos">Cadastro Pet Perdido</a>
+                                <a class="dropdown-item" href="/pet?tipo=perdido&especie=cao">Cães Perdidos</a>
+                                <a class="dropdown-item" href="/pet?tipo=perdido&especie=gato">Gatos Perdidos</a>
+                                <a class="dropdown-item" href="/pet-create?tipo=perdido">Cadastro Pet Perdido</a>
                             </div>
 
-                            <!-- Modal com Form para inserção de dados do PET -->
-                            <div class="modal fade bd-perdido-modal-sm" id="modal-perdidos" tabindex=" " role="dialog" aria-labelledby="perdidoLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <!-- Carrega conteúdo de perdidos/create -->                                        
-                                    </div>
-                                </div>
-                            </div>
 
                         </li>
 
@@ -118,18 +102,8 @@
                                 Adote
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="/adote?especie=cao">Adote Cães</a>
-                                <a class="dropdown-item" href="/adote?especie=gato">Adote Gatos</a>
-                                <a class="dropdown-item" href="/adote/create" id="link-modal-adote">Cadastro Pet Adoção</a>
-                            </div>
-
-                            <!-- Modal com Form para inserção de dados do PET -->
-                            <div class="modal fade bd-adote-modal-sm" id="modal-adote" tabindex=" " role="dialog" aria-labelledby="adoteLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <!-- Carrega conteúdo de adote/create -->                                        
-                                    </div>
-                                </div>
+                                <a class="dropdown-item" href="/pet?adotar=s&especie=cao">Adote Cães</a>
+                                <a class="dropdown-item" href="/pet?adotar=s&especie=gato">Adote Gatos</a>
                             </div>
 
                         </li>
@@ -215,9 +189,9 @@
                 <h2 class="footer-h2">MAPA DO SITE</h2>
                 <div class="footer-border"></div>
                 <ul>
-                    <li><a href="/achados">Achados</a></li>
-                    <li><a href="/perdidos">Perdidos</a></li>
-                    <li><a href="/adote">Adote</a> </li>
+                    <li><a href="/pet?tipo=achado">Achados</a></li>
+                    <li><a href="/pet?tipo=perdido">Perdidos</a></li>
+                    <li><a href="/pet?adotar=s">Adote</a> </li>
                 </ul>
             </div>
 
