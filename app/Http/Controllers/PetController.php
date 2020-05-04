@@ -102,12 +102,12 @@ class PetController extends Controller
             'state' => "required",
             'city' => "required",
             'nbhood' => "required",
-            'user_id' => "required",
             'pet_pic' => "required"
          ]);
 
         // Salva dados na tabela PET
         $pet = new Pet();
+
 
         $pet->alert_type = request('alert_type');
         $pet->species = request('species');
@@ -125,7 +125,7 @@ class PetController extends Controller
         $pet->city = request('city');
         $pet->nbhood = request('nbhood');
         $pet->avaliable_adoption = request('avaliable_adoption');
-        $pet->user_id = request('user_id');
+        $pet->user_id = auth()->user()->id;
 
         $pet->save();
 

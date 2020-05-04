@@ -255,7 +255,7 @@ LocalizaCão - Perfil
                     <div class="show-comment border rounded py-2 px-3">
                         
                         <div class="avatar-comment">
-                            <img src="/{{ $pet->comments[$i]->user->pic_profile}}" alt="">
+                            <img src="/{{ $pet->comments[$i]->user->avatar}}" alt="">
                         </div>
                         
                             <div class="comment">

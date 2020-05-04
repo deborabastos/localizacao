@@ -26,15 +26,9 @@ LocalizaCão - {{ ucfirst($tipo) }}
         <div class="form-body">
             <h4 class="titulo-form">Dados do animal</h4>
 
-            {{-- PASSA ALERT_TYPE "ACHADO" --}}
+            {{-- PASSA ALERT_TYPE --}}
             <input type="hidden" name="alert_type" value="{{ $tipo }}" >
 
-            {{-- PASSA USER ID GENÉRICO --}}
-            {{-- PASSA USER ID GENÉRICO --}}
-            {{-- PASSA USER ID GENÉRICO --}}
-            {{-- PASSA USER ID GENÉRICO --}}
-            {{-- PASSA USER ID GENÉRICO --}}
-            <input type="hidden" name="user_id" value="2" >
 
 
             <div class="form-group">
