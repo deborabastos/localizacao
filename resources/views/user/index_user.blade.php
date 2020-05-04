@@ -32,8 +32,12 @@ LocalizaCão - Página do Usuário
         <li>
         <a href="user-edit/{{$user->id}}">Editar</a>
         </li>
+
         <li>
-        <a href="#">Apagar</a>
+        <a action="submit" href="user/{{$user->id}}" method="POST">Excluir</a>
+        @csrf
+        @method('DELETE')
+        
         </li>
       </td>
     </tr>
