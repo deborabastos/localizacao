@@ -263,6 +263,66 @@ class PetController extends Controller
 
     }   
 
+     //EDITANDO UM COMENTARIO// 
+
+     public function editComment($id){
+     
+        $pet = Pet::find($id);
+        $users = User::all();
+        $comment = Comment::find($id);
+        return view('pet.editComment', compact('comment','users','pet'));
+        
+        // $comment = Comment::find($id);
+        // $pet = Pet::find($id);
+        // $users = User::all();
+        
+        
+        // return view('pet.editComment', [
+        //     'pet' => $pet,
+        //     'users' => $users,
+        //     'comment' => $comment,
+            
+        //     ]); 
+            //DUAS FORMAS DE FAZER //
+
+    }
+
+    public function updateComment(Request $request, $id){
+        $request->validate([
+            'comment' => 'required',
+            // 'pet_id' => 'required',
+            // 'user_id' => 'required',
+         ]);
+
+         $comment = Comment::find($id);
+         $pet = Pet::find($id);
+        //  $users = User::all();
+
+         $comment->comment = request('comment');
+        //  $comment->pet_id = request('pet_id');
+        //  $comment->user_id = request('user_id');
+
+         $comment -> save();
+
+         return redirect("pet/$pet->id")->with([
+            'success' => 'Comentário atualizado com sucesso! :)',
+            // 'pet' => $pet,
+            // 'users' => $users,
+            ]);
+
+    }
+
+    public function deleteComment ($id){
+        
+        $comment = Comment::findOrFail($id);
+        $pet = Pet::find($id);
+        $comment -> delete();
+
+        return redirect("pet/$pet->id")->with([
+            'success' => 'Comentário excluido com sucesso! :)'
+        ]);
+    }
+
     
     public function quemSomos(){
         return view('quem_somos');
