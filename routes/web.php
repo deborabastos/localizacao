@@ -14,6 +14,13 @@ Route::get('/pet-create', 'PetController@create');
 Route::get('/pet/{id}', 'PetController@show')->where('id', '[0-9]+')->name('showPet');
 Route::delete('/pet/{id}', 'PetController@destroy')->where('id', '[0-9]+');
 Route::put('/pet/{id}', 'PetController@update')->where('id', '[0-9]+');
+Route::put('/editComment/{id}', 'PetController@updateComment')->where('id','[0-9]+');
+
+Route::delete('/editComment/{id}', 'PetController@deleteComment')->where('id', '[0-9]+');
+
+
+
+Route::get('/editComment/{id}', 'PetController@editComment')->where('id', '[0-9]+');
 
 Route::get('/pet-edit/{id}', 'PetController@edit')->where('id', '[0-9]+');
 

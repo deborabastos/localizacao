@@ -262,6 +262,9 @@ LocalizaCão - Perfil
                                     <p class="comment-nome">{{ $pet->comments[$i]->user->name }} <small>{{ $pet->comments[$i]->created_at->diffForHumans() }}</small></p>
                                     <p>{{ $pet->comments[$i]->comment }}</p>
                             </div>
+                            <div>
+                                <a href="/editComment/{{ $pet->id }}" class="btn btn-primary btn-sm ml-5 ">Editar</a>
+                            </div>
                     </div>
                 </div>
 
