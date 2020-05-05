@@ -32,7 +32,9 @@ class CreateUsersTable extends Migration
             ['id' => 2, 'name' => "Maria Eduarda", 'cpf' => "124.556.769-22", 'email' => "pmadu@gmail.com", 'pic_profile' => "images/user/2.jpeg", 'password' => "123456", 'created_at' => "2020/03/03 17:55:00",'updated_at' => "2020/04/03 17:55:00"],
             ['id' => 3, 'name' => "Marco Antônio", 'cpf' => "523.446.869-16", 'email' => "antonio@gmail.com", 'pic_profile' => "images/user/3.jpeg", 'password' => "123456", 'created_at' => "2020/03/03 17:55:00",'updated_at' => "2020/04/03 17:55:00"],
             ['id' => 4, 'name' => "Ana Clara", 'cpf' => "325.416.559-16", 'email' => "aclara@gmail.com", 'pic_profile' => "images/user/4.jpeg", 'password' => "123456", 'created_at' => "2020/03/03 17:55:00",'updated_at' => "2020/04/03 17:55:00"],
-        ]);
+            ['id' => 5, 'name' => "Admin", 'cpf' => "000.000.000-00", 'email' => "suporte@gmail.com", 'pic_profile' => "", 'password' => "admin", 'created_at' => "2020/03/03 17:55:00", 'updated_at' => "2020/04/03 17:55:00"],
+            
+            ]);
 
 
 
