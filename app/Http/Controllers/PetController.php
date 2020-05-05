@@ -267,9 +267,10 @@ class PetController extends Controller
 
      public function editComment($id){
      
+        $comment = Comment::find($id);
+        $comment -> pet_id;
         $pet = Pet::find($id);
         $users = User::all();
-        $comment = Comment::find($id);
         return view('pet.editComment', compact('comment','users','pet'));
         
         // $comment = Comment::find($id);
@@ -295,16 +296,17 @@ class PetController extends Controller
          ]);
 
          $comment = Comment::find($id);
-         $pet = Pet::find($id);
+        //  $pet = Pet::find($comment -> pet_id);
+         
         //  $users = User::all();
-
+            // dd($request -> all(),$comment);
          $comment->comment = request('comment');
         //  $comment->pet_id = request('pet_id');
         //  $comment->user_id = request('user_id');
 
          $comment -> save();
 
-         return redirect("pet/$pet->id")->with([
+         return redirect("pet/$comment->pet_id")->with([
             'success' => 'Comentário atualizado com sucesso! :)',
             // 'pet' => $pet,
             // 'users' => $users,
@@ -318,7 +320,7 @@ class PetController extends Controller
         $pet = Pet::find($id);
         $comment -> delete();
 
-        return redirect("pet/$pet->id")->with([
+        return redirect("pet/$comment->pet_id")->with([
             'success' => 'Comentário excluido com sucesso! :)'
         ]);
     }

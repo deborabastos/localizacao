@@ -263,7 +263,7 @@ LocalizaCão - Perfil
                                     <p>{{ $pet->comments[$i]->comment }}</p>
                             </div>
                             <div>
-                                <a href="/editComment/{{ $pet->id }}" class="btn btn-primary btn-sm ml-5 ">Editar</a>
+                                <a href="/editComment/{{ $pet->comments[$i]->id }}" class="btn btn-primary btn-sm ml-5 ">Editar</a>
                             </div>
                     </div>
                 </div>

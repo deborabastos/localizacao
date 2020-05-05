@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PetController@home');
 Route::get('/pet', 'PetController@index'); 
 Route::post('/pet-store', 'PetController@store');
-Route::post('/comment-store', 'PetController@commentStore'); 
+Route::post('/comment-store', 'PetController@commentStore')->middleware('auth'); 
 
 Route::get('/pet-create', 'PetController@create');
 

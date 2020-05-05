@@ -19,9 +19,7 @@ LocalizaCão - Perfil
 
         {{-- Comentários --}}
         <div class="comentarios">
-        <form action="../editComment/{{$pet->id}}" method="POST">
-            @csrf
-                @method('PUT')
+
             <div class="col-md-12">
                 {{-- <div class="border rounded"> --}}
                     <div class="form-comment">
@@ -33,9 +31,10 @@ LocalizaCão - Perfil
                             <img src="/images/user/2.jpeg" alt="">
                         </div>
 
-
+                        <form action="../editComment/{{$comment->id}}" method="POST">
+                            @csrf
+                                @method('PUT')
                         <div class="form-group">
-                            <input type="hidden" name="id" value="{{ $pet->id }}" >
                             {{-- <label for="exampleFormControlTextarea1"> {{$comment->user->name}} </label> --}}
                             <textarea class="form-control mb-5" id="comment" name="comment" rows="3" >
                                 {{$comment->comment}}
@@ -44,9 +43,12 @@ LocalizaCão - Perfil
                                
 
                             <button class="btn btn-primary btn-sm ml-5 mr-3"" type="submit">Editar </button>
-                            {{-- @csrf
-                            @method('DELETE') --}}
+                        </form>
+                            <form action="../editComment/{{$comment->id}}" method="POST">
+                            @csrf
+                            @method('DELETE')
                             <button class="btn btn-danger btn-sm">Excluir</button>
+                            </form>
                     </div>
                 </div>
             </div>
