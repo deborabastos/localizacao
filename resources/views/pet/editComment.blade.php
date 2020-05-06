@@ -39,15 +39,14 @@ LocalizaCão - Perfil
                             <textarea class="form-control mb-5" id="comment" name="comment" rows="3" >
                                 {{$comment->comment}}
                             </textarea>
-                          </div>
-                               
+                          </div>                               
 
                             <button class="btn btn-primary btn-sm ml-5 mr-3"" type="submit">Editar </button>
                         </form>
                             <form action="../editComment/{{$comment->id}}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-danger btn-sm">Excluir</button>
+                            <button class="btn btn-danger btn-sm mr-3">Excluir</button>
                             </form>
                     </div>
                 </div>
