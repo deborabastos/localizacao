@@ -33,7 +33,7 @@ LocalizaCão - Página do Usuário
         <a href="user-edit/{{$user->id}}">Editar</a>
         </li>
         <li>
-        <a href="#">Apagar</a>
+        <a href="user-delete/{{$user->id}}">Apagar</a>
         </li>
       </td>
     </tr>

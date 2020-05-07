@@ -35,13 +35,13 @@ class CreateMessagesTable extends Migration
 
             $table->foreign('chat_id', 'fk_messages_chat_id')
                 ->references('id')->on('chats')
-                ->onDelete('no action')
-                ->onUpdate('no action');
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
 
             $table->foreign('user_id', 'fk_messages_user_id')
                 ->references('id')->on('users')
-                ->onDelete('no action')
-                ->onUpdate('no action');
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

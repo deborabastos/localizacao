@@ -95,18 +95,22 @@ LocalizaCão - Página do Usuário
         </aside>
 
         <section>
-            <div class="container_meio">
+            <div class="container_meio p-4 ml-8">
                 <div class="letras_user_page"> Publicar Alertas </div>
                 <div class="col text-center">
-                    <a href="#" class="btn btn-sq-lg btn-success" aria-hidden="true" data-toggle="modal" data-target="#achado">
+                    <a href="/pet-create?tipo=achado" class="btn btn-sq-lg btn-success" aria-hidden="true"  data-target="#achado">
                         <i class="fa fa-check-circle fa-4x"></i><br />
                         Encontrei um animal!
                     </a>
-                    <a href="#" class="btn btn-sq-lg btn-danger" aria-hidden="true" data-toggle="modal" data-target="#perdido">
+                    <a href="/pet-create?tipo=perdido" class="btn btn-sq-lg btn-danger" aria-hidden="true"  data-target="#perdido">
                         <i class="fa fa-exclamation-triangle fa-4x"></i><br />
                         Perdi um animal!
                     </a>
                 </div>
+                
+
+                
+}
 
                 <div class="letras_user_page mt-4"> Administração de Cadastros </div>
                 
@@ -136,25 +140,9 @@ LocalizaCão - Página do Usuário
 
             <div class="container_actions">
                 <div class="col-md-14">
-                    <div class="letras_user_page">Ultimas Ações</div>
-                    <ul class="timeline">
-                        <li>
-                            <a href="achados_perfil.php">Bolota</a>
-                            <span class="float-right">8 de Fevereiro, 2020</span>
-                            <p>Você comentou: "Acho que vi esse cachorrinho no mercadinho" </p>
-                        </li>
-                        <li>
-                            <a href="achados_perfil.php">Princesa</a>
-                            <span class="float-right">7 de Fevereiro, 2020</span>
-                            <p>Você marcou uma nova localização para esse alerta</p>
-                        </li>
-                        <li>
-                            <a href="achados_perfil.php">Feijão</a>
-                            <span class="float-right">7 de Fevereiro, 2020</span>
-                            <p>Você publicou um alerta de animal perdido</p>
-                        </li>
-                    </ul>
-                </div>
+                    
+
+                    
             </div>
         </section>
 

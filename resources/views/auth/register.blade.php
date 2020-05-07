@@ -11,7 +11,7 @@ LocalizaCão - Achado
         <div class="col-md-8">
            
            <br>     
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
@@ -57,19 +57,19 @@ LocalizaCão - Achado
                         </div>
 
                         
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label for="pic_profile" class="col-md-4 col-form-label text-md-right">{{ __('Foto')}}</label>
                             <div class="col-md-6">
                                 <input id="pic_profile" type="file" placeholder="Insira uma foto" class="form-control @error('pic_profile') is-invalid @enderror" name="pic_profile">
                         </div>
-                        </div>
+                        </div> -->
 
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Senha') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" placeholder="Digite uma senha maior que 8 dígitos" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" type="password" placeholder="Digite uma senha com no mínimo 6 digitos" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">

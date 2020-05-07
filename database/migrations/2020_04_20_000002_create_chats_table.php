@@ -36,13 +36,13 @@ class CreateChatsTable extends Migration
             
             $table->foreign('primary_user_id', 'fk_chats_user1_id')
                 ->references('id')->on('users')
-                ->onDelete('no action')
-                ->onUpdate('no action');
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
 
             $table->foreign('secondary_user_id', 'fk_chats_user2_id')
                 ->references('id')->on('users')
-                ->onDelete('no action')
-                ->onUpdate('no action');
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

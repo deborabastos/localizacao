@@ -17,16 +17,14 @@ LocalizaCão - Perfil
         <div class="col-md-6 col-12">
                 
 
-        <div class="card mb-1 " style="max-width: 480px; max-height: 240px;">
+        <div class="card p-4 mb-1 text-white border-white bg-primary" style="max-width: 360px; max-height: 240px;">
   <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="{$pic_profile}" class="card-img" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">{{ $user -> name}}</h5>
-        <p class="card-text">CPF: {{ $user -> cpf}}</p>
-        <p class="card-text">E-mail: {{ $user -> email}}</p>
+  <h3 class="titulo-cadastro text-align-center">Dados do Usuário</h3>
+    <div class="col-md-12">
+      <div class="card-body ">
+        <h5 class="card-title">Nome: {{ $user -> name}}</h5>
+        <h5 class="card-title">CPF: {{ $user -> cpf}}</h5>
+        <h5 class="card-title">E-mail: {{ $user -> email}}</h5>
       </div>
     </div>
   </div>

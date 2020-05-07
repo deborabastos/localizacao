@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\PetController;
-use App\User;   
+use App\Pet;
+use App\Geoloc;
+use App\Comment;
+use App\User;
+use App\Pet_pic;
 use Illuminate\Http\Request;
+use Image;
 
 
 
@@ -20,6 +25,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
+
         return view('user.index_user', compact('users'));
     }
 
@@ -47,8 +53,10 @@ class UserController extends Controller
     {
         User::create($request->all());
 
+
         return view('user.pagina_user');
-    }
+        }
+    
 
     /**
      * Display the specified resource.
@@ -59,6 +67,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
+        $pet = Pet::fin($id);
         return view('user.show', compact('user'));
     }
    
@@ -83,10 +92,13 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
+
         $this->validate($request,[
             'name'=>'required',
             'cpf'=>'required',
             'email'=>'required',
+            
         ]);
  
         $user = User::find($id);
@@ -98,6 +110,7 @@ class UserController extends Controller
         $user->save();
  
         return redirect('/user')->with('success');
+        
      }
     
 
@@ -109,7 +122,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user ->delete();
+        
+        return redirect('/user')->with('success');
     }
 
    public function indexUser()
@@ -119,6 +135,7 @@ class UserController extends Controller
 
     public function userPerfil()
     {
+        
         return view ('user.page');
     }
 }

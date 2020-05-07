@@ -32,13 +32,9 @@ LocalizaCão - Achado
                         <label for="cpf" class="col-md-4 col-form-label text-md-right">CPF</label>
 
                             <div class="col-md-6">
-                            <input id="test" type="text" class="form-control @error('cpf') is-invalid @enderror" name="cpf" value="{{$user->cpf ?? ''}}" required autocomplete="cpf" autofocus>
+                            <input id="test" type="text" class="form-control cpf" name="cpf" value="{{$user->cpf ?? ''}}" required autocomplete="cpf">
 
-                                @error('cpf')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                            
                             </div>
                         </div>
 

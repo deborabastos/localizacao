@@ -12,19 +12,18 @@ LocalizaCão
 
     <div class="servicos" id="servicos">
         <h1 class="title">Serviços</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam quia, porro repellendus dolore
-            repudiandae, accusantium corporis harum vel iste suscipit maiores provident ullam itaque libero minus
-            nesciunt consequatur iusto numquam asperiores quod fugiat veniam blanditiis.</p>
+        <h5>Possuímos serviços para facilitar o contato entre tutor e pet. Através de nossa comunidade de usuários críamos uma grande rede capaz de facilitar a localização de animais perdidos, encontrar seus tutores e dar um novo lar para os que estão abandonados.
+        </h5>
         <div class="diff_services">
             <div class="diff_services_item">
-                <img src="images/mainpage copy.jpg" alt="service_image">
+                <img src="images/mainpage copy.jpg"  alt="service_image">
                 <h3 class="sub_title">Achados</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <h5>Nos empenhamos em tentar localizar o tutor dos pets achados ou se possível garantir um novo lar para os mesmos!  </h5>
             </div>
             <div class="diff_services_item">
                 <img src="images/mainpage2 copy.jpg" alt="service_image">
                 <h3 class="sub_title">Perdidos</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <h5>Através de nossa comunidade o seu pet pode ser encontrado com maior precisão, facilitando a sua localização!</h5>
             </div>
         </div>
     </div>
@@ -35,7 +34,7 @@ LocalizaCão
         <h1 class="title">Mapas</h1>
         <img class="m-2" src="images/mapa1.jpg" width=45%>
         <h3 class="sub_title">Mapas</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <p>Utilizamos a geolocalização para agilizar as buscas</p>
     </div>
 
     <!-- mapas termina-->
@@ -71,11 +70,11 @@ LocalizaCão
                                         
                                         <div class="card-body">
                                             <h5 class="card-title">
-                                                @if( $pet->name == "")
-                                                    {{ ucfirst($pet->breed) }}
-                                                @else
-                                                    {{ ucfirst($pet->name) }}
-                                                @endif
+                                                    @if( $pet->name == "")
+                                                        {{ ucfirst($pet->breed) }}
+                                                    @else
+                                                        {{ ucfirst($pet->name) }}
+                                                    @endif
                                             
                                             </h5>
                                             <div class="text-limit">

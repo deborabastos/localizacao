@@ -39,6 +39,7 @@ Route::get('/user-edit/{id}', 'UserController@edit')->where('id', '[0-9]+');
 Route::put('/user/{id}', 'UserController@update')->where('id', '[0-9]+');
 
 Route::get('/index_user', 'Usercontroller@indexUser');
+Route::get('/user-delete/{id}', 'UserController@destroy')->where('id', '[0-9]+');
 
 //Route::get('/user/create', 'UserController');
 //Route::get('/pagina_usuario', 'UserController');

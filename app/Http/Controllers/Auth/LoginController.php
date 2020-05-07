@@ -8,6 +8,14 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
+
+    public function authenticate()
+    {
+        if (Auth::attempt(['romildo_lira@yahoo.com.br' => $email, '123456' => $password]))
+        {
+            return redirect()->intended('user.page');
+        }
+    }
     /*
     |--------------------------------------------------------------------------
     | Login Controller

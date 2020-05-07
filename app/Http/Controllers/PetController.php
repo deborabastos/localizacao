@@ -25,6 +25,7 @@ class PetController extends Controller
     }
 
     public function index() {
+        
         $especie = request('especie');
         $tipo = request('tipo');
         $adotar = request('adotar');

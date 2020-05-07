@@ -48,8 +48,8 @@ class CreatePetsTable extends Migration
 
             $table->foreign('user_id', 'fk_pets_user_id')
                 ->references('id')->on('users')
-                ->onDelete('no action')
-                ->onUpdate('no action');
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
 
         DB::table('pets')->insert([
