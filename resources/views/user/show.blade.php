@@ -17,7 +17,7 @@ LocalizaCão - Perfil
         <div class="col-md-6 col-12">
                 
 
-        <div class="card p-4 mb-1 text-white border-white bg-primary" style="max-width: 360px; max-height: 240px;">
+        <div class="card p-4 mb-1 text-white bg-primary" style="max-width: 360px; max-height: 240px;">
   <div class="row no-gutters">
   <h3 class="titulo-cadastro text-align-center">Dados do Usuário</h3>
     <div class="col-md-12">

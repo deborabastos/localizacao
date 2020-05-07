@@ -67,7 +67,6 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        $pet = Pet::fin($id);
         return view('user.show', compact('user'));
     }
    

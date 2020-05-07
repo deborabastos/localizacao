@@ -16,7 +16,7 @@ LocalizaCão
         </h5>
         <div class="diff_services">
             <div class="diff_services_item">
-                <img src="images/mainpage copy.jpg"  alt="service_image">
+                <img src="images/mainpage copy.jpg" alt="service_image">
                 <h3 class="sub_title">Achados</h3>
                 <h5>Nos empenhamos em tentar localizar o tutor dos pets achados ou se possível garantir um novo lar para os mesmos!  </h5>
             </div>
@@ -34,7 +34,7 @@ LocalizaCão
         <h1 class="title">Mapas</h1>
         <img class="m-2" src="images/mapa1.jpg" width=45%>
         <h3 class="sub_title">Mapas</h3>
-        <p>Utilizamos a geolocalização para agilizar as buscas</p>
+        <p>Utilizamos a geolocalização para agilizar as buscas!</p>
     </div>
 
     <!-- mapas termina-->
@@ -70,11 +70,11 @@ LocalizaCão
                                         
                                         <div class="card-body">
                                             <h5 class="card-title">
-                                                    @if( $pet->name == "")
-                                                        {{ ucfirst($pet->breed) }}
-                                                    @else
-                                                        {{ ucfirst($pet->name) }}
-                                                    @endif
+                                                @if( $pet->name == "")
+                                                    {{ ucfirst($pet->breed) }}
+                                                @else
+                                                    {{ ucfirst($pet->name) }}
+                                                @endif
                                             
                                             </h5>
                                             <div class="text-limit">

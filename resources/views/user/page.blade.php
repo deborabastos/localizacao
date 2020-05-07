@@ -109,8 +109,6 @@ LocalizaCão - Página do Usuário
                 </div>
                 
 
-                
-}
 
                 <div class="letras_user_page mt-4"> Administração de Cadastros </div>
                 
