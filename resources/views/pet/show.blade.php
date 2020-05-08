@@ -228,16 +228,12 @@ LocalizaCão - Perfil
                     <div class="border rounded">
                         <div class="form-comment">
                             <div class="avatar-comment">
-
-                                {{-- AVATAR DO USER --}}
-                                {{-- AVATAR DO USER --}}
-                                {{-- AVATAR DO USER --}}
                                 <img src="/storage/images/user/{{ Auth::user()->pic_profile }}" alt="">
                             </div>
                             <div class="input-group">
                                 <input type="hidden" name="id" value="{{ $pet->id }}" >
 
-                                <input class="form-control" id="comment" name="comment" rows="1" placeholder="Deixe aqui seu comentário...">
+                                <input class="form-control" id="comment" name="comment" placeholder="Deixe aqui seu comentário..." required>
                                 <button class="btn btn-primary btn-sm comment-btn" type="submit">Enviar</button>
                             </div>
                         </div>
