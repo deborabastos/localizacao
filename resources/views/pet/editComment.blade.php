@@ -19,7 +19,7 @@ LocalizaCão - Perfil
             <div class="ed-comentarios border rounded py-2 px-3">
                     
                 <div class="avatar-comment">
-                    <img src="/storage/images/user/{{ Auth::user()->pic_profile }}" alt="">
+                    <img src="/storage/images/user/{{ $comment->user->pic_profile }}" alt="">
                 </div>
                 
                 <div class="show-comment-btns">

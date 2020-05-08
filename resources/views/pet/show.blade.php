@@ -219,27 +219,38 @@ LocalizaCão - Perfil
 
         {{-- Comentários --}}
 
+       
+
+
         <div class="comentarios">
             {{-- Form comentários --}}
-            <form action="../comment-store" method="POST">
-                @csrf
-                
-                <div class="col-md-12">
-                    <div class="border rounded">
-                        <div class="form-comment">
-                            <div class="avatar-comment">
-                                <img src="/storage/images/user/{{ Auth::user()->pic_profile }}" alt="">
-                            </div>
-                            <div class="input-group">
-                                <input type="hidden" name="id" value="{{ $pet->id }}" >
 
-                                <input class="form-control" id="comment" name="comment" placeholder="Deixe aqui seu comentário..." required>
-                                <button class="btn btn-primary btn-sm comment-btn" type="submit">Enviar</button>
+
+
+            @if (Auth::check())
+                <form action="../comment-store" method="POST">
+                    @csrf
+                    
+                    <div class="col-md-12">
+                        <div class="border rounded">
+                            <div class="form-comment">
+                                <div class="avatar-comment">
+                                    <img src="/storage/images/user/{{ Auth::user()->pic_profile }}" alt="">
+                                </div>
+                                <div class="input-group">
+                                    <input type="hidden" name="id" value="{{ $pet->id }}" >
+
+                                    <input class="form-control" id="comment" name="comment" placeholder="Deixe aqui seu comentário..." required>
+                                    <button class="btn btn-primary btn-sm comment-btn" type="submit">Enviar</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </form> 
+                </form> 
+
+            @endif
+
+            
 
 
 
@@ -267,9 +278,8 @@ LocalizaCão - Perfil
                                     <button class="btn btn-danger btn-sm ex-comment-btn">Excluir</button>
                                 </form>
 
-                                <a href="/editComment/{{ $pet->comments[$i]->id }}" class="btn btn-primary btn-sm ed-comment-btn">Editar</a>
+                                <a href="/editComment/{{$pet->comments[$i]->id}}" class="btn btn-primary btn-sm ed-comment-btn">Editar</a>
 
-                                
                             </div>
                         </div>
                     </div>
@@ -277,23 +287,6 @@ LocalizaCão - Perfil
 
             @endfor
 
-            {{-- USAR FOREACH é mais simples, mas não coloca na ordem inversa (mais recente primeiro) --}}
-            
-            {{-- @foreach ($pet->comments as $comment)
-            <div class="col-md-12 my-3">
-                <div class="show-comment border rounded py-2 px-3">
-                    
-                    <div class="avatar-comment">
-                        <img src="/{{ $comment->user->pic_profile}}" alt="">
-                    </div>
-
-                        <div class="comment">
-                                <p class="comment-nome">{{ $comment->user->name }} <small>{{ date($comment->created_at) }}</small></p>
-                                <p>{{ $comment->comment }}</p>
-                        </div>
-                </div>
-            </div>
-            @endforeach --}}
 
         </div>
     </section>
