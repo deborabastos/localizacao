@@ -208,8 +208,7 @@ LocalizaCão - Perfil
                 </div>
 
 
-                <div class="mapa-perfil">
-                    <img src="/images/mapa1.jpg" class="rounded float-right img-thumbnail" alt="mapa">
+                <div id="mapid">
                 </div>
             </div>
         </div>

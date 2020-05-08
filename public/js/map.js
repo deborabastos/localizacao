@@ -33,6 +33,10 @@ function criarMapa()  {
     marker.bindPopup("Segundo").openPopup();
     var marker = L.marker([-23.61,-46.43], {icon: patinhaIcon}).addTo(map);
     marker.bindPopup("Terceiro").openPopup();
+
+    //Botar search
+
+    var searchControl = L.control.addTo(map);
 }
 
 criarMapa();
