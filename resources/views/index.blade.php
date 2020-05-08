@@ -33,7 +33,6 @@ LocalizaCão
     <div class="diff_services_item1 m-2">
         <h1 class="title">Mapas</h1>
         <div id="mapid"></div>
-        <h3 class="sub_title">Mapas</h3>
         <p>Utilizamos a geolocalização para agilizar as buscas!</p>
     </div>
     </div>
