@@ -22,7 +22,7 @@ Route::delete('/editComment/{id}', 'PetController@deleteComment')->where('id', '
 
 Route::get('/editComment/{id}', 'PetController@editComment')->where('id', '[0-9]+')->middleware('auth');
 
-Route::get('/pet-edit/{id}', 'PetController@edit')->where('id', '[0-9]+');
+Route::get('/pet-edit/{id}', 'PetController@edit')->where('id', '[0-9]+')->middleware('auth');
 
 
 

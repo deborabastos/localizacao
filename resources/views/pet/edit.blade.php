@@ -350,7 +350,7 @@ LocalizaCão - Editar
                                         <td>
                                             <div class="form-group">
                                                 <div class="">
-                                                        <input type="date" class="form-control date" name="event_date" id="event_date" value="{{ $pet->event_date == "" ? "" : $pet->event_date->format('Y-m-d')}}">
+                                                        <input type="date" class="form-control" name="event_date" id="event_date" value="{{ $pet->event_date == "" ? "" : $pet->event_date->format('Y-m-d')}}">
                                                 </div>
                                                 @error('event_date')
                                                     <p class="validacao-invalido"><small> O campo <u>data</u> é obrigatório </small></p>
