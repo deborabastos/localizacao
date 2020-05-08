@@ -28,15 +28,11 @@ function criarMapa()  {
 
 // botar markers
     var marker = L.marker([-23.61,-46.63], {icon: patinhaIcon}).addTo(map);
-    marker.bindPopup("Primeiro.").openPopup();
+    marker.bindPopup('<a href="pet/1">Shih tzu</a>').openPopup();
     var marker = L.marker([-23.62,-46.63], {icon: patinhaIcon}).addTo(map);
-    marker.bindPopup("Segundo").openPopup();
-    var marker = L.marker([-23.61,-46.43], {icon: patinhaIcon}).addTo(map);
-    marker.bindPopup("Terceiro").openPopup();
-
-    //Botar search
-
-    var searchControl = L.control.addTo(map);
+    marker.bindPopup('<a href="pet/5">Da Vinci</a>').openPopup();
+    var marker = L.marker([-23.61,-46.53], {icon: patinhaIcon}).addTo(map);
+    marker.bindPopup('<a href="pet/4">Gaia</a>').openPopup();
 }
 
 criarMapa();
