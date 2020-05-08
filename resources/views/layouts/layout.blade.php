@@ -238,7 +238,7 @@
     crossorigin=""></script>
     <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>     
     <script src="/js/map.js"></script>
-
+    
 
 </body>
 
