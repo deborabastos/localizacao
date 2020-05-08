@@ -232,8 +232,6 @@ body {
   border-radius: 5px;
   overflow: hidden;
   object-fit: cover;
-
-
 }
 
 .avatar-comment img {
@@ -256,10 +254,35 @@ body {
   display: flex;
 }
 
+.show-comment-btns{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .comment-nome{
   color: coral;
   font-weight: bolder;
   margin-bottom: 2px;
+}
+
+.ex-comment-btn{
+  width: 60px;
+  float: right;
+
+}
+
+.ed-comment-btn{
+  margin-top: 5px;
+  width: 60px;
+  float: right;
+
+}
+
+.ed-comentarios{
+  display: flex;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 

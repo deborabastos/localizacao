@@ -232,12 +232,12 @@ LocalizaCão - Perfil
                                 {{-- AVATAR DO USER --}}
                                 {{-- AVATAR DO USER --}}
                                 {{-- AVATAR DO USER --}}
-                                <img src="/images/user/2.jpeg" alt="">
+                                <img src="/storage/images/user/{{ Auth::user()->pic_profile }}" alt="">
                             </div>
                             <div class="input-group">
                                 <input type="hidden" name="id" value="{{ $pet->id }}" >
 
-                                <input class="form-control comment-input" id="comment" name="comment" rows="1" placeholder="Deixe aqui seu comentário...">
+                                <input class="form-control" id="comment" name="comment" rows="1" placeholder="Deixe aqui seu comentário...">
                                 <button class="btn btn-primary btn-sm comment-btn" type="submit">Enviar</button>
                             </div>
                         </div>
@@ -254,16 +254,28 @@ LocalizaCão - Perfil
                     <div class="show-comment border rounded py-2 px-3">
                         
                         <div class="avatar-comment">
-                            <img src="/{{ $pet->comments[$i]->user->avatar}}" alt="">
+                            <img src="/storage/images/user/{{ $pet->comments[$i]->user->pic_profile}}" alt="">
                         </div>
                         
-                            <div class="comment">
-                                    <p class="comment-nome">{{ $pet->comments[$i]->user->name }} <small>{{ $pet->comments[$i]->created_at->diffForHumans() }}</small></p>
-                                    <p>{{ $pet->comments[$i]->comment }}</p>
-                            </div>
+                        <div class="show-comment-btns">
                             <div>
-                                <a href="/editComment/{{ $pet->comments[$i]->id }}" class="btn btn-primary btn-sm ml-5 ">Editar</a>
+                                <p class="comment-nome">{{ $pet->comments[$i]->user->name }} <small>{{ $pet->comments[$i]->created_at->diffForHumans() }}</small></p>
+                                <p>{{ $pet->comments[$i]->comment }}</p>
                             </div>
+
+                            <div>
+
+                                <form action="/editComment/{{$pet->comments[$i]->id}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger btn-sm ex-comment-btn">Excluir</button>
+                                </form>
+
+                                <a href="/editComment/{{ $pet->comments[$i]->id }}" class="btn btn-primary btn-sm ed-comment-btn">Editar</a>
+
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
 
