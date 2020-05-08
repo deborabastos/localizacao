@@ -29,12 +29,13 @@ LocalizaCão
     </div>
 
     <!-- mapas-->
-
+    <div id="maps">
     <div class="diff_services_item1 m-2">
         <h1 class="title">Mapas</h1>
-        <img class="m-2" src="images/mapa1.jpg" width=45%>
+        <div id="mapid"></div>
         <h3 class="sub_title">Mapas</h3>
         <p>Utilizamos a geolocalização para agilizar as buscas!</p>
+    </div>
     </div>
 
     <!-- mapas termina-->

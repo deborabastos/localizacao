@@ -14,6 +14,8 @@ body {
   padding: 0;
 }
 
+#mapid { height: 280px;}
+
 /* TOPO */
 .topo {
   height:40px;
@@ -507,6 +509,8 @@ body {
 
 
 /*CSS INDEX*/
+
+#mapid { height: 180px; }
 
 .icones{
   margin-top: 20px;
