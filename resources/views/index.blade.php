@@ -12,7 +12,7 @@ LocalizaCão
 
     <div class="servicos" id="servicos">
         <h1 class="title">Serviços</h1>
-        <h5>Possuímos serviços para facilitar o contato entre tutor e pet. Através de nossa comunidade de usuários críamos uma grande rede capaz de facilitar a localização de animais perdidos, encontrar seus tutores e dar um novo lar para os que estão abandonados.
+        <h5>Oferecemos serviços para facilitar o contato entre o tutor e seu pet perdido. Através da nossa comunidade de usuários críamos uma grande rede capaz de facilitar a localização de animais perdidos, encontrar seus tutores e dar um novo lar para os que estão abandonados.
         </h5>
         <div class="diff_services">
             <div class="diff_services_item">
