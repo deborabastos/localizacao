@@ -34,16 +34,7 @@ LocalizaCão - Perfil
                             <span href="#">Perdido</span>
                         </div>
                     @endif
-                
-                
-                    {{-- @if($pet->avaliable_adoption == 1)
-                        <div class="corner corner_adote">  
-                            <span href="#">Adote</span>
-                        </div> 
-                    @endif          --}}
-                
-                
-                
+            
                 </div>
             </div>
             {{-- Fim da linha 1, coluna 1 --}}
@@ -158,14 +149,23 @@ LocalizaCão - Perfil
 
                     </table>
 
-                    <div class="btn-show mt-4">
-                        <a href="/pet-edit/{{ $pet->id }}" class="btn btn-primary btn-sm mr-3">Editar</a>
-                        <form class="ml-3" action="/pet/{{ $pet->id }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-danger btn-sm">Excluir</button>
-                        </form>
-                    </div>
+
+                    @if (Auth::check())
+
+                        @if ($pet->user_id == Auth::user()->id) 
+
+                            <div class="btn-show mt-4">
+                                <a href="/pet-edit/{{ $pet->id }}" class="btn btn-primary btn-sm mr-3">Editar</a>
+                                <form class="ml-3" action="/pet/{{ $pet->id }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger btn-sm">Excluir</button>
+                                </form>
+                            </div>
+
+                        @endif
+                    @endif
+
                 </div>
             </div>
             {{-- Fim da coluna 1 --}}
@@ -270,17 +270,23 @@ LocalizaCão - Perfil
                                 <p>{{ $pet->comments[$i]->comment }}</p>
                             </div>
 
-                            <div>
+                            @if (Auth::check())
 
-                                <form action="/editComment/{{$pet->comments[$i]->id}}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-danger btn-sm ex-comment-btn">Excluir</button>
-                                </form>
+                                @if ($pet->comments[$i]->user_id == Auth::user()->id) 
 
-                                <a href="/editComment/{{$pet->comments[$i]->id}}" class="btn btn-primary btn-sm ed-comment-btn">Editar</a>
+                                    <div>
+                                        <form action="/editComment/{{$pet->comments[$i]->id}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger btn-sm ex-comment-btn">Excluir</button>
+                                        </form>
 
-                            </div>
+                                        <a href="/editComment/{{$pet->comments[$i]->id}}" class="btn btn-primary btn-sm ed-comment-btn">Editar</a>
+
+                                    </div>
+                                @endif
+                            @endif
+
                         </div>
                     </div>
                 </div>
