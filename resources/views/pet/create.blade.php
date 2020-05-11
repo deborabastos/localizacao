@@ -61,7 +61,7 @@ LocalizaCão - {{ ucfirst($tipo) }}
                         <label class="custom-control-label mr-2" for="femea">Fêmea</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input class="custom-control-input" type="radio" name="sex" id="macho" value="m" {{ old('sex') == " " ? 'checked' : '' }}>
+                        <input class="custom-control-input" type="radio" name="sex" id="macho" value="m" {{ old('sex') == "m" ? 'checked' : '' }}>
                         <label class="custom-control-label mr-2" for="macho">Macho</label>
                     </div>
 
