@@ -150,7 +150,7 @@ class PetController extends Controller
         $pet_pic->save();
 
 
-        return redirect("pet?tipo=$pet->alert_type&especie=$pet->species")->with('success','Animal cadastrado com sucesso');
+        return redirect("pet?tipo=$pet->alert_type&especie=$pet->species")->with('success','Animal cadastrado com sucesso')->withInput();
     
     }
 

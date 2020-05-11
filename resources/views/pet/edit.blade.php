@@ -195,7 +195,7 @@ LocalizaCão - Editar
                                                 <label for="secondary_color" class="control-label">Cor Secundária (opcional)</label>
                                                 <div class="">
                                                     <select class="form-control" name="secondary_color" id="secondary_color">
-                                                        <option disabled selected value="0" {{ $pet->primary_color == 0 ? 'selected' : '' }}>Escolha</option>
+                                                        <option disabled selected value="0" {{ $pet->secondary_color == 0 ? 'selected' : '' }}>Escolha</option>
                                                         <option value="preto" {{ $pet->secondary_color == "preto" ? 'selected' : '' }}>Preto</option>
                                                         <option value="marrom" {{ $pet->secondary_color == "marrom" ? 'selected' : '' }}>Marrom</option>
                                                         <option value="bege" {{ $pet->secondary_color == "bege" ? 'selected' : '' }}>Bege</option>
