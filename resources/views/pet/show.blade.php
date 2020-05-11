@@ -51,8 +51,17 @@ LocalizaCão - Perfil
                 </div>
 
                 <div class="text-center mt-5">
-                    <button type="button" class="btn btn-primary btn-lg">Entrar em contato</button>
+                    <a href="https://wa.me/55{{$pet->user->phone}}" type="button" class="btn btn-primary btn-lg">Entrar em contato <img src="/images/social-media.svg" class="img-btn-contato" alt=""></a>
+
+
+                    
+
                 </div>
+
+
+
+
+
             </div>
         </div>
         {{-- Fim da linha 1, coluna 2 --}}
@@ -168,7 +177,7 @@ LocalizaCão - Perfil
 
                 </div>
             </div>
-            {{-- Fim da coluna 1 --}}
+            {{-- Fim da linha 2, coluna 1 --}}
 
 
 
@@ -209,6 +218,7 @@ LocalizaCão - Perfil
 
 
                 <div id="mapid">
+                    
                 </div>
             </div>
         </div>
@@ -235,7 +245,7 @@ LocalizaCão - Perfil
                         <div class="border rounded">
                             <div class="form-comment">
                                 <div class="avatar-comment">
-                                    <img src="/storage/images/user/{{ Auth::user()->pic_profile }}" alt="">
+                                    <img src="/storage/images/user/{{ Auth::user()->avatar }}" alt="">
                                 </div>
                                 <div class="input-group">
                                     <input type="hidden" name="id" value="{{ $pet->id }}" >
@@ -261,7 +271,7 @@ LocalizaCão - Perfil
                     <div class="show-comment border rounded py-2 px-3">
                         
                         <div class="avatar-comment">
-                            <img src="/storage/images/user/{{ $pet->comments[$i]->user->pic_profile}}" alt="">
+                            <img src="/storage/images/user/{{ $pet->comments[$i]->user->avatar}}" alt="">
                         </div>
                         
                         <div class="show-comment-btns">

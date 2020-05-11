@@ -8,7 +8,7 @@ Route::get('/pet', 'PetController@index');
 Route::post('/pet-store', 'PetController@store');
 Route::post('/comment-store', 'PetController@commentStore')->middleware('auth'); 
 
-Route::get('/pet-create', 'PetController@create');
+Route::get('/pet-create', 'PetController@create')->middleware('auth');
 
 
 Route::get('/pet/{id}', 'PetController@showPet')->where('id', '[0-9]+')->name('showPet');
@@ -41,12 +41,8 @@ Route::put('/user/{id}', 'UserController@update')->where('id', '[0-9]+');
 Route::get('/index_user', 'Usercontroller@indexUser');
 Route::get('/user-delete/{id}', 'UserController@destroy')->where('id', '[0-9]+');
 
-//Route::get('/user/create', 'UserController');
-//Route::get('/pagina_usuario', 'UserController');
-//Route::get('/user/create', 'UserController@userCreate');
 
 
 
 Route::auth(['verify' => true]);
 
-//Route::get('/', 'HomeController@index')->name('home');

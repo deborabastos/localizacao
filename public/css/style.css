@@ -289,6 +289,11 @@ body {
   width: 100%;
 }
 
+.img-btn-contato{
+  width: 25px;
+  margin-left: 5px;
+  opacity: 0.6;
+}
 
 /* About */
 .sobrenos,

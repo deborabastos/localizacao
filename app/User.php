@@ -28,13 +28,18 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'cpf',
         'email',
-        'pic_profile',
+        'avatar',
+        'phone',
         'password',
     ];
     
     protected $dates = ['created_at', 'updated_at', 'email_verified_at'];
 
     
+    public function pet(){
+        return $this->hasMany(Pet::class);
+    }
+
     public function message(){
         return $this->hasMany(Message::class);
     }
