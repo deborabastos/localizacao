@@ -95,8 +95,9 @@ class UserController extends Controller
 
         $this->validate($request,[
             'name'=>'required',
-            'cpf'=>'required',
-            'email'=>'required',
+            'cpf'=>'required|unique',
+            'phone' => 'required',
+            'email'=>'required|unique',
             
         ]);
  
@@ -105,6 +106,7 @@ class UserController extends Controller
         $user->name=$request->input('name');
         $user->cpf=$request->input('cpf');
         $user->email=$request->input('email');
+        $user->phone=$request->input('phone');
  
         $user->save();
  

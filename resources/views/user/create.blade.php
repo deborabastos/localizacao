@@ -37,8 +37,8 @@ LocalizaCão - Página do Usuário
             </div>
 
             <div class="form-group ">
-                <label class="col-sm-8 control-label mt-2" for="pic_profile" enctype="multipart/form-data">Adicione uma foto</label>
-                <input type="file" class="form-control-file col-sm-10     control-label" name="pic_profile">
+                <label class="col-sm-8 control-label mt-2" for="avatar" enctype="multipart/form-data">Adicione uma foto</label>
+                <input type="file" class="form-control-file col-sm-10     control-label" name="avatar">
             </div>
         </fieldset>
 

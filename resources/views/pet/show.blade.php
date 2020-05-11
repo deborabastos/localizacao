@@ -50,14 +50,16 @@ LocalizaCão - Perfil
                     </p>
                 </div>
 
-                <div class="text-center mt-5">
-                    <a href="https://wa.me/55{{$pet->user->phone}}" type="button" class="btn btn-primary btn-lg">Entrar em contato <img src="/images/social-media.svg" class="img-btn-contato" alt=""></a>
 
-
-                    
-
-                </div>
-
+                @if (Auth::check())
+                    <div class="text-center mt-5">
+                        <a href="https://wa.me/55{{$pet->user->phone}}" type="button" class="btn btn-primary btn-lg" target="_blank">Entrar em contato <img src="/images/social-media.svg" class="img-btn-contato" alt=""></a>
+                    </div>
+                @else
+                    <div class="text-center mt-5">
+                        <a href="/login" type="button" class="btn btn-primary btn-lg" target="_blank">Entrar em contato <img src="/images/social-media.svg" class="img-btn-contato" alt=""></a>
+                    </div>
+                @endif
 
 
 

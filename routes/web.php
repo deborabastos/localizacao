@@ -32,7 +32,7 @@ Route::get('/sucesso', 'PetController@sucesso');
 
 
 Route::resource('/user', 'UserController');
-Route::get('/page', 'UserController@userPerfil');
+Route::get('/page', 'UserController@userPerfil')->name('page');
 Route::get('/user/{id}', 'UserController@show')->where('id', '[0-9]+')->name('show');
 
 Route::get('/user-edit/{id}', 'UserController@edit')->where('id', '[0-9]+');

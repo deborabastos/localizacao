@@ -142,7 +142,7 @@
            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
 
-           <a class="dropdown-item" type="button" href="page">
+           <a class="dropdown-item" type="button" href="{{ route('page') }}">
             {{ __('Minha conta') }}
             </a>
                
