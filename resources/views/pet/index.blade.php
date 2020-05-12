@@ -28,11 +28,11 @@ LocalizaCão -
         <div class="row">
             <div class="imagedog">
             <a class="icone_cao" href="/pet?tipo={{$tipo}}&adotar={{$adotar}}&especie=cao">
-                    <img src="images/cao1.png" alt="icone de um cachorro">
+                    <img src="images/icon_cao.png" alt="icone de um cachorro">
             </div>
             <div class="imagecat">
                 <a class="icone_gato" href="/pet?tipo={{$tipo}}&adotar={{$adotar}}&especie=gato">
-                    <img src="images/gato2.png" alt="icone de um gato">
+                    <img src="images/icon_gato.png" alt="icone de um gato">
                 </a>
             </div>
         </div>

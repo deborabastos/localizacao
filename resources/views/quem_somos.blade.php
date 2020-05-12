@@ -14,33 +14,39 @@ LocalizaCão - Quem Somos
                 <div class="team-1 team">
                     <div class="team_member">
 
-                        <img src="images/leticiawinter copy.jpeg">
+                        <img src="images/quemsomos/leticiawinter.jpeg">
 
                     </div>
                     <div class="team_member">
 
-                        <img src="images/deborabastos copy.jpeg">
+                        <img src="images/quemsomos/deborabastos.jpeg">
 
                     </div>
                     <div class="team_member">
 
-                        <img src="images/luisa copy.jpeg">
+                        <img src="images/quemsomos/luisa.jpeg">
 
                     </div>
                     <div class="team_member">
 
-                        <img src="images/alshaw copy.jpeg">
+                        <img src="images/quemsomos/alshaw.jpeg">
 
                     </div>
                     <div class="team_member">
 
-                        <img src="images/romildooliveira copy.jpeg">
+                        <img src="images/quemsomos/romildooliveira.jpeg">
 
                     </div>
-                    <h5 class="m-2">Nos reunimos por uma paixão em comum, que são todos animais na qual a ajuda é necessária. Graças a esta união criamos uma comunidade para que todos tutores e simpatizantes possam se comunicar e ajudar uns aos outros! 
-                        <br>
-                        Pois não importa a espécie ou raça, todos pets merecem um lar e ser tratados com amor e carinho!</h5>
                 </div>
+            </div>
+
+
+            <div>
+                <h5 class="m-2">Nos reunimos por uma paixão em comum, que são todos animais na qual a ajuda é necessária. Graças a esta união criamos uma comunidade para que todos tutores e simpatizantes possam se comunicar e ajudar uns aos outros! 
+                    <br>
+                    Pois não importa a espécie ou raça, todos pets merecem um lar e ser tratados com amor e carinho!</h5>
+
+
             </div>
     </main>
 

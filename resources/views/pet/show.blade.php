@@ -57,7 +57,7 @@ LocalizaCão - Perfil
                     </div>
                 @else
                     <div class="text-center mt-5">
-                        <a href="/login" type="button" class="btn btn-primary btn-lg" target="_blank">Entrar em contato <img src="/images/social-media.svg" class="img-btn-contato" alt=""></a>
+                        <a href="/login" type="button" class="btn btn-primary btn-lg" target="_blank">Entrar em contato <img src="/images/whatsapp.svg" class="img-btn-contato" alt=""></a>
                     </div>
                 @endif
 

@@ -16,12 +16,12 @@ LocalizaCão
         </h5>
         <div class="diff_services">
             <div class="diff_services_item">
-                <img src="images/mainpage copy.jpg" alt="service_image">
+                <img src="images/mainpage1.jpg" alt="service_image">
                 <h3 class="sub_title">Achados</h3>
                 <h5>Nos empenhamos em tentar localizar o tutor dos pets achados ou se possível garantir um novo lar para os mesmos!  </h5>
             </div>
             <div class="diff_services_item">
-                <img src="images/mainpage2 copy.jpg" alt="service_image">
+                <img src="images/mainpage2.jpg" alt="service_image">
                 <h3 class="sub_title">Perdidos</h3>
                 <h5>Através de nossa comunidade o seu pet pode ser encontrado com maior precisão, facilitando a sua localização!</h5>
             </div>
