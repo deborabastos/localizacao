@@ -32,7 +32,7 @@ LocalizaCão - Achado
                             <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('CPF') }}<sup class="ast-required">*</sup></label>
 
                             <div class="col-md-6">
-                                <input id="test" type="text" placeholder="Digite seu CPF" class="form-control @error('cpf') is-invalid @enderror cpf" name="cpf" value="{{ old('cpf') }}" autocomplete="cpf" autofocus>
+                                <input id="cpf" type="text" placeholder="Digite seu CPF" class="form-control @error('cpf') is-invalid @enderror cpf" name="cpf" value="{{ old('cpf') }}" autocomplete="cpf" autofocus>
 
                                 @error('cpf')
                                     <span class="invalid-feedback" role="alert">
@@ -61,7 +61,7 @@ LocalizaCão - Achado
                             <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Telefone') }}<sup class="ast-required">*</sup></label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="phone" placeholder="(00) 00000-0000" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" autocomplete="phone">
+                                <input id="phone" type="phone" placeholder="(00) 00000-0000" class="form-control @error('phone') is-invalid @enderror phone" name="phone" value="{{ old('phone') }}" autocomplete="phone">
 
                                 @error('phone')
                                     <span class="invalid-feedback" role="alert">

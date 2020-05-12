@@ -5,9 +5,12 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+
 
 class RegisterController extends Controller
 {
@@ -66,7 +69,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'cpf' => $data['cpf'],
             'email' => $data['email'],
@@ -75,5 +78,25 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             //'email_verified_at' => now()
         ]);
+
+
+        if(request()->hasFile('avatar')){
+
+            // Define o nome do arquivo
+            $extension = request()->file('avatar')->getClientOriginalExtension();
+            $fileNameToStore = $user->id.'.'.$extension;
+    
+            // Salva o arquivo em Storage com nome escolhido
+            $path = request()->file('avatar')->storeAs('public/images/user', $fileNameToStore);
+
+            // Salva caminho no banco
+            $user->avatar = $fileNameToStore;
+            $user->save();
+
+            
+        } 
+
+        return $user;
+
     }
 }
