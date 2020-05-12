@@ -44,7 +44,19 @@ LocalizaCão - Perfil
 
             <div class="col-md-6 col-12">
                 <div>
-                    <h1 class="text-center text-primary font-weight-bold display-4 ml-3 mb-3">{{ ucfirst($pet->name) }}</h1>
+                    <h1 class="text-center text-primary font-weight-bold display-4 ml-3 mb-3">
+                    
+                        @if ($pet->name != "")
+
+                        {{ ucfirst($pet->name) }}
+
+                        @else
+
+                        {{ ucfirst($pet->breed) }}
+                        
+                        @endif
+                    
+                    </h1>
                     <p class="text-center ml-3">
                         {{ ucfirst($pet->description) }}
                     </p>
